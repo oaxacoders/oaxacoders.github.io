@@ -1,0 +1,18 @@
+<a href="{{ event.url }}" class="group block bg-white rounded-xl border border-gray-100 p-6 hover:border-teal-200 hover:shadow-lg hover:shadow-teal-100/50 transition-all duration-200">
+  {% if event.date_display %}
+    <p class="text-xs font-semibold uppercase tracking-wider text-accent-600 mb-2">{{ event.date_display }}</p>
+  {% endif %}
+  <h3 class="text-lg font-semibold text-navy-700 group-hover:text-teal-500 transition-colors mb-2">
+    {{ event.title }}
+  </h3>
+  {% if event.time_display %}
+    <p class="text-sm text-gray-500 mb-1">{{ event.time_display }}</p>
+  {% endif %}
+  {% if event.venue %}
+    <p class="text-sm text-gray-500 mb-3">{{ event.venue }}</p>
+  {% endif %}
+  {% if event.excerpt %}
+    <p class="text-gray-600 text-sm leading-relaxed mb-4">{{ event.excerpt | strip_html | truncatewords: 30 }}</p>
+  {% endif %}
+  <span class="text-teal-500 text-sm font-medium group-hover:underline">Ver detalles &rarr;</span>
+</a>

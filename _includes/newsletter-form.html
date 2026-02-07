@@ -1,0 +1,28 @@
+<div class="relative overflow-hidden rounded-2xl bg-gradient-to-br from-navy-700 to-navy-900 p-8 sm:p-10 text-white">
+  <div class="relative z-10">
+    <h3 class="text-xl font-bold mb-2">Suscríbete al newsletter</h3>
+    <p class="text-navy-200 text-sm mb-6">Recibe noticias sobre eventos y actividades de la comunidad.</p>
+    <form
+      action="https://buttondown.com/api/emails/embed-subscribe/oaxacoders"
+      method="post"
+      target="popupwindow"
+      class="flex flex-col sm:flex-row gap-3"
+    >
+      <input
+        type="email"
+        name="email"
+        placeholder="tu@email.com"
+        required
+        class="flex-1 px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-accent-400 backdrop-blur-sm"
+      />
+      <button
+        type="submit"
+        class="px-6 py-3 rounded-xl bg-accent-500 text-white font-semibold hover:bg-accent-600 transition shadow-lg shadow-accent-500/25"
+      >
+        Suscribirse
+      </button>
+    </form>
+  </div>
+  <div class="absolute -top-10 -right-10 w-40 h-40 bg-accent-500/10 rounded-full"></div>
+  <div class="absolute -bottom-10 -left-10 w-60 h-60 bg-teal-500/10 rounded-full"></div>
+</div>

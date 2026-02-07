@@ -1,0 +1,104 @@
+name: Sync Eventbrite Events
+
+on:
+  schedule:
+    - cron: '0 8 * * *'  # Daily at 8am UTC
+  workflow_dispatch:       # Manual trigger
+  push:
+    branches: [main]
+
+jobs:
+  sync-events:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    outputs:
+      new_events: ${{ steps.check.outputs.new_events }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.3'
+
+      - name: Fetch events from Eventbrite
+        env:
+          EVENTBRITE_TOKEN: ${{ secrets.EVENTBRITE_TOKEN }}
+          EVENTBRITE_ORG_ID: ${{ secrets.EVENTBRITE_ORG_ID }}
+        run: ruby scripts/fetch_eventbrite.rb
+
+      - name: Check for changes
+        id: check
+        run: |
+          if git diff --quiet _data/eventos.yml _events/; then
+            echo "new_events=false" >> "$GITHUB_OUTPUT"
+            echo "No changes detected."
+          else
+            echo "new_events=true" >> "$GITHUB_OUTPUT"
+            echo "Changes detected!"
+          fi
+
+      - name: Commit and push changes
+        if: steps.check.outputs.new_events == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add _data/eventos.yml _events/
+          git commit -m "Sync events from Eventbrite"
+          git push
+
+  notify:
+    needs: sync-events
+    if: needs.sync-events.outputs.new_events == 'true'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.3'
+          bundler-cache: true
+
+      - name: Post to Twitter
+        continue-on-error: true
+        env:
+          TWITTER_API_KEY: ${{ secrets.TWITTER_API_KEY }}
+          TWITTER_API_SECRET: ${{ secrets.TWITTER_API_SECRET }}
+          TWITTER_ACCESS_TOKEN: ${{ secrets.TWITTER_ACCESS_TOKEN }}
+          TWITTER_ACCESS_TOKEN_SECRET: ${{ secrets.TWITTER_ACCESS_TOKEN_SECRET }}
+        run: ruby scripts/post_twitter.rb
+
+      - name: Post to BlueSky
+        continue-on-error: true
+        env:
+          BLUESKY_HANDLE: ${{ secrets.BLUESKY_HANDLE }}
+          BLUESKY_PASSWORD: ${{ secrets.BLUESKY_PASSWORD }}
+        run: ruby scripts/post_bluesky.rb
+
+      - name: Notify Telegram
+        continue-on-error: true
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: ruby scripts/notify_telegram.rb
+
+      - name: Generate WhatsApp message
+        id: whatsapp
+        run: ruby scripts/generate_whatsapp_message.rb
+
+      - name: Send email newsletter
+        continue-on-error: true
+        env:
+          BUTTONDOWN_API_KEY: ${{ secrets.BUTTONDOWN_API_KEY }}
+        run: ruby scripts/send_email.rb
+
+      - name: Upload WhatsApp message as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: whatsapp-message
+          path: ${{ steps.whatsapp.outputs.whatsapp_message_path }}
+          retention-days: 7
