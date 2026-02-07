@@ -1,0 +1,44 @@
+title: "Oaxacoders"
+description: "Comunidad de programadores en Oaxaca, Mexico"
+url: "https://oaxacoders.org"
+baseurl: ""
+lang: "es"
+
+collections:
+  events:
+    output: true
+    permalink: /eventos/:slug/
+
+defaults:
+  - scope:
+      path: ""
+      type: "events"
+    values:
+      layout: "event"
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+
+community:
+  telegram: "https://t.me/+o8kCuGuyF3pkYzM5"
+  whatsapp: "https://chat.whatsapp.com/FJDJ2viwOV82geARAKvvxA"
+  twitter: "https://twitter.com/oaxacoders"
+  bluesky: "https://bsky.app/profile/oaxacoders.bsky.social"
+  github: "https://github.com/oaxacoders"
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - vendor/
+  - scripts/
+  - ia_generated_plans/
+  - tags
+  - .DS_Store
+  - README.md

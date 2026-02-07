@@ -1,26 +1,113 @@
-<!doctype html>
-<html>
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-  </head>
-  <body>
-    <div class="flex items-center justify-center min-h-screen bg-gray-100">
-      <div class="max-w-md w-full bg-white shadow-lg rounded-lg p-6">
-        <img src="./oaxacoders.svg" alt="Oaxacoders Logo" class="w-64 mx-auto mb-4" />
-        <div class="text-center">
-          <h1 class="text-2xl font-bold mb-4">Sitio en Construcción</h1>
-          <p class="text-gray-500 mb-6">
-          Mientras terminamos el sitio puedes unirte a nuestras comunidades en:
-          </p>  
-          <div class="justify-center space-x-4 mb-6">
-             <a href="https://chat.whatsapp.com/FJDJ2viwOV82geARAKvvxA" class="text-blue-500 hover:underline">WhatsApp</a>
-             <a href="https://t.me/+o8kCuGuyF3pkYzM5" class="text-blue-500 hover:underline">Telegram</a>
-          <div>
-          <img src="./under_construction.png" alt="Under Construction" class="w-64 mx-auto mb-4" />
-        </div>
-      </div> 
+---
+layout: default
+title: Inicio
+---
+<!-- Hero -->
+<section class="relative overflow-hidden bg-gradient-to-br from-navy-50 via-white to-teal-50">
+  <div class="absolute inset-0 overflow-hidden">
+    <div class="absolute -top-40 -right-40 w-96 h-96 bg-accent-100/30 rounded-full blur-3xl"></div>
+    <div class="absolute -bottom-40 -left-40 w-96 h-96 bg-teal-100/30 rounded-full blur-3xl"></div>
+  </div>
+  <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28 flex flex-col md:flex-row items-center gap-10 md:gap-16">
+    <div class="flex-1 text-center md:text-left">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent-50 text-accent-700 text-xs font-semibold mb-6 border border-accent-200">
+        <span class="w-1.5 h-1.5 rounded-full bg-accent-500"></span>
+        Comunidad abierta y gratuita
+      </div>
+      <img src="/assets/images/oaxacoders.svg" alt="Oaxacoders" class="h-16 sm:h-20 md:h-24 mb-6 mx-auto md:mx-0" />
+      <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-navy-700 mb-5 leading-[1.1] tracking-tight">
+        Comunidad de<br class="hidden sm:block" />
+        <span class="text-accent-500">Programadores</span><br class="hidden sm:block" />
+        en Oaxaca
+      </h1>
+      <p class="text-lg text-gray-500 mb-8 max-w-md mx-auto md:mx-0 leading-relaxed">
+        Nos reunimos para aprender, compartir y crear tecnología juntos. Meetups, talleres y hackathons.
+      </p>
+      <div class="flex justify-center md:justify-start gap-3 flex-wrap">
+        <a href="/eventos/" class="inline-flex items-center gap-2 bg-accent-500 text-white px-6 py-3 rounded-xl font-semibold hover:bg-accent-600 transition-all shadow-lg shadow-accent-500/25 hover:shadow-accent-500/40">
+          Ver Eventos
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </a>
+        <a href="{{ site.community.telegram }}" target="_blank" rel="noopener"
+           class="inline-flex items-center gap-2 bg-white text-navy-700 px-6 py-3 rounded-xl font-semibold hover:bg-gray-50 transition-all shadow-md border border-gray-200">
+          Unirse a la Comunidad
+        </a>
+      </div>
     </div>
-  </body>
-</html>
+    <div class="flex-1 flex justify-center">
+      <div class="relative">
+        <div class="absolute -inset-4 bg-gradient-to-br from-accent-200 to-teal-200 rounded-3xl blur-2xl opacity-40"></div>
+        <img src="/assets/images/programmer_grasshopper.jpeg" alt="Chapulin programador"
+             class="relative w-72 sm:w-80 md:w-96 rounded-2xl shadow-2xl" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Upcoming Events -->
+<section class="py-20 bg-white">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-bold text-navy-700 mb-3">Próximos Eventos</h2>
+      <p class="text-gray-500 max-w-md mx-auto">Meetups, talleres y más actividades de la comunidad.</p>
+    </div>
+    {% assign upcoming = site.events | sort: "event_date" %}
+    {% if upcoming.size > 0 %}
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {% for event in upcoming limit:6 %}
+          {% include event-card.html event=event %}
+        {% endfor %}
+      </div>
+      <div class="text-center mt-10">
+        <a href="/eventos/" class="inline-flex items-center gap-2 text-teal-500 font-semibold hover:text-teal-600 transition">
+          Ver todos los eventos
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </a>
+      </div>
+    {% else %}
+      <div class="text-center py-8">
+        <img src="/assets/images/programmers.jpeg" alt="Chapulines programadores"
+             class="w-72 mx-auto rounded-2xl shadow-lg mb-8" />
+        <p class="text-gray-500 text-lg mb-2">No hay eventos programados por el momento.</p>
+        <p class="text-gray-400">Únete a nuestros canales para enterarte de los próximos.</p>
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+<!-- About -->
+<section class="py-20 bg-gray-50">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center gap-12">
+    <div class="flex-1">
+      <div class="relative">
+        <div class="absolute -inset-4 bg-gradient-to-br from-teal-200/50 to-accent-200/50 rounded-3xl blur-2xl"></div>
+        <img src="/assets/images/programmer.jpeg" alt="Chapulin programando"
+             class="relative rounded-2xl shadow-xl w-full max-w-md mx-auto" />
+      </div>
+    </div>
+    <div class="flex-1 text-center md:text-left">
+      <h2 class="text-3xl font-bold text-navy-700 mb-4">Sobre Oaxacoders</h2>
+      <p class="text-gray-500 mb-4 leading-relaxed">
+        Somos una comunidad abierta de programadores, diseñadores y
+        entusiastas de la tecnología en Oaxaca, México. 
+      </p>
+      <p class="text-gray-500 mb-8 leading-relaxed">
+        Organizamos meetups, talleres y hackathons para fomentar el aprendizaje y la colaboración.
+
+         Usamos el chapulín como parte de nuestro logotipo y como nuestra "mascota" al ser un símbolo muy oaxaqueño 
+        — tradición oaxaqueña mezclada con tecnología.
+      </p>
+      <a href="/nosotros/" class="inline-flex items-center gap-2 bg-navy-700 text-white px-5 py-3 rounded-xl font-semibold hover:bg-navy-800 transition-all shadow-lg shadow-navy-700/25">
+        Conoce más
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Newsletter -->
+<section class="py-20 bg-white">
+  <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
+    {% include newsletter-form.html %}
+  </div>
+</section>

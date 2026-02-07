@@ -1,0 +1,30 @@
+name: Notify on Sync Failure
+
+on:
+  workflow_run:
+    workflows: ["Sync Eventbrite Events"]
+    types: [completed]
+
+jobs:
+  notify-failure:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'failure' }}
+    steps:
+      - name: Send failure alert to Telegram
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_ADMIN_CHAT_ID: ${{ secrets.TELEGRAM_ADMIN_CHAT_ID }}
+          RUN_URL: https://github.com/${{ github.repository }}/actions/runs/${{ github.event.workflow_run.id }}
+        run: |
+          ruby -rnet/http -rjson -ruri -e '
+            token = ENV.fetch("TELEGRAM_BOT_TOKEN")
+            chat_id = ENV.fetch("TELEGRAM_ADMIN_CHAT_ID")
+            run_url = ENV.fetch("RUN_URL")
+            uri = URI("https://api.telegram.org/bot#{token}/sendMessage")
+            Net::HTTP.start(uri.hostname, uri.port, use_ssl: true, open_timeout: 10, read_timeout: 10) do |http|
+              req = Net::HTTP::Post.new(uri, "Content-Type" => "application/json")
+              req.body = { chat_id: chat_id, text: "El workflow de sincronización de eventos falló.\n\nRevisa: #{run_url}", parse_mode: "HTML" }.to_json
+              resp = http.request(req)
+              abort "Telegram error (HTTP #{resp.code})" unless resp.is_a?(Net::HTTPSuccess)
+            end
+          '

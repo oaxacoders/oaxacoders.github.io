@@ -1,0 +1,52 @@
+<header class="sticky top-0 z-50 bg-white/80 backdrop-blur-lg border-b border-gray-100">
+  <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+    <a href="/" class="flex items-center gap-2 shrink-0">
+      <img src="/assets/images/oaxacoders.svg" alt="Oaxacoders" class="h-9" />
+    </a>
+
+    <!-- Desktop nav -->
+    <div class="hidden sm:flex items-center gap-1">
+      <a href="/eventos/" class="px-3 py-2 rounded-lg text-sm font-medium text-navy-700 hover:text-teal-500 hover:bg-teal-50 transition">Eventos</a>
+      <a href="/blog/" class="px-3 py-2 rounded-lg text-sm font-medium text-navy-700 hover:text-teal-500 hover:bg-teal-50 transition">Blog</a>
+      <a href="/nosotros/" class="px-3 py-2 rounded-lg text-sm font-medium text-navy-700 hover:text-teal-500 hover:bg-teal-50 transition">Nosotros</a>
+      <a href="{{ site.community.telegram }}" target="_blank" rel="noopener"
+         class="ml-2 px-4 py-2 rounded-lg text-sm font-semibold text-white bg-accent-500 hover:bg-accent-600 transition shadow-sm">
+        Unirse
+      </a>
+    </div>
+
+    <!-- Mobile hamburger -->
+    <button id="menu-toggle" class="sm:hidden p-2 -mr-2 rounded-lg text-navy-600 hover:bg-gray-100 transition" aria-label="Menu">
+      <svg id="menu-icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+      </svg>
+      <svg id="menu-icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+      </svg>
+    </button>
+  </nav>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="hidden sm:hidden border-t border-gray-100 bg-white">
+    <div class="px-4 py-3 space-y-1">
+      <a href="/eventos/" class="block px-3 py-2.5 rounded-lg text-sm font-medium text-navy-700 hover:bg-teal-50 hover:text-teal-600 transition">Eventos</a>
+      <a href="/blog/" class="block px-3 py-2.5 rounded-lg text-sm font-medium text-navy-700 hover:bg-teal-50 hover:text-teal-600 transition">Blog</a>
+      <a href="/nosotros/" class="block px-3 py-2.5 rounded-lg text-sm font-medium text-navy-700 hover:bg-teal-50 hover:text-teal-600 transition">Nosotros</a>
+      <a href="{{ site.community.telegram }}" target="_blank" rel="noopener"
+         class="block mt-2 px-3 py-2.5 rounded-lg text-sm font-semibold text-center text-white bg-accent-500 hover:bg-accent-600 transition">
+        Unirse a la comunidad
+      </a>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('menu-toggle').addEventListener('click', function () {
+      var menu = document.getElementById('mobile-menu');
+      var open = document.getElementById('menu-icon-open');
+      var close = document.getElementById('menu-icon-close');
+      menu.classList.toggle('hidden');
+      open.classList.toggle('hidden');
+      close.classList.toggle('hidden');
+    });
+  </script>
+</header>

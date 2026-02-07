@@ -1,0 +1,67 @@
+<footer class="bg-navy-950 text-gray-400 mt-auto">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+      <!-- Brand -->
+      <div class="sm:col-span-2 lg:col-span-1">
+        <img src="/assets/images/oaxacoders.svg" alt="Oaxacoders" class="h-9 mb-4 brightness-0 invert opacity-80" />
+        <p class="text-sm leading-relaxed max-w-xs">
+          Comunidad de programadores en Oaxaca, Mexico. El chapulín es nuestro simbolo.
+        </p>
+      </div>
+
+      <!-- Navegacion -->
+      <div>
+        <h3 class="text-xs font-semibold uppercase tracking-wider text-accent-400 mb-4">Navegación</h3>
+        <ul class="space-y-2.5 text-sm">
+          <li><a href="/eventos/" class="hover:text-white transition-colors">Eventos</a></li>
+          <li><a href="/blog/" class="hover:text-white transition-colors">Blog</a></li>
+          <li><a href="/nosotros/" class="hover:text-white transition-colors">Nosotros</a></li>
+        </ul>
+      </div>
+
+      <!-- Comunidad -->
+      <div>
+        <h3 class="text-xs font-semibold uppercase tracking-wider text-accent-400 mb-4">Comunidad</h3>
+        <ul class="space-y-2.5 text-sm">
+          <li><a href="{{ site.community.telegram }}" class="hover:text-white transition-colors" target="_blank" rel="noopener">Telegram</a></li>
+          <li><a href="{{ site.community.whatsapp }}" class="hover:text-white transition-colors" target="_blank" rel="noopener">WhatsApp</a></li>
+          <li><a href="{{ site.community.twitter }}" class="hover:text-white transition-colors" target="_blank" rel="noopener">Twitter / X</a></li>
+          <li><a href="{{ site.community.bluesky }}" class="hover:text-white transition-colors" target="_blank" rel="noopener">BlueSky</a></li>
+          <li><a href="{{ site.community.github }}" class="hover:text-white transition-colors" target="_blank" rel="noopener">GitHub</a></li>
+        </ul>
+      </div>
+
+      <!-- Newsletter -->
+      <div>
+        <h3 class="text-xs font-semibold uppercase tracking-wider text-accent-400 mb-4">Newsletter</h3>
+        <p class="text-sm mb-3">Recibe noticias de eventos.</p>
+        <form
+          action="https://buttondown.com/api/emails/embed-subscribe/oaxacoders"
+          method="post"
+          target="popupwindow"
+          class="flex gap-2"
+        >
+          <input
+            type="email"
+            name="email"
+            placeholder="tu@email.com"
+            required
+            class="w-full px-3 py-2 text-sm bg-navy-900 border border-navy-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-accent-500 focus:border-transparent"
+          />
+          <button type="submit" class="shrink-0 px-3 py-2 bg-accent-500 text-white text-sm font-medium rounded-lg hover:bg-accent-600 transition">
+            OK
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <div class="border-t border-navy-800 mt-12 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs">
+      <p>&copy; {{ "now" | date: "%Y" }} Oaxacoders. Hecho con &#10084; en Oaxaca.</p>
+      <div class="flex gap-4">
+        <a href="{{ site.community.github }}" class="hover:text-white transition-colors" target="_blank" rel="noopener">GitHub</a>
+        <a href="{{ site.community.twitter }}" class="hover:text-white transition-colors" target="_blank" rel="noopener">Twitter</a>
+        <a href="{{ site.community.bluesky }}" class="hover:text-white transition-colors" target="_blank" rel="noopener">BlueSky</a>
+      </div>
+    </div>
+  </div>
+</footer>
