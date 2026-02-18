@@ -82,7 +82,8 @@ def api_get(path)
   end
 
   unless response.is_a?(Net::HTTPSuccess)
-    warn "Eventbrite API error (HTTP #{response.code})"
+    warn "Eventbrite API error (HTTP #{response.code}) for #{uri}"
+    warn "Response: #{response.body[0, 500]}" if response.body
     return nil
   end
 
@@ -183,6 +184,7 @@ def write_post_file(event_data)
     "venue" => event_data["venue"],
     "venue_address" => event_data["venue_address"],
     "eventbrite_url" => event_data["eventbrite_url"],
+    "published" => false,
     "category" => "eventos-pasados",
     "slides_url" => "",
     "slides_type" => "",
@@ -196,32 +198,10 @@ def write_post_file(event_data)
 
     #{event_data['description']}
 
-    ## Presentación
-
-    <!-- Para agregar slides, edita el front matter de este archivo:
-         slides_url: "https://docs.google.com/presentation/d/.../embed"
-         slides_type: "google-slides"
-         O para PDF:
-         slides_url: "/assets/slides/mi-presentacion.pdf"
-         slides_type: "pdf" -->
-
-    ## Fotos
-
-    <!-- Para agregar fotos, edita el front matter de este archivo:
-         fotos:
-           - url: "/assets/fotos/evento/foto1.jpg"
-             caption: "Descripción de la foto"
-           - url: "/assets/fotos/evento/foto2.jpg"
-             caption: "Otra descripción" -->
-
-    ## Recursos
-
-    <!-- Para agregar recursos, edita el front matter de este archivo:
-         recursos:
-           - titulo: "Repositorio del proyecto"
-             url: "https://github.com/..."
-           - titulo: "Documentación"
-             url: "https://..." -->
+    <!-- Secciones adicionales se controlan via front matter:
+         slides_url / slides_type  — presentación (Google Slides embed o PDF)
+         fotos                     — lista de {url, caption}
+         recursos                  — lista de {titulo, url} -->
   MARKDOWN
 
   content = "#{front_matter.to_yaml}---\n#{body}"

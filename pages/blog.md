@@ -39,7 +39,7 @@ permalink: /blog/
     <div class="space-y-6">
       {% for post in eventos_pasados %}
         <a href="{{ post.url }}" class="group block bg-white rounded-xl border border-gray-100 p-6 hover:border-teal-200 hover:shadow-lg hover:shadow-teal-100/50 transition-all duration-200">
-          <p class="text-xs text-gray-400 mb-2">{{ post.date_display | default: post.date | date: "%d de %B, %Y" }}</p>
+          <p class="text-xs text-gray-400 mb-2">{% if post.date_display %}{{ post.date_display }}{% else %}{{ post.date | date: "%d de %B, %Y" }}{% endif %}</p>
           <h2 class="text-xl font-semibold text-navy-700 group-hover:text-teal-500 transition-colors mb-2">{{ post.title }}</h2>
           <div class="flex flex-wrap gap-2 mb-2">
             {% if post.venue %}
