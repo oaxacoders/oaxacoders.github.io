@@ -7,3 +7,5 @@ gem "jekyll-sitemap", "~> 1.4"
 
 # Social media (Phase 3)
 gem "x", "~> 0.14"
+
+gem "openssl", "3.3.1"
