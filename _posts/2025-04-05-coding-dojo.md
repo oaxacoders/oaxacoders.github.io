@@ -1,7 +1,7 @@
 ---
 layout: evento-pasado
 published: true 
-title: Coding Dojo
+title: Coding Dojo Abril
 date: '2025-04-05'
 date_display: 5 de abril, 2025
 time_display: 17:00 - 18:30
