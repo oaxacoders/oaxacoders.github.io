@@ -1,6 +1,6 @@
 ---
 layout: event
-title: Eligiendo tu Monitor, una herramienta que puede mejorar tu experiencia
+title: 'Eligiendo tu Monitor, una herramienta que puede mejorar tu experiencia'
 date: '2026-03-21'
 date_display: 21 de marzo, 2026
 time_display: 17:00 - 18:00

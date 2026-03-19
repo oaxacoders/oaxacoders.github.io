@@ -37,7 +37,7 @@ bundle exec jekyll serve
 
 ## GitHub Actions Workflows
 
-- **`sync-events.yml`** — Runs daily, fetches events from Eventbrite, comkkkkmits changes, triggers notifications
+- **`sync-events.yml`** — Runs daily, fetches events from Eventbrite, commits changes, triggers notifications
 - **`notify-failures.yml`** — Sends Telegram alert to admin if sync workflow fails
 
 ## GitHub Secrets Required

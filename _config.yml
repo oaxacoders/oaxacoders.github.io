@@ -3,6 +3,7 @@ description: "Comunidad de programadores en Oaxaca, Mexico"
 url: "https://oaxacoders.org"
 baseurl: ""
 lang: "es"
+future: true
 
 collections:
   events:
