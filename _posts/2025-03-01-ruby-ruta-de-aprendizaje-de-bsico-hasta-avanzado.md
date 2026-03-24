@@ -19,6 +19,8 @@ recursos:
 
 ¡Aprende una ruta rápida para pasar de saber nada del lenguaje hasta llegar a un nivel avanzado!
 
+![Poster Ruby: Ruta de aprendizaje](/assets/images/eventos/2025-03-01-ruby-aprendizaje/poster.png)
+
 ## Descripción
 
 En la presentación abordamos un plan de aprendizaje para dominar Ruby, desde los fundamentos básicos hasta conceptos avanzados. Cubrimos temas como sintaxis, estructuras de datos, programación orientada a objetos, manejo de errores, y mejores prácticas. Además, compartimos recursos útiles para seguir aprendiendo y mejorar tus habilidades en Ruby.
