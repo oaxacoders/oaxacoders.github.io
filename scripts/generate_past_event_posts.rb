@@ -133,9 +133,20 @@ def fetch_ended_events
   events
 end
 
+def fetch_event_description(event_id)
+  data = api_get("/events/#{event_id}/description/")
+  return "" unless data
+
+  sanitize_text(data["description"] || "")[0, MAX_DESCRIPTION_LENGTH]
+end
+
 def process_event(event)
   name = sanitize_text(event["name"]["text"] || "Sin titulo")[0, MAX_TITLE_LENGTH]
-  description = sanitize_text(event.dig("description", "text") || "")[0, MAX_DESCRIPTION_LENGTH]
+  description = sanitize_text(event.dig("description", "text") || "")
+  if description.empty?
+    description = fetch_event_description(event["id"])
+  end
+  description = description[0, MAX_DESCRIPTION_LENGTH]
   eventbrite_url = event["url"]
 
   start_utc = Time.parse(event.dig("start", "utc"))
@@ -192,17 +203,13 @@ def write_post_file(event_data)
     "recursos" => []
   }
 
-  body = <<~MARKDOWN
+  description = event_data["description"]
+  paragraphs = description.split(/\n{2,}/).map(&:strip).reject(&:empty?)
+  summary = paragraphs.first || ""
+  rest = paragraphs.drop(1).join("\n\n")
 
-    ## Resumen
-
-    #{event_data['description']}
-
-    <!-- Secciones adicionales se controlan via front matter:
-         slides_url / slides_type  — presentación (Google Slides embed o PDF)
-         fotos                     — lista de {url, caption}
-         recursos                  — lista de {titulo, url} -->
-  MARKDOWN
+  body = "## Resumen\n\n#{summary}\n"
+  body += "\n## Descripción\n\n#{rest}\n" unless rest.empty?
 
   content = "#{front_matter.to_yaml}---\n#{body}"
   File.write(filepath, content)
