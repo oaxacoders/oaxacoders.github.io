@@ -11,11 +11,14 @@ published: true
 category: eventos-pasados
 slides_url: '/assets/files/eligiendo-monitor.pdf'
 slides_type: 'pdf'
-fotos: []
+fotos:
+  - url: /assets/images/eventos/2026-03-21-eligiendo-monitor/foto.jpg
 recursos: []
 ---
 
 Guía para evaluar la decisión al adquirir un monitor
+
+![Poster Eligiendo tu Monitor](/assets/images/eventos/2026-03-21-eligiendo-monitor/poster.png)
 
 ## Descripción
 
