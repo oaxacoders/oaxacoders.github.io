@@ -30,7 +30,7 @@ permalink: /agradecimientos/
         </div>
         <h3 class="text-lg font-semibold text-navy-700 mb-3"><a href="https://oaxacarb.org/" target="_blank" rel="noopener" class="hover:text-teal-600 transition-colors">oaxaca.rb</a></h3>
         <p class="text-sm text-gray-500 leading-relaxed">
-          A los fundadores de oaxaca.rb, por sentar las bases y ser la inspiración de esta comunidad.
+          A los fundadores y miembros de oaxaca.rb, por sentar las bases y ser la inspiración de esta comunidad.
           Cinco años organizando eventos no es poca cosa, y ese esfuerzo constante es lo que nos motivó a seguir construyendo.
         </p>
       </div>
