@@ -1,7 +1,7 @@
 ---
 layout: evento-pasado
 published: true 
-title: 'Ruby: Ruta de aprendizaje de básico hasta avanzado.'
+title: 'Ruby: Ruta de aprendizaje de básico hasta avanzado — por Hermes Ojeda Ruiz'
 date: '2025-03-01'
 date_display: 1 de marzo, 2025
 time_display: 17:00 - 18:00

@@ -1,7 +1,7 @@
 ---
 layout: evento-pasado
 published: true
-title: Kernel Self-Protection Project
+title: Kernel Self-Protection Project — por Gustavo A. R. Silva
 date: '2025-05-03'
 date_display: 3 de mayo, 2025
 time_display: 17:00 - 18:30

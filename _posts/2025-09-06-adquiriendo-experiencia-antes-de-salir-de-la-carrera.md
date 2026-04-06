@@ -1,7 +1,7 @@
 ---
 layout: evento-pasado
 published: true 
-title: Adquiriendo experiencia antes de salir de la carrera
+title: Adquiriendo experiencia antes de salir de la carrera — por Hermes Ojeda Ruiz
 date: '2025-09-06'
 date_display: 6 de septiembre, 2025
 time_display: 17:00 - 18:00

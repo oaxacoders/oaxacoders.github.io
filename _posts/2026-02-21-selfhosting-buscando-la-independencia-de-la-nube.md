@@ -1,6 +1,6 @@
 ---
 layout: evento-pasado
-title: 'Selfhosting: Buscando la independencia de la nube'
+title: 'Selfhosting: Buscando la independencia de la nube — por Hermes Ojeda Ruiz'
 date: '2026-02-21'
 date_display: 21 de febrero, 2026
 time_display: 17:00 - 18:00

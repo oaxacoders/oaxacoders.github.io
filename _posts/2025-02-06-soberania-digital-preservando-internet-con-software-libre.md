@@ -1,7 +1,7 @@
 ---
 layout: evento-pasado
 published: true
-title: 'Soberanía Digital: Preservando Internet con Software Libre'
+title: 'Soberanía Digital: Preservando Internet con Software Libre — por Rubén Rodríguez Pérez'
 date: '2025-02-06'
 date_display: 6 de febrero, 2025
 time_display: 18:00 - 19:00

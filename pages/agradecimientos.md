@@ -13,7 +13,7 @@ permalink: /agradecimientos/
     <h1 class="text-3xl sm:text-4xl font-bold text-navy-700 mb-5">Agradecimientos</h1>
     <p class="text-lg text-gray-500 leading-relaxed max-w-2xl mx-auto">
       Oaxacoders no sería lo que es sin el apoyo de personas y organizaciones que han creído en la comunidad.
-      Aquí va nuestro agradecimiento a quienes han puesto su granito de arena — o más bien, su granito de código.
+      En este espacio expresamos nuestro agradecimiento a quienes han puesto su granito de arena — o su granito de código.
     </p>
   </div>
 </section>
@@ -37,12 +37,10 @@ permalink: /agradecimientos/
 
       <!-- Emmanuel Mendoza -->
       <div class="rounded-2xl border border-gray-100 p-8 hover:border-teal-200 hover:shadow-lg hover:shadow-teal-100/50 transition-all duration-200 flex flex-col items-center text-center">
-        <div class="w-20 h-20 rounded-2xl bg-teal-50 border border-teal-200 flex items-center justify-center mb-5">
-          <svg class="w-10 h-10 text-teal-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
-          </svg>
+        <div class="w-20 h-20 rounded-2xl bg-teal-50 border border-teal-200 flex items-center justify-center mb-5 overflow-hidden">
+          <img src="/assets/images/agradecimientos/emma.jpeg" alt="Emmanuel Mendoza" class="w-20 h-20 object-cover" />
         </div>
-        <h3 class="text-lg font-semibold text-navy-700 mb-3">Emmanuel Mendoza</h3>
+        <h3 class="text-lg font-semibold text-navy-700 mb-3"><a href="https://www.linkedin.com/in/emmanuel-mendoza-acevedo" target="_blank" rel="noopener" class="hover:text-teal-600 transition-colors">Emmanuel Mendoza</a></h3>
         <p class="text-sm text-gray-500 leading-relaxed">
           A Emmanuel Mendoza, quien participó activamente en oaxaca.rb y en esta nueva etapa nos abrió las puertas de un espacio céntrico para recibir a ponentes internacionales.
           Gracias por facilitar que las ideas fluyan.
@@ -58,6 +56,32 @@ permalink: /agradecimientos/
         <p class="text-sm text-gray-500 leading-relaxed">
           A Atzomx Café y Coworking, por ponernos a disposición sus excelentes instalaciones para la realización de nuestros eventos.
           Un buen espacio hace toda la diferencia, y el suyo la ha hecho.
+        </p>
+      </div>
+
+      <!-- Internet-in-a-Box -->
+      <div class="rounded-2xl border border-gray-100 p-8 hover:border-teal-200 hover:shadow-lg hover:shadow-teal-100/50 transition-all duration-200 flex flex-col items-center text-center">
+        <div class="w-20 h-20 rounded-2xl bg-accent-50 border border-accent-200 flex items-center justify-center mb-5 overflow-hidden">
+          <img src="/assets/images/agradecimientos/iiab.jpeg" alt="Internet-in-a-Box" class="w-20 h-20 object-cover" />
+        </div>
+        <h3 class="text-lg font-semibold text-navy-700 mb-3"><a href="https://internet-in-a-box.org/" target="_blank" rel="noopener" class="hover:text-teal-600 transition-colors">Internet-in-a-Box</a></h3>
+        <p class="text-sm text-gray-500 leading-relaxed">
+          A nuestros amigos de Internet-in-a-Box por su amistad, apoyo a la comunidad y con el contacto para las charlas con ponentes internacionales.
+          Gracias a <a href="https://www.linkedin.com/in/avnikhatri/" target="_blank" rel="noopener" class="text-teal-600 hover:underline">Avni</a> y <a href="https://unleashkids.org/" target="_blank" rel="noopener" class="text-teal-600 hover:underline">Adam</a>, así como <a href="https://www.codewiz.org/" target="_blank" rel="noopener" class="text-teal-600 hover:underline">Bernie</a>, <a href="https://quidam.cc/" target="_blank" rel="noopener" class="text-teal-600 hover:underline">Rubén</a> y <a href="https://ark.switnet.org/acerca/" target="_blank" rel="noopener" class="text-teal-600 hover:underline">Luis</a>.
+        </p>
+      </div>
+
+      <!-- Ponentes -->
+      <div class="rounded-2xl border border-gray-100 p-8 hover:border-teal-200 hover:shadow-lg hover:shadow-teal-100/50 transition-all duration-200 flex flex-col items-center text-center md:col-span-3">
+        <div class="w-20 h-20 rounded-2xl bg-accent-50 border border-accent-200 flex items-center justify-center mb-5">
+          <svg class="w-10 h-10 text-accent-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"/>
+          </svg>
+        </div>
+        <h3 class="text-lg font-semibold text-navy-700 mb-3"><a href="/eventos/todos/" class="hover:text-teal-600 transition-colors">Ponentes</a></h3>
+        <p class="text-sm text-gray-500 leading-relaxed max-w-xl">
+          A todas las personas que han compartido su conocimiento y experiencia en nuestros eventos.
+          Cada charla enriquece a la comunidad y nos inspira a seguir aprendiendo.
         </p>
       </div>
 

@@ -1,7 +1,7 @@
 ---
 layout: evento-pasado
 published: false
-title: Arma tu Arcade Retro con Software Libre
+title: Arma tu Arcade Retro con Software Libre — por Hermes Ojeda Bravo y Hermes Ojeda Ruiz
 date: '2026-01-17'
 date_display: 17 de enero, 2026
 time_display: 17:00 - 18:00

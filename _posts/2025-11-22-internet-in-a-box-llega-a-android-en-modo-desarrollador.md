@@ -1,7 +1,7 @@
 ---
 layout: evento-pasado
 published: false
-title: Internet-in-a-Box llega a Android... ¡en modo Desarrollador²!
+title: Internet-in-a-Box llega a Android... ¡en modo Desarrollador²! — por Luis A. Guzmán García
 date: '2025-11-22'
 date_display: 22 de noviembre, 2025
 time_display: 17:00 - 18:30
