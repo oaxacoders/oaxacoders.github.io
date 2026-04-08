@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="58cm" height="95cm" viewBox="450 -115 1154 1897" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g id="Fondo">
+    <g>
+      <rect style="fill: #f75936; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2.35099e-37; stroke: #000000" x="450.68" y="-114.093" width="1153.03" height="179.093" rx="0" ry="0"/>
+      <text font-size="12.8" style="fill: #000000; fill-opacity: 1; stroke: none;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="1027.19" y="-20.646">
+        <tspan x="1027.19" y="-20.646"></tspan>
+      </text>
+    </g>
+    <g>
+      <rect style="fill: #3584e4; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2.35099e-37; stroke: #000000" x="450.991" y="1234.41" width="1152.66" height="547.638" rx="0" ry="0"/>
+      <text font-size="12.8" style="fill: #000000; fill-opacity: 1; stroke: none;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="1027.32" y="1512.13">
+        <tspan x="1027.32" y="1512.13"></tspan>
+      </text>
+    </g>
+    <g>
+      <rect style="fill: #f9f06b; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2.35099e-37; stroke: #000000" x="450.983" y="513.598" width="1152.66" height="720.831" rx="0" ry="0"/>
+      <text font-size="12.8" style="fill: #000000; fill-opacity: 1; stroke: none;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="1027.31" y="877.914">
+        <tspan x="1027.31" y="877.914"></tspan>
+      </text>
+    </g>
+    <g>
+      <rect style="fill: #8ff0a4; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2.35099e-37; stroke: #000000" x="450.814" y="64.987" width="1152.83" height="449" rx="0" ry="0"/>
+      <text font-size="12.8" style="fill: #000000; fill-opacity: 1; stroke: none;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="1027.23" y="293.387">
+        <tspan x="1027.23" y="293.387"></tspan>
+      </text>
+    </g>
+    <g>
+      <ellipse style="fill: #955ff8; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" cx="846.3" cy="140.966" rx="45.5673" ry="47.0336"/>
+      <text font-size="12.8" style="fill: #000000; fill-opacity: 1; stroke: none;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="846.3" y="144.866">
+        <tspan x="846.3" y="144.866">F-Droid</tspan>
+      </text>
+    </g>
+    <g>
+      <ellipse style="fill: #d87474; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" cx="1152.17" cy="257.914" rx="45.5673" ry="47.0336"/>
+      <text font-size="12.8" style="fill: #000000; fill-opacity: 1; stroke: none;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="1152.17" y="261.814">
+        <tspan x="1152.17" y="261.814">Termux-App</tspan>
+      </text>
+    </g>
+    <g>
+      <ellipse style="fill: #955ff8; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke-dasharray: 20 8 4 8; stroke: #000000" cx="902.236" cy="296.268" rx="45.5673" ry="47.0336"/>
+      <text font-size="12.8" style="fill: #000000; fill-opacity: 1; stroke: none;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="902.236" y="300.168">
+        <tspan x="902.236" y="300.168">Fennec</tspan>
+      </text>
+    </g>
+    <g>
+      <ellipse style="fill: #955ff8; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" cx="846.3" cy="451.434" rx="45.5673" ry="47.0336"/>
+      <text font-size="12.8" style="fill: #000000; fill-opacity: 1; stroke: none;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="846.3" y="455.334">
+        <tspan x="846.3" y="455.334">kdeconnect</tspan>
+      </text>
+    </g>
+    <text font-size="12.8" style="fill: #000000; fill-opacity: 1; stroke: none;text-anchor:start;font-family:Sans;font-style:normal;font-weight:700" x="729.668" y="592.156">
+      <tspan x="729.668" y="592.156">https://github.com/RikkaApps/Shizuku/releases/tag/v13.6.0</tspan>
+    </text>
+    <text font-size="12.8" style="fill: #000000; fill-opacity: 1; stroke: none;text-anchor:start;font-family:Sans;font-style:normal;font-weight:700" x="1230.55" y="257.106">
+      <tspan x="1230.55" y="257.106">https://github.com/termux/termux-app/releases/tag/v0.118.3</tspan>
+    </text>
+    <g>
+      <ellipse style="fill: #3584e4; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" cx="1133.04" cy="589.434" rx="45.5673" ry="47.0336"/>
+      <text font-size="12.8" style="fill: #000000; fill-opacity: 1; stroke: none;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="1133.04" y="593.334">
+        <tspan x="1133.04" y="593.334">Shizuku</tspan>
+      </text>
+    </g>
+    <g>
+      <path style="fill: none; stroke-opacity: 1; stroke-width: 2; stroke: #000000" d="M 800.733,140.966 A 544.686,544.686 0 0 0 801.56,424.065"/>
+      <polygon style="fill: #000000; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" fill-rule="evenodd" points="803.575,431.288 795.976,423.087 801.476,424.088 805.577,420.288 "/>
+    </g>
+    <g>
+      <path style="fill: none; stroke-opacity: 1; stroke-width: 2; stroke-dasharray: 20 8 4 8; stroke: #000000" d="M 1110.07,275.913 A 471.582,471.582 0 0 0 885.07,410.973"/>
+      <polygon style="fill: #000000; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" fill-rule="evenodd" points="880.008,416.506 882.925,405.713 884.996,410.905 890.393,412.363 "/>
+    </g>
+    <g>
+      <ellipse style="fill: #ffffff; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" cx="1149.43" cy="-12.5117" rx="46.5481" ry="48.0461"/>
+      <text font-size="12.8" style="fill: #000000; fill-opacity: 1; stroke: none;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="1149.43" y="-16.6117">
+        <tspan x="1149.43" y="-16.6117">Navegador</tspan>
+        <tspan x="1149.43" y="-0.611746">por defecto</tspan>
+      </text>
+    </g>
+    <g>
+      <path style="fill: none; stroke-opacity: 1; stroke-width: 2; stroke: #000000" d="M 1102.88,-12.5117 A 443.099,443.099 0 0 0 871.045,91.081"/>
+      <polygon style="fill: #000000; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" fill-rule="evenodd" points="865.4,96.0171 869.488,85.6111 870.975,91 876.178,93.0441 "/>
+    </g>
+    <g>
+      <line style="fill: none; stroke-opacity: 1; stroke-width: 2; stroke: #000000" x1="1149.43" y1="35.5343" x2="1152.02" y2="201.145"/>
+      <polygon style="fill: #000000; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" fill-rule="evenodd" points="1152.13,208.644 1146.98,198.724 1152.02,201.145 1156.98,198.568 "/>
+    </g>
+    <g>
+      <path style="fill: none; stroke-opacity: 1; stroke-width: 2; stroke: #000000" d="M 888.399,122.967 A 163.982,163.982 0 0 1 935.609,253.355"/>
+      <polygon style="fill: #000000; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" fill-rule="evenodd" points="934.788,260.798 931.322,250.169 935.897,253.381 941.212,251.648 "/>
+    </g>
+    <text font-size="28.2222" style="fill: #000000; fill-opacity: 1; stroke: none;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="529.979" y="281.121">
+      <tspan x="529.979" y="281.121">Preparación</tspan>
+      <tspan x="529.979" y="316.398">Aplicaciones</tspan>
+    </text>
+    <text font-size="28.2222" style="fill: #000000; fill-opacity: 1; stroke: none;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="529.979" y="772.613">
+      <tspan x="529.979" y="772.613">Activar y configurar</tspan>
+      <tspan x="529.979" y="807.891">Modo de Desarrollador</tspan>
+    </text>
+    <g>
+      <path style="fill: none; stroke-opacity: 1; stroke-width: 2; stroke-dasharray: 20 8 4 8; stroke: #000000" d="M 947.803,296.268 A 255.885,255.885 0 0 1 1100.34,240.022"/>
+      <polygon style="fill: #000000; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" fill-rule="evenodd" points="1107.83,239.897 1097.79,244.816 1100.33,239.837 1097.87,234.817 "/>
+    </g>
+    <g>
+      <path style="fill: none; stroke-opacity: 1; stroke-width: 2; stroke-dasharray: 20 8 4 8; stroke: #000000" d="M 947.803,296.268 A 262.586,262.586 0 0 1 1132.68,532.676"/>
+      <polygon style="fill: #000000; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" fill-rule="evenodd" points="1133,540.164 1127.82,530.258 1132.86,532.666 1137.82,530.074 "/>
+    </g>
+    <g>
+      <path style="fill: none; stroke-opacity: 1; stroke-width: 2; stroke: #000000" d="M 1182.35,21.4619 A 735.839,735.839 0 0 1 1154.44,537.088"/>
+      <polygon style="fill: #000000; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" fill-rule="evenodd" points="1151.4,543.944 1150.98,532.771 1154.5,537.114 1160.09,536.902 "/>
+    </g>
+    <g>
+      <polygon style="fill: #ffffff; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" fill-rule="evenodd" points="1133.04,692.963 1204.71,761.157 1133.04,829.351 1061.37,761.157 "/>
+      <text font-size="12.8" style="fill: #000000; fill-opacity: 1; stroke: none;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="1133.04" y="757.057">
+        <tspan x="1133.04" y="757.057">Modo</tspan>
+        <tspan x="1133.04" y="773.057">Desarrollador</tspan>
+      </text>
+    </g>
+    <g>
+      <line style="fill: none; stroke-opacity: 1; stroke-width: 2; stroke: #000000" x1="1133.04" y1="636.467" x2="1133.04" y2="683.227"/>
+      <polygon style="fill: #000000; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" fill-rule="evenodd" points="1133.04,690.727 1128.04,680.727 1133.04,683.227 1138.04,680.727 "/>
+    </g>
+    <g>
+      <polygon style="fill: #ffffff; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" fill-rule="evenodd" points="977.253,839.655 1078.47,839.655 1053,909.655 951.775,909.655 "/>
+      <text font-size="12.8" style="fill: #000000; fill-opacity: 1; stroke: none;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="1015.12" y="862.555">
+        <tspan x="1015.12" y="862.555">Configurar</tspan>
+        <tspan x="1015.12" y="878.555">RAM</tspan>
+        <tspan x="1015.12" y="894.555">expandible</tspan>
+      </text>
+    </g>
+    <g>
+      <rect style="fill: #ffffff; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" x="1199.65" y="863.5" width="93.85" height="86.1073" rx="0" ry="0"/>
+      <text font-size="12.8" style="fill: #000000; fill-opacity: 1; stroke: none;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="1246.57" y="886.453">
+        <tspan x="1246.57" y="886.453">Emparejar /</tspan>
+        <tspan x="1246.57" y="902.453">Conectar</tspan>
+        <tspan x="1246.57" y="918.453">Depuración</tspan>
+        <tspan x="1246.57" y="934.453">Inalámbrica</tspan>
+      </text>
+    </g>
+    <g>
+      <polyline style="fill: none; stroke-opacity: 1; stroke-width: 2; stroke-dasharray: 20 8 4 8; stroke: #000000" points="1061.37,761.157 1027.86,761.157 1027.86,829.919 "/>
+      <polygon style="fill: #000000; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" fill-rule="evenodd" points="1027.86,837.419 1022.86,827.419 1027.86,829.919 1032.86,827.419 "/>
+    </g>
+    <g>
+      <polyline style="fill: none; stroke-opacity: 1; stroke-width: 2; stroke: #000000" points="1204.71,761.157 1246.57,761.157 1246.57,853.764 "/>
+      <polygon style="fill: #000000; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" fill-rule="evenodd" points="1246.57,861.264 1241.57,851.264 1246.57,853.764 1251.57,851.264 "/>
+    </g>
+    <g>
+      <rect style="fill: #ffffff; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" x="1199.65" y="974.526" width="93.85" height="86.1073" rx="0" ry="0"/>
+      <text font-size="12.8" style="fill: #000000; fill-opacity: 1; stroke: none;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="1246.57" y="997.48">
+        <tspan x="1246.57" y="997.48">Exportar /</tspan>
+        <tspan x="1246.57" y="1013.48">configurar</tspan>
+        <tspan x="1246.57" y="1029.48">Shizuku con</tspan>
+        <tspan x="1246.57" y="1045.48">Termux</tspan>
+      </text>
+    </g>
+    <g>
+      <line style="fill: none; stroke-opacity: 1; stroke-width: 2; stroke: #000000" x1="1246.57" y1="950.604" x2="1246.57" y2="964.79"/>
+      <polygon style="fill: #000000; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" fill-rule="evenodd" points="1246.57,972.29 1241.57,962.29 1246.57,964.79 1251.57,962.29 "/>
+    </g>
+    <g>
+      <path style="fill: none; stroke-opacity: 1; stroke-width: 2; stroke: #000000" d="M 1178.61,589.434 A 338.801,338.801 0 0 1 1297.61,1008.76"/>
+      <polygon style="fill: #000000; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" fill-rule="evenodd" points="1294.47,1015.57 1294.33,1004.39 1297.74,1008.82 1303.33,1008.75 "/>
+    </g>
+    <g>
+      <ellipse style="fill: #d87474; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" cx="1155.41" cy="1146.63" rx="45.5673" ry="47.0336"/>
+      <text font-size="12.8" style="fill: #000000; fill-opacity: 1; stroke: none;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="1155.41" y="1150.53">
+        <tspan x="1155.41" y="1150.53">Termux-App</tspan>
+      </text>
+    </g>
+    <g>
+      <path style="fill: none; stroke-opacity: 1; stroke-width: 2; stroke-dasharray: 20 8 4 8; stroke: #000000" d="M 1246.57,1060.63 A 80.1727,80.1727 0 0 1 1209.51,1142.06"/>
+      <polygon style="fill: #000000; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" fill-rule="evenodd" points="1203.01,1145.69 1210,1136.97 1209.82,1142.56 1214.18,1146.06 "/>
+    </g>
+    <g>
+      <rect style="fill: #ffffff; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" x="906.245" y="1103.57" width="93.85" height="86.1073" rx="0" ry="0"/>
+      <text font-size="12.8" style="fill: #000000; fill-opacity: 1; stroke: none;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="953.17" y="1134.53">
+        <tspan x="953.17" y="1134.53">Incrementar</tspan>
+        <tspan x="953.17" y="1150.53">valor de</tspan>
+        <tspan x="953.17" y="1166.53">PPK (256)</tspan>
+      </text>
+    </g>
+    <g>
+      <line style="fill: none; stroke-opacity: 1; stroke-width: 2; stroke: #000000" x1="1109.84" y1="1146.63" x2="1009.83" y2="1146.63"/>
+      <polygon style="fill: #000000; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" fill-rule="evenodd" points="1002.33,1146.63 1012.33,1141.63 1009.83,1146.63 1012.33,1151.63 "/>
+    </g>
+    <g>
+      <rect style="fill: #ffffff; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" x="906.245" y="1282.43" width="93.85" height="86.1073" rx="0" ry="0"/>
+      <text font-size="12.8" style="fill: #000000; fill-opacity: 1; stroke: none;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="953.17" y="1313.39">
+        <tspan x="953.17" y="1313.39">Instalar</tspan>
+        <tspan x="953.17" y="1329.39">Debian via</tspan>
+        <tspan x="953.17" y="1345.39">proot-distro</tspan>
+      </text>
+    </g>
+    <g>
+      <line style="fill: none; stroke-opacity: 1; stroke-width: 2; stroke: #000000" x1="953.17" y1="1190.68" x2="953.17" y2="1272.7"/>
+      <polygon style="fill: #000000; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" fill-rule="evenodd" points="953.17,1280.2 948.17,1270.2 953.17,1272.7 958.17,1270.2 "/>
+    </g>
+    <g>
+      <ellipse style="fill: #d87474; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" cx="953.17" cy="1469.68" rx="45.5673" ry="47.0336"/>
+      <text font-size="12.8" style="fill: #000000; fill-opacity: 1; stroke: none;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="953.17" y="1473.58">
+        <tspan x="953.17" y="1473.58">Termux-App</tspan>
+      </text>
+    </g>
+    <g>
+      <rect style="fill: #ffffff; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" x="900.202" y="1585.89" width="105.938" height="70" rx="0" ry="0"/>
+      <line style="fill: none; stroke-opacity: 1; stroke-width: 2; stroke: #000000" x1="910.795" y1="1585.89" x2="910.795" y2="1655.89"/>
+      <line style="fill: none; stroke-opacity: 1; stroke-width: 2; stroke: #000000" x1="995.545" y1="1585.89" x2="995.545" y2="1655.89"/>
+      <text font-size="12.8" style="fill: #000000; fill-opacity: 1; stroke: none;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="953.17" y="1600.89">
+        <tspan x="953.17" y="1600.89">Instalar</tspan>
+        <tspan x="953.17" y="1616.89">Internet in </tspan>
+        <tspan x="953.17" y="1632.89">a Box</tspan>
+        <tspan x="953.17" y="1648.89">via PR 4122</tspan>
+      </text>
+    </g>
+    <g>
+      <line style="fill: none; stroke-opacity: 1; stroke-width: 2; stroke: #000000" x1="953.17" y1="1368.54" x2="953.17" y2="1412.91"/>
+      <polygon style="fill: #000000; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" fill-rule="evenodd" points="953.17,1420.41 948.17,1410.41 953.17,1412.91 958.17,1410.41 "/>
+    </g>
+    <g>
+      <line style="fill: none; stroke-opacity: 1; stroke-width: 2; stroke: #000000" x1="953.17" y1="1516.72" x2="953.17" y2="1576.15"/>
+      <polygon style="fill: #000000; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" fill-rule="evenodd" points="953.17,1583.65 948.17,1573.65 953.17,1576.15 958.17,1573.65 "/>
+    </g>
+    <g>
+      <path style="fill: #ffffff; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" fill-rule="evenodd" d="M 1287.44 1283.75 L 1385.54,1283.75 L 1385.54,1327.55 C 1365.92,1320.25 1356.11,1320.25 1336.49,1327.55 C 1316.87,1334.85 1307.06,1334.85 1287.44,1327.55 L 1287.44,1283.75z"/>
+      <text font-size="12.8" style="fill: #000000; fill-opacity: 1; stroke: none;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="1336.49" y="1306">
+        <tspan x="1336.49" y="1306">IIAB - Kolibri</tspan>
+      </text>
+    </g>
+    <g>
+      <path style="fill: #ffffff; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" fill-rule="evenodd" d="M 1287.83 1374.78 L 1385.93,1374.78 L 1385.93,1418.58 C 1366.31,1411.28 1356.5,1411.28 1336.88,1418.58 C 1317.26,1425.88 1307.45,1425.88 1287.83,1418.58 L 1287.83,1374.78z"/>
+      <text font-size="12.8" style="fill: #000000; fill-opacity: 1; stroke: none;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="1336.88" y="1397.03">
+        <tspan x="1336.88" y="1397.03">IIAB - Kiwix</tspan>
+      </text>
+    </g>
+    <g>
+      <path style="fill: #ffffff; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" fill-rule="evenodd" d="M 1286.53 1474.63 L 1384.63,1474.63 L 1384.63,1518.43 C 1365.01,1511.13 1355.2,1511.13 1335.58,1518.43 C 1315.96,1525.73 1306.15,1525.73 1286.53,1518.43 L 1286.53,1474.63z"/>
+      <text font-size="12.8" style="fill: #000000; fill-opacity: 1; stroke: none;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="1335.58" y="1496.88">
+        <tspan x="1335.58" y="1496.88">IIAB - Maps</tspan>
+      </text>
+    </g>
+    <g>
+      <path style="fill: #ffffff; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" fill-rule="evenodd" d="M 1282.25 1570.85 L 1389.7,1570.85 L 1389.7,1614.65 C 1368.21,1607.35 1357.46,1607.35 1335.97,1614.65 C 1314.48,1621.95 1303.74,1621.95 1282.25,1614.65 L 1282.25,1570.85z"/>
+      <text font-size="12.8" style="fill: #000000; fill-opacity: 1; stroke: none;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="1335.97" y="1593.1">
+        <tspan x="1335.97" y="1593.1">IIAB - Calibre Web</tspan>
+      </text>
+    </g>
+    <g>
+      <path style="fill: #ffffff; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" fill-rule="evenodd" d="M 1286.53 1664.47 L 1393.98,1664.47 L 1393.98,1708.27 C 1372.49,1700.97 1361.74,1700.97 1340.25,1708.27 C 1318.76,1715.57 1308.02,1715.57 1286.53,1708.27 L 1286.53,1664.47z"/>
+      <text font-size="12.8" style="fill: #000000; fill-opacity: 1; stroke: none;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="1340.25" y="1686.72">
+        <tspan x="1340.25" y="1686.72">IIAB - Matomo</tspan>
+      </text>
+    </g>
+    <g>
+      <ellipse style="fill: #8ff0a4; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" cx="1336.93" cy="1144.03" rx="47.5521" ry="49.0824"/>
+      <text font-size="12.8" style="fill: #000000; fill-opacity: 1; stroke: none;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="1336.93" y="1139.93">
+        <tspan x="1336.93" y="1139.93">Fossy File</tspan>
+        <tspan x="1336.93" y="1155.93">Manager</tspan>
+      </text>
+    </g>
+    <g>
+      <path style="fill: none; stroke-opacity: 1; stroke-width: 2; stroke: #000000" d="M 1293.5,1017.58 A 113.133,113.133 0 0 1 1368.78,1099.78"/>
+      <polygon style="fill: #000000; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" fill-rule="evenodd" points="1370.24,1107.11 1363.89,1097.91 1369.19,1099.69 1373.79,1096.51 "/>
+    </g>
+    <g>
+      <path style="fill: none; stroke-opacity: 1; stroke-width: 2; stroke: #000000" d="M 1336.93,1193.12 A 142.286,142.286 0 0 1 1205,1170.82"/>
+      <polygon style="fill: #000000; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" fill-rule="evenodd" points="1199.18,1166.11 1209.98,1169 1204.79,1171.09 1203.35,1176.49 "/>
+    </g>
+    <g>
+      <line style="fill: none; stroke-opacity: 1; stroke-width: 2; stroke: #000000" x1="1013.46" y1="1612.68" x2="1280.12" y2="1313.86"/>
+      <path style="fill: #ffffff; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" fill-rule="evenodd" d="M 1006.8 1620.14 C 1004.94,1618.48 1004.74,1614.95 1006.4,1613.08 C 1008.07,1611.22 1011.6,1611.02 1013.46,1612.68 C 1015.33,1614.35 1015.53,1617.88 1013.86,1619.74 C 1012.2,1621.61 1008.67,1621.81 1006.8,1620.14z"/>
+      <path style="fill: #ffffff; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" fill-rule="evenodd" d="M 1286.78 1306.4 C 1288.64,1308.07 1288.84,1311.59 1287.18,1313.46 C 1285.51,1315.33 1281.98,1315.53 1280.12,1313.86 C 1278.25,1312.2 1278.05,1308.67 1279.72,1306.8 C 1281.38,1304.94 1284.91,1304.74 1286.78,1306.4z"/>
+    </g>
+    <g>
+      <line style="fill: none; stroke-opacity: 1; stroke-width: 2; stroke: #000000" x1="1014.75" y1="1614.04" x2="1279.22" y2="1403.53"/>
+      <path style="fill: #ffffff; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" fill-rule="evenodd" d="M 1006.92 1620.27 C 1005.36,1618.31 1005.76,1614.8 1007.72,1613.24 C 1009.68,1611.68 1013.19,1612.08 1014.75,1614.04 C 1016.3,1616 1015.9,1619.51 1013.95,1621.07 C 1011.99,1622.62 1008.48,1622.22 1006.92,1620.27z"/>
+      <path style="fill: #ffffff; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" fill-rule="evenodd" d="M 1287.05 1397.31 C 1288.61,1399.26 1288.21,1402.78 1286.25,1404.33 C 1284.29,1405.89 1280.78,1405.49 1279.22,1403.53 C 1277.67,1401.58 1278.07,1398.07 1280.02,1396.51 C 1281.98,1394.95 1285.49,1395.35 1287.05,1397.31z"/>
+    </g>
+    <g>
+      <line style="fill: none; stroke-opacity: 1; stroke-width: 2; stroke: #000000" x1="1016.19" y1="1616.43" x2="1276.48" y2="1500.99"/>
+      <path style="fill: #ffffff; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" fill-rule="evenodd" d="M 1007.05 1620.48 C 1006.04,1618.2 1007.31,1614.9 1009.6,1613.89 C 1011.88,1612.87 1015.18,1614.15 1016.19,1616.43 C 1017.21,1618.72 1015.94,1622.01 1013.65,1623.03 C 1011.37,1624.04 1008.07,1622.77 1007.05,1620.48z"/>
+      <path style="fill: #ffffff; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" fill-rule="evenodd" d="M 1285.62 1496.94 C 1286.63,1499.22 1285.36,1502.52 1283.08,1503.53 C 1280.79,1504.55 1277.49,1503.28 1276.48,1500.99 C 1275.47,1498.71 1276.74,1495.41 1279.02,1494.39 C 1281.31,1493.38 1284.61,1494.65 1285.62,1496.94z"/>
+    </g>
+    <g>
+      <line style="fill: none; stroke-opacity: 1; stroke-width: 2; stroke: #000000" x1="1017.08" y1="1619.77" x2="1271.3" y2="1593.86"/>
+      <path style="fill: #ffffff; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" fill-rule="evenodd" d="M 1007.13 1620.79 C 1006.88,1618.3 1009.11,1615.56 1011.6,1615.31 C 1014.09,1615.05 1016.83,1617.29 1017.08,1619.77 C 1017.34,1622.26 1015.1,1625 1012.62,1625.26 C 1010.13,1625.51 1007.39,1623.28 1007.13,1620.79z"/>
+      <path style="fill: #ffffff; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" fill-rule="evenodd" d="M 1281.25 1592.85 C 1281.51,1595.34 1279.27,1598.08 1276.78,1598.33 C 1274.3,1598.58 1271.56,1596.35 1271.3,1593.86 C 1271.05,1591.38 1273.28,1588.63 1275.77,1588.38 C 1278.26,1588.13 1281,1590.36 1281.25,1592.85z"/>
+    </g>
+    <g>
+      <line style="fill: none; stroke-opacity: 1; stroke-width: 2; stroke: #000000" x1="1016.85" y1="1623.39" x2="1275.81" y2="1683.87"/>
+      <path style="fill: #ffffff; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" fill-rule="evenodd" d="M 1007.11 1621.12 C 1007.68,1618.68 1010.68,1616.82 1013.12,1617.39 C 1015.55,1617.95 1017.42,1620.96 1016.85,1623.39 C 1016.28,1625.83 1013.28,1627.69 1010.84,1627.12 C 1008.41,1626.56 1006.54,1623.55 1007.11,1621.12z"/>
+      <path style="fill: #ffffff; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" fill-rule="evenodd" d="M 1285.55 1686.14 C 1284.98,1688.58 1281.98,1690.44 1279.55,1689.87 C 1277.11,1689.31 1275.25,1686.3 1275.81,1683.87 C 1276.38,1681.43 1279.39,1679.57 1281.82,1680.14 C 1284.25,1680.71 1286.12,1683.71 1285.55,1686.14z"/>
+    </g>
+    <text font-size="28.2222" style="fill: #000000; fill-opacity: 1; stroke: none;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="529.979" y="1494.62">
+      <tspan x="529.979" y="1494.62">Ejecucion e</tspan>
+      <tspan x="529.979" y="1529.9">instalación de IIAB</tspan>
+    </text>
+    <g>
+      <path style="fill: none; stroke-opacity: 1; stroke-width: 2; stroke: #000000" d="M 888.399,122.967 A 1074.56,1074.56 0 0 1 1381.69,1115.55"/>
+      <polygon style="fill: #000000; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" fill-rule="evenodd" points="1381.06,1123.02 1376.98,1112.62 1381.73,1115.56 1386.94,1113.51 "/>
+    </g>
+  </g>
+</svg>
