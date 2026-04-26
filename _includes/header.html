@@ -9,8 +9,11 @@
       <a href="/eventos/" class="px-3 py-2 rounded-lg text-sm font-medium text-navy-700 hover:text-teal-500 hover:bg-teal-50 transition">Eventos</a>
       <a href="/blog/" class="px-3 py-2 rounded-lg text-sm font-medium text-navy-700 hover:text-teal-500 hover:bg-teal-50 transition">Blog</a>
       <a href="/videos/" class="px-3 py-2 rounded-lg text-sm font-medium text-navy-700 hover:text-teal-500 hover:bg-teal-50 transition">Videos</a>
+      <a href="/recursos/" class="px-3 py-2 rounded-lg text-sm font-medium text-navy-700 hover:text-teal-500 hover:bg-teal-50 transition">Recursos</a>
       <a href="/nosotros/" class="px-3 py-2 rounded-lg text-sm font-medium text-navy-700 hover:text-teal-500 hover:bg-teal-50 transition">Nosotros</a>
       <a href="/agradecimientos/" class="px-3 py-2 rounded-lg text-sm font-medium text-navy-700 hover:text-teal-500 hover:bg-teal-50 transition">Agradecimientos</a>
+      <a href="/codigo-de-conducta/" class="px-3 py-2 rounded-lg text-sm font-medium text-navy-700 hover:text-teal-500 hover:bg-teal-50 transition">Código de Conducta</a>
+      <a href="/call-for-papers/" class="px-3 py-2 rounded-lg text-sm font-medium text-navy-700 hover:text-teal-500 hover:bg-teal-50 transition">Call for Papers</a>
       <a href="{{ site.community.telegram }}" target="_blank" rel="noopener"
          class="ml-2 px-4 py-2 rounded-lg text-sm font-semibold text-white bg-accent-500 hover:bg-accent-600 transition shadow-sm">
         Unirse
@@ -45,15 +48,32 @@
       </a>
     </div>
   </div>
-
-  <script>
-    document.getElementById('menu-toggle').addEventListener('click', function () {
-      var menu = document.getElementById('mobile-menu');
-      var open = document.getElementById('menu-icon-open');
-      var close = document.getElementById('menu-icon-close');
-      menu.classList.toggle('hidden');
-      open.classList.toggle('hidden');
-      close.classList.toggle('hidden');
-    });
-  </script>
 </header>
+
+<script>
+// Mobile menu toggle functionality
+document.addEventListener('DOMContentLoaded', function() {
+  const menuToggle = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const menuIconOpen = document.getElementById('menu-icon-open');
+  const menuIconClose = document.getElementById('menu-icon-close');
+
+  if (menuToggle && mobileMenu) {
+    menuToggle.addEventListener('click', function() {
+      mobileMenu.classList.toggle('hidden');
+      menuIconOpen.classList.toggle('hidden');
+      menuIconClose.classList.toggle('hidden');
+    });
+
+    // Close menu when clicking on a link
+    const menuLinks = mobileMenu.querySelectorAll('a');
+    menuLinks.forEach(function(link) {
+      link.addEventListener('click', function() {
+        mobileMenu.classList.add('hidden');
+        menuIconOpen.classList.remove('hidden');
+        menuIconClose.classList.add('hidden');
+      });
+    });
+  }
+});
+</script>

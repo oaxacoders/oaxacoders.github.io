@@ -3,10 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net https://cdn.tailwindcss.com https://fonts.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https:; frame-src https://www.youtube.com https://www.youtube-nocookie.com; connect-src 'self' https://buttondown.email;" />
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net https://cdn.tailwindcss.com https://fonts.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https:; frame-src https://www.youtube.com https://www.youtube-nocookie.com; connect-src 'self' https://buttondown.email;" /> -->
     <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains; preload" />
     <meta http-equiv="X-Content-Type-Options" content="nosniff" />
-    <meta http-equiv="X-Frame-Options" content="DENY" />
     <meta http-equiv="X-XSS-Protection" content="1; mode=block" />
     <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
     <meta name="Permissions-Policy" content="camera=(), microphone=(), geolocation=()" />
@@ -22,6 +21,53 @@
     <meta name="twitter:image" content="{{ site.url }}/assets/images/oaxacoders.svg" />
     <title>{% if page.title %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              navy: {
+                50: '#eef0ff',
+                100: '#dde1ff',
+                200: '#b3baed',
+                300: '#8089d0',
+                400: '#4f58a8',
+                500: '#2a3385',
+                600: '#151c6e',
+                700: '#01065c',
+                800: '#010450',
+                900: '#010340',
+                950: '#000220',
+              },
+              accent: {
+                50: '#edfce8',
+                100: '#d5f9cc',
+                200: '#aaf29a',
+                300: '#72e65a',
+                400: '#4cdb2f',
+                500: '#37d31c',
+                600: '#28a814',
+                700: '#1f8010',
+                800: '#1a6510',
+                900: '#155310',
+              },
+              teal: {
+                50: '#eef7fb',
+                100: '#d5ecf5',
+                200: '#aed8eb',
+                300: '#7bbdd9',
+                400: '#539fc2',
+                500: '#3e83a6',
+                600: '#336d8c',
+                700: '#2a5872',
+                800: '#224860',
+                900: '#1c3c52',
+              },
+            },
+          },
+        },
+      }
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />

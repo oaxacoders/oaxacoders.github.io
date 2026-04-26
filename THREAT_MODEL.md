@@ -408,7 +408,7 @@ Mitigación: CODEOWNERS, monitoreo de actions, alerts de seguridad
 | Control | Implementación | Estado |
 |---------|---------------|--------|
 | HTTPS | GitHub Pages + HSTS | ✅ Implementado |
-| CSP | Meta tag en default.html | ✅ Implementado |
+| CSP | Meta tag en default.html | ⚠️ Temporalmente desactivado* |
 | X-Frame-Options | DENY | ✅ Implementado |
 | X-Content-Type-Options | nosniff | ✅ Implementado |
 | HSTS | max-age=31536000 | ✅ Implementado |
@@ -514,6 +514,28 @@ Este documento debe actualizarse cuando:
 
 ---
 
+## 11.3 Notas sobre Cambios Recientes (v1.1)
+
+**CSP Temporalmente Desactivado:**
+- La meta tag CSP ha sido comentada en `_layouts/default.html` para permitir scripts inline
+- Razón: Los scripts inline del menú móvil eran bloqueados por CSP strict
+- Acción recomendada: Reactivar CSP con `'unsafe-inline'` en `script-src` o migrar scripts a archivos externos con nonce/hash
+- Riesgo: Vulnerable a XSS via scripts inline no validados
+- Plazo de corrección: CRÍTICO - debe reactivarse en siguiente sprint
+
+**Configuración de Tailwind CDN:**
+- Agregada configuración explícita de colores en `tailwind.config` dentro de `default.html`
+- Permite que CDN compile correctamente clases con colores personalizados (navy, accent, teal)
+- Mejora: Tailwind ahora reconoce `bg-accent-500`, `text-accent-700`, etc.
+
+**Scripts Inline Restaurados:**
+- Script del menú móvil restaurado como inline en `_includes/header.html`
+- Razón: Evitar creación de archivos externos que alteren la estructura
+- Riesgo: Scripts inline son objetivo de ataques XSS si no están validados
+- Mitigación: Reactivar CSP cuando sea posible
+
+---
+
 ## 12. Aprobaciones
 
 | Rol | Nombre | Fecha | Firma |
@@ -528,6 +550,7 @@ Este documento debe actualizarse cuando:
 
 | Versión | Fecha | Autor | Cambios |
 |---------|-------|-------|---------|
+| 1.1 | 26/04/2026 | Equipo Oaxacoders | Desactivación temporal de CSP para permitir scripts inline. Configuración Tailwind CDN con colores personalizados. Restauración de script inline del menú móvil. |
 | 1.0 | 26/04/2026 | Equipo Oaxacoders | Versión inicial |
 
 ---
