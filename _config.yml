@@ -28,6 +28,7 @@ community:
   twitter: "https://twitter.com/oaxacoders"
   bluesky: "https://bsky.app/profile/oaxacoders.bsky.social"
   github: "https://github.com/oaxacoders"
+  youtube: "https://www.youtube.com/@oaxacoders"
 
 plugins:
   - jekyll-feed
