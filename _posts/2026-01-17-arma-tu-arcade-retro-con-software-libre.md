@@ -11,7 +11,10 @@ eventbrite_url: https://www.eventbrite.com.mx/e/arma-tu-arcade-retro-con-softwar
 category: eventos-pasados
 slides_url: 'https://docs.google.com/presentation/d/e/2PACX-1vRrbDM1BS4YSsDjbdUt3mr-RzPM_DYVvFXZEPnpES1SsfC0-T1S4AUiXoEjbmCCqjHhyssY6lCbwokI/embed'
 slides_type: 'google-slides'
-fotos: []
+fotos:
+  - url: /assets/images/eventos/2026-01-17-arcade-retro/foto1.jpg
+  - url: /assets/images/eventos/2026-01-17-arcade-retro/foto2.jpg
+  - url: /assets/images/eventos/2026-01-17-arcade-retro/foto3.jpg
 recursos: []
 ---
 
