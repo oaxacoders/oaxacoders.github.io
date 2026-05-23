@@ -144,6 +144,29 @@ def process_event(event)
   }
 end
 
+def cleanup_stale_events(events_data)
+  current_events = events_data.each_with_object({}) do |e, h|
+    h[e["eventbrite_id"]] = e["filename"]
+  end
+
+  Dir.glob(File.join(EVENTS_DIR, "*.md")).each do |filepath|
+    content = File.read(filepath)
+    match = content.match(/^eventbrite_id:\s*'?(\d+)'?\s*$/)
+    next unless match
+
+    file_event_id = match[1]
+    expected_filename = current_events[file_event_id]
+
+    if expected_filename && expected_filename != File.basename(filepath)
+      puts "  Removing stale (rescheduled): #{File.basename(filepath)}"
+      File.delete(filepath)
+    elsif !current_events.key?(file_event_id)
+      puts "  Removing stale (no longer live): #{File.basename(filepath)}"
+      File.delete(filepath)
+    end
+  end
+end
+
 def write_event_file(event_data)
   filepath = File.join(EVENTS_DIR, event_data["filename"])
 
@@ -194,6 +217,8 @@ puts "Found #{raw_events.size} live event(s)."
 
 FileUtils.mkdir_p(EVENTS_DIR)
 events_data = raw_events.map { |e| process_event(e) }
+
+cleanup_stale_events(events_data)
 
 new_events = false
 events_data.each do |event_data|
