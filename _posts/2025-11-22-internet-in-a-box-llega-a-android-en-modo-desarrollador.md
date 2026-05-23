@@ -17,6 +17,12 @@ fotos:
   - url: /assets/images/eventos/2025-11-22-internet-in-a-box/foto3.jpg
   - url: /assets/images/eventos/2025-11-22-internet-in-a-box/foto4.jpg
   - url: /assets/images/eventos/2025-11-22-internet-in-a-box/foto5.jpg
+  - url: /assets/images/eventos/2025-11-22-internet-in-a-box/foto6.jpeg
+  - url: /assets/images/eventos/2025-11-22-internet-in-a-box/foto7.jpeg
+  - url: /assets/images/eventos/2025-11-22-internet-in-a-box/foto8.jpeg
+  - url: /assets/images/eventos/2025-11-22-internet-in-a-box/foto9.jpeg
+  - url: /assets/images/eventos/2025-11-22-internet-in-a-box/foto10.jpeg
+  - url: /assets/images/eventos/2025-11-22-internet-in-a-box/foto11.jpeg
   - url: /assets/images/eventos/2025-11-22-internet-in-a-box/bernie.jpg
     caption: Bernie Innocenti
 recursos:
