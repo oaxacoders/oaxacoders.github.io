@@ -25,7 +25,7 @@
   eventbrite_url: https://www.eventbrite.com.mx/e/reagendado-spec-driven-development-2026-del-caos-a-la-conformidad-tickets-1987329570242
   eventbrite_id: '1987329570242'
   is_free: false
-  status: disponible
+  status: agotado
   description: Descubre cómo las empresas están transformando las prácticas de programación
     impulsadas por IA mediante el Desarrollo Especificado (SDD)
 - title: 'De programador a programador: C#'
