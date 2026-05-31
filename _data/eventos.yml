@@ -1,18 +1,4 @@
 ---
-- title: Una primera aproximación a los conceptos de Computación Cuántica
-  slug: una-primera-aproximacin-a-los-conceptos-de-computacin-cuntica
-  date: '2026-06-13'
-  date_display: 13 de junio, 2026
-  time_display: 17:00 - 18:00
-  start_time: '2026-06-13T17:00:00'
-  end_time: '2026-06-13T18:00:00'
-  venue: C. de Los Libres 800
-  venue_address: 800 Calle de Los Libres, Oaxaca de Juárez, OAX 68000
-  eventbrite_url: https://www.eventbrite.com.mx/e/una-primera-aproximacion-a-los-conceptos-de-computacion-cuantica-tickets-1988190967705
-  eventbrite_id: '1988190967705'
-  is_free: false
-  status: disponible
-  description: Adentrándose en el área de la Computación Cuántica
 - title: 'Reagendado: Spec-Driven Development 2026: Del caos a la conformidad'
   slug: reagendado-spec-driven-development-2026-del-caos-a-la-conformidad
   date: '2026-06-27'
@@ -25,9 +11,23 @@
   eventbrite_url: https://www.eventbrite.com.mx/e/reagendado-spec-driven-development-2026-del-caos-a-la-conformidad-tickets-1987329570242
   eventbrite_id: '1987329570242'
   is_free: false
-  status: agotado
+  status: disponible
   description: Descubre cómo las empresas están transformando las prácticas de programación
     impulsadas por IA mediante el Desarrollo Especificado (SDD)
+- title: 'Reagendado: Una primera aprox. a los conceptos de Computación Cuántica'
+  slug: reagendado-una-primera-aprox-a-los-conceptos-de-computacin-cuntica
+  date: '2026-07-25'
+  date_display: 25 de julio, 2026
+  time_display: 17:00 - 18:00
+  start_time: '2026-07-25T17:00:00'
+  end_time: '2026-07-25T18:00:00'
+  venue: C. de Los Libres 800
+  venue_address: 800 Calle de Los Libres, Oaxaca de Juárez, OAX 68000
+  eventbrite_url: https://www.eventbrite.com.mx/e/reagendado-una-primera-aprox-a-los-conceptos-de-computacion-cuantica-tickets-1988190967705
+  eventbrite_id: '1988190967705'
+  is_free: false
+  status: disponible
+  description: Adentrándose en el área de la Computación Cuántica
 - title: 'De programador a programador: C#'
   slug: de-programador-a-programador-c
   date: '2026-09-26'
