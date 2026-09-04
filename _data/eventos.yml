@@ -1,6 +1,6 @@
 ---
-- title: 'De programador a programador: C#'
-  slug: de-programador-a-programador-c
+- title: pi.dev - Crea un agente de IA en 20 mins.
+  slug: pidev-crea-un-agente-de-ia-en-20-mins
   date: '2026-09-26'
   date_display: 26 de septiembre, 2026
   time_display: 17:00 - 18:00
@@ -8,7 +8,22 @@
   end_time: '2026-09-26T18:00:00'
   venue: C. de Los Libres 800
   venue_address: 800 Calle de Los Libres, Oaxaca de Juárez, OAX 68000
-  eventbrite_url: https://www.eventbrite.com.mx/e/de-programador-a-programador-c-tickets-1989803781675
+  eventbrite_url: https://www.eventbrite.com.mx/e/pidev-crea-un-agente-de-ia-en-20-mins-tickets-1999746621978
+  eventbrite_id: '1999746621978'
+  is_free: false
+  status: disponible
+  description: Usaremos pi.dev para crear una agente de IA busca en internet clientes
+    potenciales.
+- title: 'Reagendado: De programador a programador: C#'
+  slug: reagendado-de-programador-a-programador-c
+  date: '2026-10-24'
+  date_display: 24 de octubre, 2026
+  time_display: 17:00 - 18:00
+  start_time: '2026-10-24T17:00:00'
+  end_time: '2026-10-24T18:00:00'
+  venue: C. de Los Libres 800
+  venue_address: 800 Calle de Los Libres, Oaxaca de Juárez, OAX 68000
+  eventbrite_url: https://www.eventbrite.com.mx/e/reagendado-de-programador-a-programador-c-tickets-1989803781675
   eventbrite_id: '1989803781675'
   is_free: false
   status: disponible
