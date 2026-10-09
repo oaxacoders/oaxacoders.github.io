@@ -1,0 +1,494 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ page.title }} | {{ site.title }}</title>
+    <meta name="description" content="{{ page.meta_description | default: 'Hack Day de Hacktoberfest en Oaxaca. 31 de octubre 2026, gratuito. Construye con open-weight models e IA open-source.' }}" />
+    <meta property="og:title" content="{{ page.title }}" />
+    <meta property="og:description" content="HackDay oficial de Hacktoberfest 2026 en Oaxaca. 31 de octubre, gratis. Open-weight models e IA open-source." />
+    <meta property="og:image" content="{{ site.url }}/assets/images/hacktoberfest-oaxaca.jpg" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600;700;800;900&family=Martian+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+    <style type="text/tailwindcss">
+      @theme {
+        --font-sans: 'Barlow Semi Condensed', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        --font-mono: 'Martian Mono', ui-monospace, 'SF Mono', 'Cascadia Code', monospace;
+
+        /* Hacktoberfest 2026 official palette (sampled from hacktoberfest.com) */
+        --color-hf-sage: #3d5f58;        /* main header/hero bg */
+        --color-hf-sage-dark: #2e4742;   /* alt dark section */
+        --color-hf-sage-darker: #1a2b28; /* deepest */
+        --color-hf-ink: #10201d;         /* body text on cream */
+        --color-hf-cream: #f7f7f2;       /* text on dark */
+        --color-hf-cream-50: #f2f2eb;    /* section bg */
+        --color-hf-cream-100: #e4e5da;   /* alt section bg */
+        --color-hf-coral: #e8928d;       /* CTAs, highlights */
+        --color-hf-coral-light: #f6c4c1; /* soft accents, body */
+        --color-hf-mustard: #eac84f;     /* yellow accents */
+        --color-hf-blush: #f4a09a;       /* alt pink */
+
+        /* Oaxacoders accent kept for the GRATIS badge */
+        --color-oax-green: #37d31c;
+        --color-oax-navy: #01065c;
+      }
+
+      body {
+        background: #3d5f58;
+        color: #f7f7f2;
+        font-family: var(--font-sans);
+        -webkit-font-smoothing: antialiased;
+      }
+
+      .font-display { font-family: 'Barlow Semi Condensed', sans-serif; font-weight: 900; letter-spacing: -0.01em; }
+      .font-mono-sm { font-family: 'Martian Mono', monospace; font-size: 0.75rem; letter-spacing: 0.05em; text-transform: uppercase; }
+
+      /* Official HACKTØBERFEST 26 wordmark SVG wrapper */
+      .wordmark-svg {
+        display: inline-block;
+        color: currentColor;
+      }
+      .wordmark-svg svg {
+        display: block;
+        width: auto;
+        height: 100%;
+        fill: currentColor;
+      }
+
+      /* Pixel decoration */
+      .pixel-plus {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        background:
+          linear-gradient(currentColor, currentColor) center/6px 20px no-repeat,
+          linear-gradient(currentColor, currentColor) center/20px 6px no-repeat;
+        image-rendering: pixelated;
+      }
+
+      /* Grid texture overlay */
+      .grid-bg {
+        background-image:
+          linear-gradient(rgba(247, 247, 242, 0.04) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(247, 247, 242, 0.04) 1px, transparent 1px);
+        background-size: 48px 48px;
+      }
+
+      /* Hero background with Oaxaca image + sage overlay */
+      .hero-bg {
+        background:
+          linear-gradient(to bottom, rgba(16, 32, 29, 0.75) 0%, rgba(61, 95, 88, 0.80) 50%, rgba(61, 95, 88, 0.95) 100%),
+          url('/assets/images/oaxaca-sentimientos.jpg') center/cover no-repeat;
+        background-attachment: scroll;
+      }
+
+      /* Marquee */
+      .marquee-track { animation: marquee 32s linear infinite; }
+      @keyframes marquee {
+        from { transform: translateX(0); }
+        to { transform: translateX(-50%); }
+      }
+
+      /* Prose for dark */
+      .prose-sage p { line-height: 1.65; color: rgba(247, 247, 242, 0.88); }
+      .prose-sage a { color: var(--color-hf-coral); text-decoration: underline; text-underline-offset: 3px; }
+      .prose-sage strong { color: #f7f7f2; }
+    </style>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  </head>
+
+  <body class="min-h-screen flex flex-col">
+
+    <!-- Top bar with HACKTØBERFEST 26 wordmark + back link -->
+    <div class="w-full border-b border-hf-cream/10 bg-hf-sage-dark sticky top-0 z-50">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-14 flex items-center justify-between">
+        <a href="/" class="inline-flex items-center gap-3 text-hf-cream hover:text-hf-coral transition">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"/></svg>
+          <span class="wordmark-svg h-5 sm:h-6" aria-label="Hacktoberfest 26">
+            {% include hacktoberfest-wordmark.svg %}
+          </span>
+        </a>
+        <div class="flex items-center gap-3">
+          <a href="/" class="hidden sm:inline font-mono-sm text-xs text-hf-cream/60 hover:text-hf-cream transition">← Oaxacoders</a>
+          <a href="{{ page.register_url }}" target="_blank" rel="noopener"
+             class="inline-flex items-center gap-1.5 font-mono-sm bg-hf-coral hover:bg-hf-blush text-hf-ink px-3 py-2 rounded transition font-bold">
+            Registrarme
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- HERO over Oaxaca image -->
+    <section class="relative overflow-hidden hero-bg">
+      <!-- Grid overlay for tech feel -->
+      <div class="absolute inset-0 grid-bg pointer-events-none"></div>
+
+      <!-- Pixel decoration -->
+      <span class="pixel-plus text-hf-coral top-16 left-6 sm:left-16 opacity-80"></span>
+      <span class="pixel-plus text-hf-mustard top-28 right-8 sm:right-24 opacity-70"></span>
+      <span class="pixel-plus text-hf-cream bottom-24 left-12 sm:left-40 opacity-60"></span>
+      <span class="pixel-plus text-hf-coral bottom-40 right-6 sm:right-32 opacity-75"></span>
+      <span class="pixel-plus text-hf-mustard top-1/2 left-1/4 opacity-50 hidden md:block"></span>
+
+      <div class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-20 md:pt-24 md:pb-28 text-center">
+
+        <p class="font-mono-sm text-hf-cream/80 mb-4">
+          <span class="text-hf-mustard">31 Octubre 2026</span> · In-Person · Free
+        </p>
+
+        <!-- Big wordmark hero -->
+        <h1 class="flex justify-center mb-4" aria-label="Hacktoberfest 26">
+          <span class="wordmark-svg h-16 sm:h-24 md:h-32 text-hf-cream">
+            {% include hacktoberfest-wordmark.svg %}
+          </span>
+        </h1>
+
+        <!-- "500+ Fests. One is near you." style tagline -->
+        <p class="text-3xl sm:text-5xl md:text-6xl font-display mb-3 leading-tight">
+          <span class="text-hf-cream">Hack Day.</span>
+          <span class="text-hf-coral">Aquí en Oaxaca.</span>
+        </p>
+
+        <p class="font-mono-sm text-hf-cream/70 mb-10">
+          Code · Learn · Collaborate · Create
+        </p>
+
+        <!-- Info chips -->
+        <div class="flex flex-wrap justify-center gap-2 mb-10">
+          <span class="inline-flex items-center gap-2 bg-hf-sage-darker/70 border border-hf-cream/15 rounded px-3 py-2 font-mono-sm text-hf-cream">
+            <svg class="w-3.5 h-3.5 text-hf-mustard" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+            {{ page.date_display }}
+          </span>
+          <span class="inline-flex items-center gap-2 bg-hf-sage-darker/70 border border-hf-cream/15 rounded px-3 py-2 font-mono-sm text-hf-cream">
+            <svg class="w-3.5 h-3.5 text-hf-coral" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6l4 2m6-2a10 10 0 11-20 0 10 10 0 0120 0z"/></svg>
+            {{ page.time_display }}
+          </span>
+          <span class="inline-flex items-center gap-2 bg-hf-sage-darker/70 border border-hf-cream/15 rounded px-3 py-2 font-mono-sm text-hf-cream">
+            <svg class="w-3.5 h-3.5 text-hf-blush" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a2 2 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+            {{ page.venue }}
+          </span>
+          <span class="inline-flex items-center font-mono-sm bg-oax-green text-oax-navy border border-oax-green rounded px-3 py-2 font-bold">
+            Gratis
+          </span>
+        </div>
+
+        <!-- CTAs -->
+        <div class="flex flex-wrap justify-center gap-3">
+          <a href="{{ page.register_url }}" target="_blank" rel="noopener"
+             class="inline-flex items-center gap-2 bg-hf-coral hover:bg-hf-blush text-hf-ink px-7 py-4 rounded font-mono-sm font-bold transition shadow-lg">
+            Registrarme en MLH →
+          </a>
+          <a href="#que-es"
+             class="inline-flex items-center gap-2 bg-transparent hover:bg-hf-cream/10 border border-hf-cream/40 text-hf-cream px-7 py-4 rounded font-mono-sm font-bold transition">
+            Saber más ↓
+          </a>
+        </div>
+      </div>
+
+      <!-- Marquee ticker -->
+      <div class="relative border-y border-hf-cream/10 bg-hf-sage-darker/60 overflow-hidden">
+        <div class="marquee-track flex gap-8 font-mono-sm text-hf-cream/60 py-3 whitespace-nowrap">
+          {% for i in (1..2) %}
+            <span>★ Hacktoberfest 2026</span><span>·</span>
+            <span class="text-hf-coral">Hack Day Oaxaca</span><span>·</span>
+            <span>31 Octubre</span><span>·</span>
+            <span class="text-hf-mustard">Open Source AI</span><span>·</span>
+            <span>Gratis</span><span>·</span>
+            <span class="text-hf-coral">Open-weight models</span><span>·</span>
+            <span>Code · Learn · Collab · Create</span><span>·</span>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+
+    <!-- ¿Qué es un HackDay? -->
+    <section id="que-es" class="relative py-20 md:py-24 bg-hf-sage">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-5 gap-10">
+        <div class="md:col-span-2">
+          <p class="font-mono-sm text-hf-coral mb-3">Introduction</p>
+          <h2 class="font-display text-4xl sm:text-5xl md:text-6xl leading-[1] text-hf-cream">
+            ¿Qué es un<br/>
+            <span class="text-hf-mustard">HackDay</span>?
+          </h2>
+        </div>
+        <div class="md:col-span-3 prose-sage text-base sm:text-lg space-y-4">
+          <p>
+            Un día. Un espacio. Un equipo. El <strong>HackDay</strong> es la versión condensada de un hackathon: seis horas para idear, construir y mostrar un proyecto funcional junto a otras personas apasionadas por el código.
+          </p>
+          <p>
+            No importa si vienes solo o con tu equipo, si llevas años programando o es tu primer evento. Aquí se construye, se aprende y se comparte — todo en una sola tarde.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tema: Open-source AI -->
+    <section class="relative py-20 md:py-24 bg-hf-sage-dark grid-bg">
+      <span class="pixel-plus text-hf-coral top-16 right-16 opacity-60"></span>
+      <span class="pixel-plus text-hf-mustard bottom-16 left-16 opacity-60"></span>
+
+      <div class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-5 gap-10 items-center">
+        <div class="md:col-span-3">
+          <p class="font-mono-sm text-hf-mustard mb-3">El tema · 2026</p>
+          <h2 class="font-display text-4xl sm:text-5xl md:text-6xl leading-[1] text-hf-cream mb-6">
+            <span class="text-hf-coral">AI belongs</span><br/>to everyone.
+          </h2>
+          <div class="prose-sage space-y-4 text-base sm:text-lg">
+            <p>
+              Este año el reto es construir algo real usando <strong>modelos abiertos</strong> y herramientas de IA de código libre. Nada de APIs cerradas: queremos ver qué pasa cuando la comunidad tiene acceso a los pesos, a los repos y al poder de modificar.
+            </p>
+            <p>
+              Tráete una idea, un dataset o solo las ganas de experimentar. Vas a conocer gente que está construyendo en el mismo frente.
+            </p>
+          </div>
+        </div>
+
+        <div class="md:col-span-2">
+          <div class="relative bg-hf-sage-darker border border-hf-cream/10 rounded p-6 font-mono text-sm">
+            <div class="flex items-center gap-1.5 mb-4">
+              <span class="w-2.5 h-2.5 rounded-full bg-hf-coral"></span>
+              <span class="w-2.5 h-2.5 rounded-full bg-hf-mustard"></span>
+              <span class="w-2.5 h-2.5 rounded-full bg-oax-green"></span>
+            </div>
+            <div class="space-y-1.5 text-hf-cream/80 leading-relaxed text-[13px]">
+              <p><span class="text-hf-coral">$</span> stack = [</p>
+              <p class="pl-4 text-hf-mustard">"open-weight LLMs",</p>
+              <p class="pl-4 text-hf-mustard">"inference local",</p>
+              <p class="pl-4 text-hf-mustard">"fine-tuning",</p>
+              <p class="pl-4 text-hf-mustard">"agentes · RAG · tools"</p>
+              <p>]</p>
+              <p class="text-hf-cream/50">// ship something real.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Info grid: Fecha · Hora · Sede · Costo -->
+    <section class="py-20 bg-hf-cream-50 text-hf-ink">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <p class="font-mono-sm text-hf-sage mb-3">Los datos</p>
+        <h2 class="font-display text-4xl sm:text-5xl md:text-6xl leading-[1] text-hf-ink mb-10">
+          Dónde, cuándo, cómo.
+        </h2>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div class="bg-white border border-hf-ink/10 rounded-lg p-5 hover:border-hf-coral transition">
+            <svg class="w-7 h-7 text-hf-sage mb-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+            <p class="font-mono-sm text-hf-ink/60 mb-1">Fecha</p>
+            <p class="font-display text-xl text-hf-ink leading-tight">{{ page.date_display }}</p>
+          </div>
+          <div class="bg-white border border-hf-ink/10 rounded-lg p-5 hover:border-hf-coral transition">
+            <svg class="w-7 h-7 text-hf-coral mb-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6l4 2m6-2a10 10 0 11-20 0 10 10 0 0120 0z"/></svg>
+            <p class="font-mono-sm text-hf-ink/60 mb-1">Hora</p>
+            <p class="font-display text-xl text-hf-ink leading-tight">{{ page.time_display }}</p>
+          </div>
+          <div class="bg-white border border-hf-ink/10 rounded-lg p-5 hover:border-hf-coral transition">
+            <svg class="w-7 h-7 text-hf-mustard mb-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a2 2 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+            <p class="font-mono-sm text-hf-ink/60 mb-1">Sede</p>
+            <p class="font-display text-lg text-hf-ink leading-tight">{{ page.venue }}</p>
+            {% if page.venue_address %}
+              <p class="text-xs text-hf-ink/60 mt-1">{{ page.venue_address }}</p>
+            {% endif %}
+          </div>
+          <div class="bg-oax-green border border-oax-green rounded-lg p-5 text-oax-navy">
+            <svg class="w-7 h-7 mb-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 9V7a5 5 0 00-10 0v2M5 9h14l1 12H4L5 9z"/></svg>
+            <p class="font-mono-sm opacity-70 mb-1">Costo</p>
+            <p class="font-display text-2xl leading-tight">Gratis</p>
+            <p class="text-xs opacity-80 mt-1">Cupo limitado</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cómo llegar: mapa de Atzomx -->
+    {% if page.venue_embed_url %}
+    <section class="py-20 bg-hf-cream-100 text-hf-ink">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-5 gap-8 items-center">
+          <div class="md:col-span-2">
+            <p class="font-mono-sm text-hf-sage mb-3">Cómo llegar</p>
+            <h2 class="font-display text-4xl sm:text-5xl md:text-6xl leading-[1] text-hf-ink mb-6">
+              Atzomx<br/>
+              <span class="text-hf-coral">Coworking.</span>
+            </h2>
+            <p class="text-hf-ink/80 text-base leading-relaxed mb-6">
+              {{ page.venue_address }}
+            </p>
+            <div class="flex flex-wrap gap-3">
+              <a href="{{ page.venue_maps_url }}" target="_blank" rel="noopener"
+                 class="inline-flex items-center gap-2 bg-hf-sage hover:bg-hf-sage-dark text-hf-cream px-5 py-3 rounded font-mono-sm font-bold transition">
+                Abrir en Google Maps →
+              </a>
+              <a href="https://atzomx.com.mx/" target="_blank" rel="noopener"
+                 class="inline-flex items-center gap-2 bg-transparent hover:bg-hf-ink/5 border border-hf-ink/30 text-hf-ink px-5 py-3 rounded font-mono-sm font-bold transition">
+                atzomx.com.mx
+              </a>
+            </div>
+          </div>
+          <div class="md:col-span-3">
+            <div class="relative rounded-lg overflow-hidden border border-hf-ink/10 shadow-lg">
+              <iframe
+                src="{{ page.venue_embed_url }}"
+                class="w-full h-80 md:h-96 block"
+                style="border:0;"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                title="Ubicación de Atzomx Coworking"></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    {% endif %}
+
+    <!-- Agenda -->
+    {% if page.agenda and page.agenda.size > 0 %}
+    <section class="py-20 bg-hf-sage">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <p class="font-mono-sm text-hf-coral mb-3">Agenda</p>
+        <h2 class="font-display text-4xl sm:text-5xl md:text-6xl leading-[1] text-hf-cream mb-10">
+          Cómo se vive el día.
+        </h2>
+        <div class="relative">
+          <div class="absolute left-5 top-2 bottom-2 w-0.5 bg-gradient-to-b from-hf-coral via-hf-mustard to-hf-coral"></div>
+          <ul class="space-y-6">
+            {% for block in page.agenda %}
+              <li class="relative pl-14">
+                <span class="absolute left-0 top-0 w-11 h-11 rounded-full bg-hf-sage border-2 border-hf-mustard flex items-center justify-center font-mono-sm text-hf-mustard font-bold">
+                  {{ forloop.index }}
+                </span>
+                <p class="font-mono-sm text-hf-coral mb-1">{{ block.time }}</p>
+                <p class="font-display text-xl text-hf-cream">{{ block.title }}</p>
+                {% if block.description %}
+                  <p class="text-hf-cream/70 text-sm mt-1 leading-relaxed">{{ block.description }}</p>
+                {% endif %}
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </section>
+    {% endif %}
+
+    <!-- Qué traer -->
+    {% if page.requisitos and page.requisitos.size > 0 %}
+    <section class="py-20 bg-hf-sage-dark">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <p class="font-mono-sm text-hf-mustard mb-3">Qué traer</p>
+        <h2 class="font-display text-4xl sm:text-5xl md:text-6xl leading-[1] text-hf-cream mb-10">
+          Vente listo.
+        </h2>
+        <div class="grid sm:grid-cols-2 gap-4">
+          {% for item in page.requisitos %}
+            <div class="flex gap-4 bg-hf-sage-darker/60 border border-hf-cream/10 rounded-lg p-5 hover:border-hf-mustard/50 transition">
+              <span class="shrink-0 w-10 h-10 rounded-lg bg-hf-mustard/15 border border-hf-mustard/40 flex items-center justify-center text-hf-mustard font-bold">
+                ✓
+              </span>
+              <div>
+                <p class="font-display text-lg text-hf-cream">{{ item.title }}</p>
+                {% if item.description %}
+                  <p class="text-sm text-hf-cream/60 mt-0.5 leading-relaxed">{{ item.description }}</p>
+                {% endif %}
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+    {% endif %}
+
+    <!-- Markdown body if present -->
+    {% assign stripped_content = content | strip %}
+    {% if stripped_content != "" %}
+      <section class="py-16 bg-hf-sage">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 prose-sage text-base sm:text-lg">
+          {{ content }}
+        </div>
+      </section>
+    {% endif %}
+
+    <!-- Patrocinadores -->
+    <section class="py-20 md:py-24 bg-hf-cream-50 text-hf-ink">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <p class="font-mono-sm text-hf-sage mb-3">Lo hacen posible</p>
+        <h2 class="font-display text-4xl sm:text-5xl md:text-6xl leading-[1] text-hf-ink mb-4">
+          Patrocinadores.
+        </h2>
+        <p class="text-hf-ink/70 max-w-xl mx-auto mb-12">
+          Un evento global, organizado localmente — gracias a quienes abren la puerta.
+        </p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 items-stretch">
+          <div class="bg-white rounded-lg p-8 border border-hf-ink/10 flex flex-col items-center justify-center min-h-[180px] hover:border-hf-coral transition">
+            <img src="/assets/images/oaxacoders.svg" alt="Oaxacoders" class="h-10 mb-4" />
+            <p class="font-mono-sm text-hf-ink/50">Organizador local</p>
+          </div>
+          <div class="bg-white rounded-lg p-8 border border-hf-ink/10 flex flex-col items-center justify-center min-h-[180px] hover:border-hf-coral transition">
+            <img src="/assets/images/atzomx.svg" alt="Atzomx" class="h-16 mb-4" />
+            <p class="font-mono-sm text-hf-ink/50">Sede & café coworking</p>
+          </div>
+          <div class="bg-white rounded-lg p-8 border border-hf-ink/10 flex flex-col items-center justify-center min-h-[180px] hover:border-hf-coral transition">
+            <img src="/assets/images/mlh.svg" alt="Major League Hacking" class="h-14 mb-4" />
+            <p class="font-mono-sm text-hf-ink/50">Organizador global</p>
+          </div>
+        </div>
+
+        <p class="text-xs text-hf-ink/50 mt-10 font-mono-sm">
+          Hacktoberfest es una iniciativa de <a href="https://mlh.io" target="_blank" rel="noopener" class="underline hover:text-hf-coral">Major League Hacking</a>.
+        </p>
+      </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="relative py-20 md:py-28 hero-bg overflow-hidden">
+      <div class="absolute inset-0 grid-bg pointer-events-none"></div>
+      <span class="pixel-plus text-hf-coral top-10 left-10 opacity-70"></span>
+      <span class="pixel-plus text-hf-mustard top-20 right-10 opacity-70"></span>
+      <span class="pixel-plus text-hf-coral bottom-10 left-20 opacity-70"></span>
+      <span class="pixel-plus text-hf-cream bottom-20 right-20 opacity-50"></span>
+
+      <div class="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <p class="font-mono-sm text-hf-mustard mb-4">Last call</p>
+        <h2 class="font-display text-5xl sm:text-6xl md:text-7xl text-hf-cream mb-6 leading-[1]">
+          Nos vemos el <span class="text-hf-coral">31 de octubre</span>.
+        </h2>
+        <p class="text-lg text-hf-cream/80 mb-10 max-w-xl mx-auto">
+          Cupo limitado. Registro oficial en el sitio de MLH — rápido y gratis.
+        </p>
+        <a href="{{ page.register_url }}" target="_blank" rel="noopener"
+           class="inline-flex items-center gap-3 bg-hf-coral hover:bg-hf-blush text-hf-ink px-10 py-5 rounded font-mono-sm font-bold text-base transition shadow-xl">
+          Reservar mi lugar →
+        </a>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-hf-sage-darker border-t border-hf-cream/10 py-10 mt-auto">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+        <a href="/" class="inline-flex items-center gap-3 text-hf-cream hover:text-hf-coral transition">
+          <img src="/assets/images/oaxacoders.svg" alt="Oaxacoders" class="h-8 brightness-0 invert opacity-90" />
+          <span class="font-mono-sm">Volver a Oaxacoders</span>
+        </a>
+        <div class="flex items-center gap-4 font-mono-sm text-hf-cream/50">
+          <a href="{{ site.community.telegram }}" target="_blank" rel="noopener" class="hover:text-hf-mustard transition">Telegram</a>
+          <span>·</span>
+          <a href="{{ site.community.whatsapp }}" target="_blank" rel="noopener" class="hover:text-hf-mustard transition">WhatsApp</a>
+          <span>·</span>
+          <a href="{{ site.community.github }}" target="_blank" rel="noopener" class="hover:text-hf-mustard transition">GitHub</a>
+        </div>
+      </div>
+    </footer>
+
+  </body>
+</html>
