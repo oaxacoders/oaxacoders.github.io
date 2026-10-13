@@ -408,6 +408,65 @@
     </section>
     {% endif %}
 
+    <!-- Recursos -->
+    {% if page.recursos and page.recursos.size > 0 %}
+    <section class="py-20 bg-hf-cream-50 text-hf-ink">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <p class="font-mono-sm text-hf-sage mb-3">Recursos</p>
+        <h2 class="font-display text-4xl sm:text-5xl md:text-6xl leading-[1] text-hf-ink mb-6">
+          Con qué construir.
+        </h2>
+        {% if page.recursos_intro %}
+          <p class="text-hf-ink/80 text-base sm:text-lg max-w-3xl leading-relaxed mb-10">
+            {{ page.recursos_intro }}
+          </p>
+        {% endif %}
+
+        <div class="grid md:grid-cols-2 gap-4">
+          {% for group in page.recursos %}
+            <div class="bg-white border border-hf-ink/10 rounded-lg p-6 hover:border-hf-coral transition flex flex-col">
+              <p class="font-mono-sm text-hf-coral mb-2">0{{ forloop.index }}</p>
+              <h3 class="font-display text-2xl text-hf-ink mb-2 leading-tight">{{ group.heading }}</h3>
+              {% if group.description %}
+                <p class="text-sm text-hf-ink/60 mb-4 leading-relaxed">{{ group.description }}</p>
+              {% endif %}
+              <ul class="space-y-1.5 text-sm text-hf-ink/80">
+                {% for item in group.items %}
+                  <li class="flex gap-2">
+                    <span class="text-hf-mustard font-bold shrink-0">▸</span>
+                    <span>{{ item }}</span>
+                  </li>
+                {% endfor %}
+              </ul>
+              {% if group.link_url %}
+                <a href="{{ group.link_url }}" target="_blank" rel="noopener"
+                   class="inline-flex items-center gap-1.5 mt-5 pt-4 border-t border-hf-ink/10 font-mono-sm text-xs text-hf-sage hover:text-hf-coral transition font-bold">
+                  {{ group.link_label | default: "Ver más" }}
+                  <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                </a>
+              {% endif %}
+            </div>
+          {% endfor %}
+        </div>
+
+        {% if page.enlaces_oficiales and page.enlaces_oficiales.size > 0 %}
+          <div class="mt-12 pt-10 border-t border-hf-ink/10">
+            <p class="font-mono-sm text-hf-sage mb-4">Más en los canales oficiales</p>
+            <div class="flex flex-wrap gap-3">
+              {% for link in page.enlaces_oficiales %}
+                <a href="{{ link.url }}" target="_blank" rel="noopener"
+                   class="inline-flex items-center gap-2 bg-white hover:bg-hf-cream-100 border border-hf-ink/15 hover:border-hf-coral text-hf-ink px-4 py-2.5 rounded font-mono-sm text-xs font-bold transition">
+                  {{ link.label }}
+                  <svg class="w-3 h-3 opacity-60" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                </a>
+              {% endfor %}
+            </div>
+          </div>
+        {% endif %}
+      </div>
+    </section>
+    {% endif %}
+
     <!-- Markdown body if present -->
     {% assign stripped_content = content | strip %}
     {% if stripped_content != "" %}
@@ -426,7 +485,7 @@
           Patrocinadores.
         </h2>
         <p class="text-hf-ink/70 max-w-xl mx-auto mb-12">
-          Un evento global, organizado localmente — gracias a quienes abren la puerta.
+          El HackDay sucede en Oaxaca gracias a...
         </p>
 
         <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 items-stretch">
@@ -459,7 +518,7 @@
       <span class="pixel-plus text-hf-cream bottom-20 right-20 opacity-50"></span>
 
       <div class="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <p class="font-mono-sm text-hf-mustard mb-4">Last call</p>
+        <p class="font-mono-sm text-hf-mustard mb-4">Confirma tu lugar</p>
         <h2 class="font-display text-5xl sm:text-6xl md:text-7xl text-hf-cream mb-6 leading-[1]">
           Nos vemos el <span class="text-hf-coral">31 de octubre</span>.
         </h2>
