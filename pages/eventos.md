@@ -2,6 +2,7 @@
 layout: default
 title: Eventos
 permalink: /eventos/
+description: Próximos meetups, talleres y hackathons de Oaxacoders — la comunidad de programadores en Oaxaca, México. Participación gratuita.
 ---
 
 <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">

@@ -2,6 +2,7 @@
 layout: default
 title: Todos los Eventos
 permalink: /eventos/todos/
+description: Archivo completo de meetups, talleres y hackathons de Oaxacoders — eventos próximos y pasados en Oaxaca, México.
 ---
 
 <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">

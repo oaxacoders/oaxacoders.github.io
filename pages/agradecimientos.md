@@ -2,6 +2,7 @@
 layout: default
 title: Agradecimientos
 permalink: /agradecimientos/
+description: Patrocinadores, sedes y aliados que hacen posible los eventos de la comunidad Oaxacoders en Oaxaca, México.
 ---
 
 <!-- Hero -->

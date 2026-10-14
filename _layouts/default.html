@@ -88,6 +88,37 @@
     <link rel="manifest" href="/site.webmanifest" />
     {% seo %}
     {% feed_meta %}
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Oaxacoders",
+      "url": "{{ site.url }}",
+      "description": "{{ site.description }}",
+      "logo": "{{ site.url }}/android-chrome-512x512.png",
+      "image": "{{ site.url }}/assets/images/oaxacoders.svg",
+      "foundingLocation": {
+        "@type": "Place",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Oaxaca de Juárez",
+          "addressRegion": "Oaxaca",
+          "addressCountry": "MX"
+        }
+      },
+      "areaServed": {
+        "@type": "City",
+        "name": "Oaxaca de Juárez"
+      },
+      "sameAs": [
+        "{{ site.community.telegram }}",
+        "{{ site.community.whatsapp }}",
+        "{{ site.community.twitter }}",
+        "{{ site.community.bluesky }}",
+        "{{ site.community.github }}"
+      ]
+    }
+    </script>
   </head>
   <body class="min-h-screen flex flex-col bg-gray-50 text-gray-900 font-sans antialiased">
     {% include header.html %}

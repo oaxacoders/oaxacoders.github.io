@@ -1,6 +1,48 @@
 ---
 layout: default
 ---
+{% assign times = page.time_display | default: "" | split: " - " %}
+{% assign start_hhmm = times[0] | default: "" %}
+{% assign end_hhmm = times[1] | default: start_hhmm %}
+{% assign date_str = page.date | date: "%Y-%m-%d" %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Event",
+  "name": {{ page.title | jsonify }},
+  "description": {{ page.content | strip_html | strip_newlines | truncate: 300 | jsonify }},
+  "url": "{{ site.url }}{{ page.url }}",
+  {% if start_hhmm != "" %}"startDate": "{{ date_str }}T{{ start_hhmm }}:00-06:00",{% else %}"startDate": "{{ date_str }}",{% endif %}
+  {% if end_hhmm != "" %}"endDate": "{{ date_str }}T{{ end_hhmm }}:00-06:00",{% endif %}
+  "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+  "eventStatus": "https://schema.org/EventScheduled",
+  "inLanguage": "es-MX",
+  "location": {
+    "@type": "Place",
+    "name": {{ page.venue | default: "Oaxaca de Juárez" | jsonify }},
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": {{ page.venue_address | default: page.venue | default: "Oaxaca de Juárez, OAX" | jsonify }},
+      "addressLocality": "Oaxaca de Juárez",
+      "addressRegion": "Oaxaca",
+      "addressCountry": "MX"
+    }
+  },
+  "organizer": {
+    "@type": "Organization",
+    "name": "Oaxacoders",
+    "url": "{{ site.url }}"
+  }{% if page.eventbrite_url or page.register_url %},
+  "offers": {
+    "@type": "Offer",
+    "url": "{{ page.eventbrite_url | default: page.register_url }}",
+    "price": {% if page.is_free %}"0"{% else %}"0"{% endif %},
+    "priceCurrency": "MXN",
+    "availability": "https://schema.org/InStock",
+    "validFrom": "{{ date_str }}"
+  }{% endif %}
+}
+</script>
 <article class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
   <a href="/eventos/" class="inline-flex items-center gap-1 text-sm text-gray-400 hover:text-teal-500 transition mb-8">
     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>

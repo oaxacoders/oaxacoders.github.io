@@ -2,6 +2,7 @@
 layout: default
 title: Blog
 permalink: /blog/
+description: Artículos, tutoriales y resúmenes de eventos pasados de la comunidad Oaxacoders en Oaxaca, México.
 ---
 
 {% assign general_posts = site.posts | where_exp: "post", "post.category != 'eventos-pasados'" %}

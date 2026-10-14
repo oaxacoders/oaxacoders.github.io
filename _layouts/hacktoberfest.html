@@ -104,6 +104,75 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="canonical" href="{{ site.url }}{{ page.url }}" />
+
+    {% assign hf_times = page.time_display | default: "" | split: " - " %}
+    {% assign hf_start = hf_times[0] | default: "" %}
+    {% assign hf_end = hf_times[1] | default: hf_start %}
+    {% assign hf_date = page.date | date: "%Y-%m-%d" %}
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Oaxacoders",
+      "url": "{{ site.url }}",
+      "description": "{{ site.description }}",
+      "logo": "{{ site.url }}/android-chrome-512x512.png",
+      "sameAs": [
+        "{{ site.community.telegram }}",
+        "{{ site.community.whatsapp }}",
+        "{{ site.community.twitter }}",
+        "{{ site.community.bluesky }}",
+        "{{ site.community.github }}"
+      ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Event",
+      "name": {{ page.title | jsonify }},
+      "description": {{ page.meta_description | default: "Hack Day oficial de Hacktoberfest 2026 en Oaxaca. Gratis. Construye con open-weight models e IA open-source." | jsonify }},
+      "url": "{{ site.url }}{{ page.url }}",
+      {% if hf_start != "" %}"startDate": "{{ hf_date }}T{{ hf_start }}:00-06:00",{% else %}"startDate": "{{ hf_date }}",{% endif %}
+      {% if hf_end != "" %}"endDate": "{{ hf_date }}T{{ hf_end }}:00-06:00",{% endif %}
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "inLanguage": "es-MX",
+      "image": "{{ site.url }}/assets/images/hacktoberfest-oaxaca.jpg",
+      "location": {
+        "@type": "Place",
+        "name": {{ page.venue | jsonify }},
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": {{ page.venue_address | jsonify }},
+          "addressLocality": "Oaxaca de Juárez",
+          "addressRegion": "Oaxaca",
+          "addressCountry": "MX"
+        }
+      },
+      "organizer": [
+        {
+          "@type": "Organization",
+          "name": "Oaxacoders",
+          "url": "{{ site.url }}"
+        },
+        {
+          "@type": "Organization",
+          "name": "Major League Hacking",
+          "url": "https://mlh.io/"
+        }
+      ],
+      "offers": {
+        "@type": "Offer",
+        "url": "{{ page.register_url }}",
+        "price": "0",
+        "priceCurrency": "MXN",
+        "availability": "https://schema.org/InStock",
+        "validFrom": "{{ hf_date }}"
+      }
+    }
+    </script>
   </head>
 
   <body class="min-h-screen flex flex-col">

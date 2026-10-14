@@ -2,6 +2,7 @@
 layout: default
 title: Nosotros
 permalink: /nosotros/
+description: Conoce a Oaxacoders, la comunidad abierta y gratuita de programadores, diseñadores y entusiastas de la tecnología en Oaxaca de Juárez, México.
 ---
 
 <!-- Intro -->
