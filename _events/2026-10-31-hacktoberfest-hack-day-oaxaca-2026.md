@@ -68,6 +68,14 @@ enlaces_oficiales:
   - label: "Major League Hacking"
     url: "https://mlh.io/"
 
+# Aliados y patrocinadores — comunidades, empresas y proyectos que apoyan el evento.
+aliados:
+  - name: "Nexis"
+    role: "Difusión"
+    logo: "/assets/images/nexis.svg"
+    logo_height: 28
+    url: "https://nexisoaxaca.tech/"
+
 # Qué traer / requisitos — editable después.
 requisitos:
   - title: "Laptop"

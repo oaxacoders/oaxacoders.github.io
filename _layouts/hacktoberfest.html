@@ -546,30 +546,33 @@
       </section>
     {% endif %}
 
-    <!-- Patrocinadores -->
+    <!-- Organizadores -->
     <section class="py-20 md:py-24 bg-hf-cream-50 text-hf-ink">
       <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <p class="font-mono-sm text-hf-sage mb-3">Lo hacen posible</p>
         <h2 class="font-display text-4xl sm:text-5xl md:text-6xl leading-[1] text-hf-ink mb-4">
-          Patrocinadores.
+          Organizadores.
         </h2>
         <p class="text-hf-ink/70 max-w-xl mx-auto mb-12">
           El HackDay sucede en Oaxaca gracias a...
         </p>
 
         <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 items-stretch">
-          <div class="bg-white rounded-lg p-8 border border-hf-ink/10 flex flex-col items-center justify-center min-h-[180px] hover:border-hf-coral transition">
+          <a href="https://oaxacoders.org" target="_blank" rel="noopener"
+             class="bg-white rounded-lg p-8 border border-hf-ink/10 flex flex-col items-center justify-center min-h-[180px] hover:border-hf-coral transition">
             <img src="/assets/images/oaxacoders.svg" alt="Oaxacoders" class="h-10 mb-4" />
             <p class="font-mono-sm text-hf-ink/50">Organizador local</p>
-          </div>
-          <div class="bg-white rounded-lg p-8 border border-hf-ink/10 flex flex-col items-center justify-center min-h-[180px] hover:border-hf-coral transition">
+          </a>
+          <a href="https://atzomx.com.mx/" target="_blank" rel="noopener"
+             class="bg-white rounded-lg p-8 border border-hf-ink/10 flex flex-col items-center justify-center min-h-[180px] hover:border-hf-coral transition">
             <img src="/assets/images/atzomx.svg" alt="Atzomx" class="h-16 mb-4" />
             <p class="font-mono-sm text-hf-ink/50">Sede & café coworking</p>
-          </div>
-          <div class="bg-white rounded-lg p-8 border border-hf-ink/10 flex flex-col items-center justify-center min-h-[180px] hover:border-hf-coral transition">
+          </a>
+          <a href="https://mlh.io/" target="_blank" rel="noopener"
+             class="bg-white rounded-lg p-8 border border-hf-ink/10 flex flex-col items-center justify-center min-h-[180px] hover:border-hf-coral transition">
             <img src="/assets/images/mlh.svg" alt="Major League Hacking" class="h-14 mb-4" />
             <p class="font-mono-sm text-hf-ink/50">Organizador global</p>
-          </div>
+          </a>
         </div>
 
         <p class="text-xs text-hf-ink/50 mt-10 font-mono-sm">
@@ -577,6 +580,49 @@
         </p>
       </div>
     </section>
+
+    <!-- Aliados y Patrocinadores -->
+    {% if page.aliados and page.aliados.size > 0 %}
+    <section class="py-20 md:py-24 bg-hf-sage-dark grid-bg">
+      <span class="pixel-plus text-hf-coral top-16 left-10 opacity-60"></span>
+      <span class="pixel-plus text-hf-mustard bottom-16 right-10 opacity-60"></span>
+
+      <div class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <p class="font-mono-sm text-hf-coral mb-3">Nos acompañan</p>
+        <h2 class="font-display text-4xl sm:text-5xl md:text-6xl leading-[1] text-hf-cream mb-4">
+          Aliados y <span class="text-hf-mustard">Patrocinadores</span>.
+        </h2>
+        <p class="text-hf-cream/70 max-w-xl mx-auto mb-12">
+          Comunidades, empresas y proyectos que suman para que esto pase.
+        </p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 items-stretch">
+          {% for aliado in page.aliados %}
+            {% if aliado.url %}
+              <a href="{{ aliado.url }}" target="_blank" rel="noopener"
+                 class="bg-hf-sage-darker rounded-lg p-8 border border-hf-cream/20 flex flex-col items-center justify-center min-h-[200px] text-hf-cream hover:border-hf-coral hover:bg-hf-sage-darker transition">
+                <img src="{{ aliado.logo }}" alt="{{ aliado.name }}" class="h-{{ aliado.logo_height | default: 16 }} mb-4 text-hf-cream" />
+                {% if aliado.role %}
+                  <p class="font-mono-sm text-hf-cream/50">{{ aliado.role }}</p>
+                {% endif %}
+              </a>
+            {% else %}
+              <div class="bg-hf-sage-darker rounded-lg p-8 border border-hf-cream/20 flex flex-col items-center justify-center min-h-[200px] text-hf-cream hover:border-hf-coral transition">
+                <img src="{{ aliado.logo }}" alt="{{ aliado.name }}" class="h-{{ aliado.logo_height | default: 16 }} mb-4 text-hf-cream" />
+                {% if aliado.role %}
+                  <p class="font-mono-sm text-hf-cream/50">{{ aliado.role }}</p>
+                {% endif %}
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+
+        <p class="text-xs text-hf-cream/50 mt-10 font-mono-sm">
+          ¿Tu comunidad o empresa también quiere sumar? Escríbenos.
+        </p>
+      </div>
+    </section>
+    {% endif %}
 
     <!-- Final CTA -->
     <section class="relative py-20 md:py-28 hero-bg overflow-hidden">
