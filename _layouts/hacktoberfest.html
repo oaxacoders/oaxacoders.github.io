@@ -53,11 +53,13 @@
       .wordmark-svg {
         display: inline-block;
         color: currentColor;
+        max-width: 100%;
       }
       .wordmark-svg svg {
         display: block;
         width: auto;
         height: 100%;
+        max-width: 100%;
         fill: currentColor;
       }
 
@@ -215,8 +217,8 @@
         </p>
 
         <!-- Big wordmark hero -->
-        <h1 class="flex justify-center mb-4" aria-label="Hacktoberfest 26">
-          <span class="wordmark-svg h-16 sm:h-24 md:h-32 text-hf-cream">
+        <h1 class="flex justify-center mb-4 px-2" aria-label="Hacktoberfest 26">
+          <span class="wordmark-svg w-full max-w-full h-auto sm:w-auto sm:h-24 md:h-32 text-hf-cream">
             {% include hacktoberfest-wordmark.svg %}
           </span>
         </h1>
