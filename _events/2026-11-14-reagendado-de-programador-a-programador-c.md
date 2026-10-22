@@ -1,8 +1,8 @@
 ---
 layout: event
 title: 'Reagendado: De programador a programador: C#'
-date: '2026-10-24'
-date_display: 24 de octubre, 2026
+date: '2026-11-14'
+date_display: 14 de noviembre, 2026
 time_display: 17:00 - 18:00
 venue: C. de Los Libres 800
 venue_address: 800 Calle de Los Libres, Oaxaca de Juárez, OAX 68000
