@@ -1,0 +1,572 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ page.title }} | {{ site.title }}</title>
+    <meta name="description" content="{{ page.meta_description | default: 'Así se vivió Hacktoberfest Hack Day Oaxaca 2026. Ganadores, jurado, premios y galería.' }}" />
+    <meta property="og:title" content="{{ page.title }}" />
+    <meta property="og:description" content="{{ page.meta_description | default: 'Así se vivió Hacktoberfest Hack Day Oaxaca 2026.' }}" />
+    <meta property="og:image" content="{{ site.url }}/assets/images/hacktoberfest-oaxaca.jpg" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600;700;800;900&family=Martian+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+    <style type="text/tailwindcss">
+      @theme {
+        --font-sans: 'Barlow Semi Condensed', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        --font-mono: 'Martian Mono', ui-monospace, 'SF Mono', 'Cascadia Code', monospace;
+
+        --color-hf-sage: #3d5f58;
+        --color-hf-sage-dark: #2e4742;
+        --color-hf-sage-darker: #1a2b28;
+        --color-hf-ink: #10201d;
+        --color-hf-cream: #f7f7f2;
+        --color-hf-cream-50: #f2f2eb;
+        --color-hf-cream-100: #e4e5da;
+        --color-hf-coral: #e8928d;
+        --color-hf-coral-light: #f6c4c1;
+        --color-hf-mustard: #eac84f;
+        --color-hf-blush: #f4a09a;
+
+        --color-oax-green: #37d31c;
+        --color-oax-navy: #01065c;
+      }
+
+      body {
+        background: #3d5f58;
+        color: #f7f7f2;
+        font-family: var(--font-sans);
+        -webkit-font-smoothing: antialiased;
+      }
+
+      .font-display { font-family: 'Barlow Semi Condensed', sans-serif; font-weight: 900; letter-spacing: -0.01em; }
+      .font-mono-sm { font-family: 'Martian Mono', monospace; font-size: 0.75rem; letter-spacing: 0.05em; text-transform: uppercase; }
+
+      .wordmark-svg {
+        display: inline-block;
+        color: currentColor;
+        max-width: 100%;
+      }
+      .wordmark-svg svg {
+        display: block;
+        width: auto;
+        height: 100%;
+        max-width: 100%;
+        fill: currentColor;
+      }
+
+      .pixel-plus {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        background:
+          linear-gradient(currentColor, currentColor) center/6px 20px no-repeat,
+          linear-gradient(currentColor, currentColor) center/20px 6px no-repeat;
+        image-rendering: pixelated;
+      }
+
+      .grid-bg {
+        background-image:
+          linear-gradient(rgba(247, 247, 242, 0.04) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(247, 247, 242, 0.04) 1px, transparent 1px);
+        background-size: 48px 48px;
+      }
+
+      .hero-bg {
+        background:
+          linear-gradient(to bottom, rgba(16, 32, 29, 0.75) 0%, rgba(61, 95, 88, 0.80) 50%, rgba(61, 95, 88, 0.95) 100%),
+          url('/assets/images/oaxaca-sentimientos.jpg') center/cover no-repeat;
+        background-attachment: scroll;
+      }
+
+      .prose-sage p { line-height: 1.65; color: rgba(247, 247, 242, 0.88); }
+      .prose-sage a { color: var(--color-hf-coral); text-decoration: underline; text-underline-offset: 3px; }
+      .prose-sage strong { color: #f7f7f2; }
+      .prose-sage ul { list-style: disc; padding-left: 1.25rem; color: rgba(247, 247, 242, 0.88); }
+      .prose-sage ul li { line-height: 1.6; margin-top: 0.25rem; }
+      .prose-sage ul li::marker { color: var(--color-hf-mustard); }
+    </style>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="canonical" href="{{ site.url }}{{ page.url }}" />
+  </head>
+
+  <body class="min-h-screen flex flex-col">
+
+    <!-- Top sticky bar -->
+    <div class="w-full border-b border-hf-cream/10 bg-hf-sage-dark sticky top-0 z-50">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-14 flex items-center justify-between">
+        <a href="/" class="inline-flex items-center gap-3 text-hf-cream hover:text-hf-coral transition">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"/></svg>
+          <span class="wordmark-svg h-5 sm:h-6" aria-label="Hacktoberfest 26">
+            {% include hacktoberfest-wordmark.svg %}
+          </span>
+        </a>
+        <div class="flex items-center gap-3">
+          <a href="/" class="hidden sm:inline font-mono-sm text-xs text-hf-cream/60 hover:text-hf-cream transition">← Oaxacoders</a>
+          {% if page.gallery_url %}
+          <a href="{{ page.gallery_url }}" target="_blank" rel="noopener"
+             class="inline-flex items-center gap-1.5 font-mono-sm bg-hf-coral hover:bg-hf-blush text-hf-ink px-3 py-2 rounded transition font-bold">
+            Galería ↗
+          </a>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+
+    <!-- HERO -->
+    <section class="relative overflow-hidden hero-bg">
+      <div class="absolute inset-0 grid-bg pointer-events-none"></div>
+
+      <span class="pixel-plus text-hf-coral top-16 left-6 sm:left-16 opacity-80"></span>
+      <span class="pixel-plus text-hf-mustard top-28 right-8 sm:right-24 opacity-70"></span>
+      <span class="pixel-plus text-hf-cream bottom-24 left-12 sm:left-40 opacity-60"></span>
+      <span class="pixel-plus text-hf-coral bottom-40 right-6 sm:right-32 opacity-75"></span>
+
+      <div class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-20 md:pt-24 md:pb-28 text-center">
+
+        <p class="font-mono-sm text-hf-cream/80 mb-4">
+          <span class="text-hf-mustard">{{ page.date_display }}</span> · In-Person · Oaxaca
+        </p>
+
+        <h1 class="flex justify-center mb-4 px-2" aria-label="Hacktoberfest 26">
+          <span class="wordmark-svg w-full max-w-full h-auto sm:w-auto sm:h-24 md:h-32 text-hf-cream">
+            {% include hacktoberfest-wordmark.svg %}
+          </span>
+        </h1>
+
+        <p class="text-3xl sm:text-5xl md:text-6xl font-display mb-3 leading-tight">
+          <span class="text-hf-cream">Así se vivió.</span>
+          <span class="text-hf-coral">Aquí en Oaxaca.</span>
+        </p>
+
+        <p class="font-mono-sm text-hf-cream/70 mb-10">
+          Code · Learn · Collaborate · Create
+        </p>
+
+        <div class="flex flex-wrap justify-center gap-3">
+          {% if page.gallery_url %}
+          <a href="{{ page.gallery_url }}" target="_blank" rel="noopener"
+             class="inline-flex items-center gap-2 bg-hf-coral hover:bg-hf-blush text-hf-ink px-7 py-4 rounded font-mono-sm font-bold transition shadow-lg">
+            Abrir galería ↗
+          </a>
+          {% endif %}
+          <a href="#ganadores"
+             class="inline-flex items-center gap-2 bg-transparent hover:bg-hf-cream/10 border border-hf-cream/40 text-hf-cream px-7 py-4 rounded font-mono-sm font-bold transition">
+            Ver ganadores ↓
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- STATS -->
+    {% if page.stats and page.stats.size > 0 %}
+    <section class="py-16 md:py-20 bg-hf-sage">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <p class="font-mono-sm text-hf-coral mb-3 text-center">En números</p>
+        <h2 class="font-display text-4xl sm:text-5xl md:text-6xl leading-[1] text-hf-cream mb-10 text-center">
+          El evento, resumido.
+        </h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          {% for stat in page.stats %}
+            <div class="bg-hf-sage-darker/60 border border-hf-cream/15 rounded-xl p-6 text-center">
+              <p class="font-display text-4xl sm:text-5xl md:text-6xl text-hf-mustard leading-none mb-2">{{ stat.number }}</p>
+              <p class="font-mono-sm text-hf-cream/70">{{ stat.label }}</p>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+    {% endif %}
+
+    <!-- WINNERS -->
+    {% if page.categories and page.categories.size > 0 %}
+    <section id="ganadores" class="py-20 md:py-24 bg-hf-sage-dark grid-bg">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <p class="font-mono-sm text-hf-mustard mb-3 text-center">Ganadores</p>
+        <h2 class="font-display text-4xl sm:text-5xl md:text-6xl leading-[1] text-hf-cream mb-14 text-center">
+          Los proyectos<br/><span class="text-hf-coral">que ganaron.</span>
+        </h2>
+
+        {% for cat in page.categories %}
+        <div class="mb-14 last:mb-0">
+          <h3 class="font-display text-2xl sm:text-3xl text-hf-cream mb-6 border-l-4 border-hf-coral pl-4">
+            {{ cat.name }}
+          </h3>
+          <div class="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+            {% for w in cat.winners %}
+            <div class="relative bg-hf-sage-darker/70 border border-hf-cream/15 rounded-xl p-6 flex flex-col hover:border-hf-coral transition">
+              <div class="flex items-center gap-3 mb-3">
+                <span class="inline-flex items-center justify-center w-11 h-11 rounded-full font-display text-xl font-bold shrink-0
+                  {% if w.place == 1 %}bg-hf-mustard text-hf-ink
+                  {% elsif w.place == 2 %}bg-hf-cream-100 text-hf-ink
+                  {% else %}bg-hf-coral text-hf-ink{% endif %}">
+                  {{ w.place }}°
+                </span>
+                <h4 class="font-display text-2xl text-hf-cream leading-none">{{ w.project }}</h4>
+              </div>
+              {% if w.team %}
+              <p class="font-mono-sm text-hf-cream/60 mb-4 leading-relaxed text-[11px]">
+                {{ w.team | join: " · " }}
+              </p>
+              {% endif %}
+              {% if w.prize %}
+              <div class="bg-hf-sage/40 border border-hf-mustard/30 rounded-lg p-4 mb-4 text-sm text-hf-cream/85 leading-relaxed">
+                <p class="font-mono-sm text-hf-mustard mb-1 text-[10px]">Premio</p>
+                {{ w.prize }}
+              </div>
+              {% endif %}
+              <div class="mt-auto flex flex-wrap gap-2 pt-2">
+                {% if w.mlh %}
+                <a href="{{ w.mlh }}" target="_blank" rel="noopener"
+                   class="inline-flex items-center gap-1 font-mono-sm text-xs bg-hf-coral hover:bg-hf-blush text-hf-ink px-3 py-2 rounded font-bold transition">
+                  MLH ↗
+                </a>
+                {% endif %}
+                {% if w.repo %}
+                <a href="{{ w.repo }}" target="_blank" rel="noopener"
+                   class="inline-flex items-center gap-1 font-mono-sm text-xs border border-hf-cream/30 hover:border-hf-cream text-hf-cream px-3 py-2 rounded font-bold transition">
+                  Repo ↗
+                </a>
+                {% endif %}
+                {% if w.demo %}
+                <a href="{{ w.demo }}" target="_blank" rel="noopener"
+                   class="inline-flex items-center gap-1 font-mono-sm text-xs border border-hf-cream/30 hover:border-hf-cream text-hf-cream px-3 py-2 rounded font-bold transition">
+                  Demo ↗
+                </a>
+                {% endif %}
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+        {% endfor %}
+
+        {% if page.all_submissions_url %}
+        <div class="text-center mt-10">
+          <a href="{{ page.all_submissions_url }}" target="_blank" rel="noopener"
+             class="inline-flex items-center gap-2 bg-transparent hover:bg-hf-cream/10 border border-hf-cream/40 text-hf-cream px-5 py-3 rounded font-mono-sm font-bold transition">
+            Ver todos los proyectos en MLH →
+          </a>
+        </div>
+        {% endif %}
+      </div>
+    </section>
+    {% endif %}
+
+    <!-- Prizes photo -->
+    {% if page.prizes_photo or page.prizes_photo_url %}
+    <section class="py-16 md:py-20 bg-hf-cream-100 text-hf-ink">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <p class="font-mono-sm text-hf-sage mb-2">Los premios</p>
+        <h3 class="font-display text-3xl sm:text-4xl text-hf-ink mb-6">Así quedaron.</h3>
+        {% if page.prizes_photo %}
+          <div class="rounded-xl overflow-hidden shadow-xl border border-hf-ink/10 mb-6">
+            <img src="{{ page.prizes_photo }}" alt="Premios del Hacktoberfest Hack Day Oaxaca 2026" class="w-full h-auto block" />
+          </div>
+        {% endif %}
+        {% if page.prizes_photo_url %}
+          <a href="{{ page.prizes_photo_url }}" target="_blank" rel="noopener"
+             class="inline-flex items-center gap-2 font-mono-sm text-xs text-hf-sage hover:text-hf-coral transition font-bold">
+            Ver más fotos de los premios ↗
+          </a>
+        {% endif %}
+      </div>
+    </section>
+    {% endif %}
+
+    <!-- JUDGES -->
+    {% if page.judges and page.judges.size > 0 %}
+    <section class="py-20 bg-hf-sage">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <p class="font-mono-sm text-hf-coral mb-3 text-center">Jurado</p>
+        <h2 class="font-display text-4xl sm:text-5xl md:text-6xl leading-[1] text-hf-cream mb-10 text-center">
+          Quienes evaluaron.
+        </h2>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+          {% for j in page.judges %}
+            {% capture judge_card %}
+              {% if j.photo %}
+                <img src="{{ j.photo }}" alt="{{ j.name }}" class="w-28 h-28 rounded-full object-cover mx-auto mb-4 border-2 border-hf-mustard/40" />
+              {% else %}
+                <div class="w-28 h-28 rounded-full bg-hf-sage/70 border-2 border-hf-mustard/40 flex items-center justify-center mx-auto mb-4 font-display text-3xl text-hf-mustard">
+                  {{ j.initials | default: j.name | slice: 0, 2 | upcase }}
+                </div>
+              {% endif %}
+              <p class="font-display text-xl text-hf-cream mb-1">{{ j.name }}</p>
+              {% if j.role %}<p class="font-mono-sm text-hf-cream/60 text-xs">{{ j.role }}</p>{% endif %}
+            {% endcapture %}
+            {% if j.url %}
+              <a href="{{ j.url }}" target="_blank" rel="noopener"
+                 class="block bg-hf-sage-darker/60 border border-hf-cream/15 rounded-xl p-6 text-center hover:border-hf-coral hover:bg-hf-sage-darker transition">
+                {{ judge_card }}
+              </a>
+            {% else %}
+              <div class="bg-hf-sage-darker/60 border border-hf-cream/15 rounded-xl p-6 text-center hover:border-hf-coral transition">
+                {{ judge_card }}
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+    {% endif %}
+
+    <!-- THANKS -->
+    {% if page.thanks %}
+    <section class="py-20 md:py-24 bg-hf-sage-dark">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <p class="font-mono-sm text-hf-mustard mb-3 text-center">Agradecimientos especiales</p>
+        <h2 class="font-display text-4xl sm:text-5xl md:text-6xl leading-[1] text-hf-cream mb-6 text-center">
+          Gracias.
+        </h2>
+        {% if page.thanks.intro %}
+          <p class="text-center max-w-2xl mx-auto text-hf-cream/80 mb-12 leading-relaxed">
+            {{ page.thanks.intro }}
+          </p>
+        {% endif %}
+
+        {% if page.thanks.featured %}
+          {% capture featured_card %}
+            <div class="md:col-span-2 relative">
+              <img src="{{ page.thanks.featured.photo }}" alt="{{ page.thanks.featured.name }}" class="w-full h-64 md:h-full object-cover" />
+            </div>
+            <div class="md:col-span-3 p-6 sm:p-8 flex flex-col justify-center">
+              {% if page.thanks.featured.label %}
+                <p class="font-mono-sm text-hf-mustard mb-2">{{ page.thanks.featured.label }}</p>
+              {% endif %}
+              <h3 class="font-display text-2xl sm:text-3xl text-hf-cream mb-3 leading-tight">{{ page.thanks.featured.name }}</h3>
+              <p class="text-hf-cream/85 leading-relaxed">{{ page.thanks.featured.text }}</p>
+            </div>
+          {% endcapture %}
+          {% if page.thanks.featured.url %}
+            <a href="{{ page.thanks.featured.url }}" target="_blank" rel="noopener"
+               class="mb-14 bg-hf-sage-darker/60 border border-hf-cream/15 rounded-xl overflow-hidden grid md:grid-cols-5 hover:border-hf-coral transition">
+              {{ featured_card }}
+            </a>
+          {% else %}
+            <div class="mb-14 bg-hf-sage-darker/60 border border-hf-cream/15 rounded-xl overflow-hidden grid md:grid-cols-5">
+              {{ featured_card }}
+            </div>
+          {% endif %}
+        {% endif %}
+
+        {% if page.thanks.prize_donors and page.thanks.prize_donors.size > 0 %}
+        <div class="mb-14">
+          <h3 class="font-display text-2xl sm:text-3xl text-hf-cream mb-6 border-l-4 border-hf-coral pl-4">
+            Premios adicionales
+          </h3>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+            {% for d in page.thanks.prize_donors %}
+            {% capture donor_card %}
+              {% if d.logo %}
+                <div class="w-24 h-24 rounded-full bg-hf-cream border-2 border-hf-coral/40 flex items-center justify-center mb-4 text-hf-ink">
+                  <img src="{{ d.logo }}" alt="{{ d.name }}" class="w-12 h-12" />
+                </div>
+              {% elsif d.photo %}
+                <img src="{{ d.photo }}" alt="{{ d.name }}" class="w-24 h-24 rounded-full object-cover mb-4 border-2 border-hf-coral/40" />
+              {% else %}
+                <div class="w-24 h-24 rounded-full bg-hf-sage/70 border-2 border-hf-coral/40 flex items-center justify-center mb-4 font-display text-2xl text-hf-coral">
+                  {{ d.name | slice: 0, 2 | upcase }}
+                </div>
+              {% endif %}
+              <p class="font-display text-xl text-hf-cream mb-2">{{ d.name }}</p>
+              <p class="text-sm text-hf-cream/80 leading-relaxed">{{ d.text }}</p>
+            {% endcapture %}
+            {% if d.url %}
+              <a href="{{ d.url }}" target="_blank" rel="noopener"
+                 class="bg-hf-sage-darker/60 border border-hf-cream/15 rounded-xl p-6 text-center flex flex-col items-center hover:border-hf-coral hover:bg-hf-sage-darker transition">
+                {{ donor_card }}
+              </a>
+            {% else %}
+              <div class="bg-hf-sage-darker/60 border border-hf-cream/15 rounded-xl p-6 text-center flex flex-col items-center">
+                {{ donor_card }}
+              </div>
+            {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+        {% endif %}
+
+        {% if page.thanks.people_orgs and page.thanks.people_orgs.size > 0 %}
+        <div>
+          <h3 class="font-display text-2xl sm:text-3xl text-hf-cream mb-6 border-l-4 border-hf-mustard pl-4">
+            Al equipo que lo hizo posible
+          </h3>
+          <ul class="space-y-3">
+            {% for t in page.thanks.people_orgs %}
+            <li class="flex gap-3 items-start bg-hf-sage-darker/40 border border-hf-cream/10 rounded-lg p-4">
+              <span class="text-hf-mustard mt-0.5 shrink-0 font-bold">→</span>
+              <p class="text-hf-cream/85 leading-relaxed">
+                {% if t.name_html %}
+                  <strong class="text-hf-cream">{{ t.name_html }}</strong>
+                {% elsif t.url %}
+                  <strong><a href="{{ t.url }}" target="_blank" rel="noopener" class="text-hf-cream hover:text-hf-coral underline underline-offset-2">{{ t.name }}</a></strong>
+                {% else %}
+                  <strong class="text-hf-cream">{{ t.name }}</strong>
+                {% endif %}
+                — {{ t.text }}
+              </p>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+        {% endif %}
+
+        {% if page.thanks.closing %}
+          <p class="text-center text-hf-cream/80 mt-10 text-lg">{{ page.thanks.closing }}</p>
+        {% endif %}
+      </div>
+    </section>
+    {% endif %}
+
+    <!-- MATERIAL DEL EVENTO -->
+    {% if page.gallery_url or page.slides_embed_url or page.slides_url %}
+    <section class="py-20 bg-hf-cream-50 text-hf-ink">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-10">
+          <p class="font-mono-sm text-hf-sage mb-3">Material del evento</p>
+          <h2 class="font-display text-4xl sm:text-5xl md:text-6xl leading-[1] text-hf-ink mb-5">
+            Revive el día.
+          </h2>
+        </div>
+
+        {% if page.slides_embed_url %}
+          <div class="mb-10">
+            <p class="font-mono-sm text-hf-sage mb-3 text-center">Las diapositivas</p>
+            <div class="relative w-full rounded-xl overflow-hidden border border-hf-ink/10 shadow-lg" style="padding-bottom: 56.25%;">
+              <iframe src="{{ page.slides_embed_url }}"
+                      class="absolute inset-0 w-full h-full"
+                      frameborder="0"
+                      allowfullscreen="true"
+                      mozallowfullscreen="true"
+                      webkitallowfullscreen="true"
+                      title="Diapositivas del Hacktoberfest Hack Day Oaxaca 2026">
+              </iframe>
+            </div>
+            {% if page.slides_url %}
+              <div class="text-center mt-4">
+                <a href="{{ page.slides_url }}" target="_blank" rel="noopener"
+                   class="inline-flex items-center gap-2 font-mono-sm text-xs text-hf-sage hover:text-hf-coral transition font-bold">
+                  Abrir diapositivas en Google Slides ↗
+                </a>
+              </div>
+            {% endif %}
+          </div>
+        {% endif %}
+
+        {% if page.gallery_url %}
+          <div class="text-center pt-6 border-t border-hf-ink/10">
+            <p class="font-mono-sm text-hf-sage mb-3">Galería de fotos</p>
+            <a href="{{ page.gallery_url }}" target="_blank" rel="noopener"
+               class="inline-flex items-center gap-2 bg-hf-coral hover:bg-hf-blush text-hf-ink px-7 py-4 rounded font-mono-sm font-bold text-base transition shadow-lg">
+              Abrir álbum completo ↗
+            </a>
+          </div>
+        {% endif %}
+      </div>
+    </section>
+    {% endif %}
+
+    <!-- Organizadores -->
+    <section class="py-20 md:py-24 bg-hf-cream-50 text-hf-ink">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <p class="font-mono-sm text-hf-sage mb-3">Lo hicieron posible</p>
+        <h2 class="font-display text-4xl sm:text-5xl md:text-6xl leading-[1] text-hf-ink mb-4">
+          Organizadores.
+        </h2>
+
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 items-stretch mt-10">
+          <a href="https://oaxacoders.org" target="_blank" rel="noopener"
+             class="bg-white rounded-lg p-8 border border-hf-ink/10 flex flex-col items-center justify-center min-h-[180px] hover:border-hf-coral transition">
+            <img src="/assets/images/oaxacoders.svg" alt="Oaxacoders" class="h-10 mb-4" />
+            <p class="font-mono-sm text-hf-ink/50">Organizador local</p>
+          </a>
+          <a href="https://atzomx.com.mx/" target="_blank" rel="noopener"
+             class="bg-white rounded-lg p-8 border border-hf-ink/10 flex flex-col items-center justify-center min-h-[180px] hover:border-hf-coral transition">
+            <img src="/assets/images/atzomx.svg" alt="Atzomx" class="h-16 mb-4" />
+            <p class="font-mono-sm text-hf-ink/50">Sede & café coworking</p>
+          </a>
+          <a href="https://mlh.io/" target="_blank" rel="noopener"
+             class="bg-white rounded-lg p-8 border border-hf-ink/10 flex flex-col items-center justify-center min-h-[180px] hover:border-hf-coral transition">
+            <img src="/assets/images/mlh.svg" alt="Major League Hacking" class="h-14 mb-4" />
+            <p class="font-mono-sm text-hf-ink/50">Organizador global</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Aliados y Patrocinadores -->
+    {% if page.aliados and page.aliados.size > 0 %}
+    <section class="py-20 md:py-24 bg-hf-sage-dark grid-bg">
+      <span class="pixel-plus text-hf-coral top-16 left-10 opacity-60"></span>
+      <span class="pixel-plus text-hf-mustard bottom-16 right-10 opacity-60"></span>
+
+      <div class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <p class="font-mono-sm text-hf-coral mb-3">Nos acompañaron</p>
+        <h2 class="font-display text-4xl sm:text-5xl md:text-6xl leading-[1] text-hf-cream mb-4">
+          Aliados y <span class="text-hf-mustard">Patrocinadores</span>.
+        </h2>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 items-stretch mt-10">
+          {% for aliado in page.aliados %}
+            {% if aliado.url %}
+              <a href="{{ aliado.url }}" target="_blank" rel="noopener"
+                 class="bg-hf-sage-darker rounded-lg p-8 border border-hf-cream/20 flex flex-col items-center justify-center min-h-[200px] text-hf-cream hover:border-hf-coral hover:bg-hf-sage-darker transition">
+                <img src="{{ aliado.logo }}" alt="{{ aliado.name }}" class="h-{{ aliado.logo_height | default: 16 }} mb-4 text-hf-cream" />
+                {% if aliado.role %}<p class="font-mono-sm text-hf-cream/50">{{ aliado.role }}</p>{% endif %}
+              </a>
+            {% else %}
+              <div class="bg-hf-sage-darker rounded-lg p-8 border border-hf-cream/20 flex flex-col items-center justify-center min-h-[200px] text-hf-cream hover:border-hf-coral transition">
+                <img src="{{ aliado.logo }}" alt="{{ aliado.name }}" class="h-{{ aliado.logo_height | default: 16 }} mb-4 text-hf-cream" />
+                {% if aliado.role %}<p class="font-mono-sm text-hf-cream/50">{{ aliado.role }}</p>{% endif %}
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+    {% endif %}
+
+    <!-- Link to event info page -->
+    {% if page.event_info_url %}
+    <section class="py-14 bg-hf-sage-darker">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <p class="font-mono-sm text-hf-cream/60 mb-3">Antes del evento</p>
+        <p class="text-hf-cream/80 mb-5">
+          Si quieres consultar la información original — agenda, qué traer, código de conducta, cómo llegar — aquí está.
+        </p>
+        <a href="{{ page.event_info_url }}"
+           class="inline-flex items-center gap-2 bg-transparent hover:bg-hf-cream/10 border border-hf-cream/40 text-hf-cream px-5 py-3 rounded font-mono-sm font-bold transition">
+          Ver la página original del evento →
+        </a>
+      </div>
+    </section>
+    {% endif %}
+
+    <!-- Footer -->
+    <footer class="bg-hf-sage-darker border-t border-hf-cream/10 py-10 mt-auto">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+        <a href="/" class="inline-flex items-center gap-3 text-hf-cream hover:text-hf-coral transition">
+          <img src="/assets/images/oaxacoders.svg" alt="Oaxacoders" class="h-8 brightness-0 invert opacity-90" />
+          <span class="font-mono-sm">Volver a Oaxacoders</span>
+        </a>
+        <div class="flex items-center gap-4 font-mono-sm text-hf-cream/50">
+          <a href="{{ site.community.telegram }}" target="_blank" rel="noopener" class="hover:text-hf-mustard transition">Telegram</a>
+          <span>·</span>
+          <a href="{{ site.community.whatsapp }}" target="_blank" rel="noopener" class="hover:text-hf-mustard transition">WhatsApp</a>
+          <span>·</span>
+          <a href="{{ site.community.github }}" target="_blank" rel="noopener" class="hover:text-hf-mustard transition">GitHub</a>
+        </div>
+      </div>
+    </footer>
+
+  </body>
+</html>

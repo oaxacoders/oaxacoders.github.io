@@ -1,5 +1,6 @@
 ---
 layout: hacktoberfest
+permalink: /eventos/hacktoberfest-hack-day-oaxaca-2026-info/
 title: "Hacktoberfest Hack Day Oaxaca 2026"
 date: '2026-10-31'
 date_display: 31 de octubre, 2026
