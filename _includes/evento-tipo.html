@@ -1,0 +1,44 @@
+{%- comment -%}
+  Uso: {% include evento-tipo.html event=event %} o {% include evento-tipo.html event=page %}
+  Asigna: tipo, tipo_label, tipo_bg, tipo_text, tipo_accent
+{%- endcomment -%}
+{%- assign tipo_raw = include.event.tipo -%}
+{%- if tipo_raw == nil or tipo_raw == "" -%}
+  {%- assign title_lower = include.event.title | downcase -%}
+  {%- if title_lower contains "taller" -%}
+    {%- assign tipo_raw = "taller" -%}
+  {%- elsif title_lower contains "dojo" -%}
+    {%- assign tipo_raw = "dojo" -%}
+  {%- elsif title_lower contains "hack" -%}
+    {%- assign tipo_raw = "hackathon" -%}
+  {%- else -%}
+    {%- assign tipo_raw = "platica" -%}
+  {%- endif -%}
+{%- endif -%}
+{%- case tipo_raw -%}
+  {%- when "platica" -%}
+    {%- assign tipo_label = "Plática" -%}
+    {%- assign tipo_bg = "bg-rosa" -%}
+    {%- assign tipo_text = "text-white" -%}
+    {%- assign tipo_accent = "text-rosa" -%}
+    {%- assign tipo_border = "border-rosa" -%}
+  {%- when "taller" -%}
+    {%- assign tipo_label = "Taller" -%}
+    {%- assign tipo_bg = "bg-turquesa" -%}
+    {%- assign tipo_text = "text-anil" -%}
+    {%- assign tipo_accent = "text-turquesa" -%}
+    {%- assign tipo_border = "border-turquesa" -%}
+  {%- when "dojo" -%}
+    {%- assign tipo_label = "Coding Dojo" -%}
+    {%- assign tipo_bg = "bg-turquesa" -%}
+    {%- assign tipo_text = "text-anil" -%}
+    {%- assign tipo_accent = "text-turquesa" -%}
+    {%- assign tipo_border = "border-turquesa" -%}
+  {%- when "hackathon" -%}
+    {%- assign tipo_label = "Hackathon" -%}
+    {%- assign tipo_bg = "bg-cempasuchil" -%}
+    {%- assign tipo_text = "text-anil" -%}
+    {%- assign tipo_accent = "text-cempasuchil" -%}
+    {%- assign tipo_border = "border-cempasuchil" -%}
+{%- endcase -%}
+{%- assign tipo = tipo_raw -%}

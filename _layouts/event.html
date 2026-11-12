@@ -43,48 +43,154 @@ layout: default
   }{% endif %}
 }
 </script>
-<article class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-  <a href="/eventos/" class="inline-flex items-center gap-1 text-sm text-gray-400 hover:text-teal-500 transition mb-8">
-    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+
+{% include evento-tipo.html event=page %}
+
+<article class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+  <a href="/eventos/" class="inline-flex items-center gap-1 label-mono text-anil/70 hover:text-rosa transition mb-8">
+    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"/></svg>
     Todos los eventos
   </a>
 
   <header class="mb-10">
-    {% if page.date_display %}
-      <p class="text-xs font-semibold uppercase tracking-wider text-accent-600 mb-3">{{ page.date_display }}</p>
-    {% endif %}
-    <h1 class="text-3xl sm:text-4xl font-bold text-navy-700 mb-5 leading-tight">{{ page.title }}</h1>
-    <div class="flex flex-wrap gap-3">
-      {% if page.time_display %}
-        <span class="inline-flex items-center gap-1.5 text-sm text-teal-700 bg-teal-50 px-3 py-1.5 rounded-lg">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6v6l4 2m6-2a10 10 0 11-20 0 10 10 0 0120 0z"/></svg>
-          {{ page.time_display }}
-        </span>
-      {% endif %}
-      {% if page.venue %}
-        <span class="inline-flex items-center gap-1.5 text-sm text-teal-700 bg-teal-50 px-3 py-1.5 rounded-lg">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a2 2 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-          {{ page.venue }}
-        </span>
+    <div class="flex flex-wrap items-center gap-3 mb-5">
+      <span class="label-mono {{ tipo_bg }} {{ tipo_text }} inline-flex items-center h-8 px-3 rounded-[6px]">{{ tipo_label }}</span>
+      {% if page.nivel %}
+        {% include nivel.html nivel=page.nivel color=tipo_bg %}
       {% endif %}
       {% if page.is_free %}
-        <span class="inline-flex items-center text-sm text-accent-700 bg-accent-50 px-3 py-1.5 rounded-lg font-medium border border-accent-200">Gratis</span>
+        <span class="label-mono bg-cempasuchil text-anil inline-flex items-center h-8 px-3 rounded-[6px]">Gratis</span>
       {% endif %}
     </div>
+
+    <h1 class="font-display text-[40px] sm:text-[56px] md:text-[72px] text-anil leading-[0.95] mb-6">{{ page.title }}</h1>
+
+    <div class="flex flex-wrap items-baseline gap-x-6 gap-y-2">
+      {% if page.date_display or page.time_display %}
+        <p class="font-display text-[26px] sm:text-[34px] text-anil leading-none">
+          {% if page.date_display %}{{ page.date_display }}{% endif %}
+          {% if page.time_display %} · <span class="{{ tipo_accent }}">{{ page.time_display }}</span>{% endif %}
+        </p>
+      {% endif %}
+      {% if page.venue %}
+        <p class="text-[20px] sm:text-[22px] font-bold text-anil">{{ page.venue }}</p>
+      {% endif %}
+    </div>
+    {% if page.venue_address %}
+      <p class="font-mono text-[13px] text-anil/70 mt-2">{{ page.venue_address }}</p>
+    {% endif %}
   </header>
 
-  <div class="prose prose-gray max-w-none mb-10 leading-relaxed text-gray-600">
+  {% assign has_register = false %}
+  {% if page.eventbrite_url or page.register_url %}{% assign has_register = true %}{% endif %}
+  {% assign register_href = page.register_url | default: page.eventbrite_url %}
+  {% assign status_lower = page.status | default: "" | downcase %}
+  {% assign is_sold_out = false %}
+  {% if status_lower contains "agotado" or status_lower contains "sold" %}{% assign is_sold_out = true %}{% endif %}
+
+  {% if has_register %}
+    <div class="bg-anil text-crema rounded-[12px] p-6 sm:p-8 mb-10 on-anil">
+      <div class="flex flex-col sm:flex-row sm:items-center gap-6 sm:justify-between">
+        <div>
+          <h2 class="font-display text-[28px] sm:text-[34px] text-crema leading-tight mb-1">
+            {% if is_sold_out %}Lugar agotado{% else %}Regístrate{% endif %}
+          </h2>
+          {% if page.is_free and is_sold_out == false %}
+            <p class="label-mono text-cempasuchil">¡Es gratis!</p>
+          {% endif %}
+        </div>
+        {% if is_sold_out %}
+          <span class="inline-flex items-center justify-center h-12 px-6 rounded-[6px] bg-crema/20 text-crema text-[20px] font-extrabold cursor-not-allowed select-none" aria-disabled="true">
+            Agotado
+          </span>
+        {% else %}
+          <a href="{{ register_href }}" target="_blank" rel="noopener"
+             class="inline-flex items-center justify-center h-12 px-6 rounded-[6px] bg-cempasuchil text-anil text-[20px] font-extrabold hover:bg-crema transition">
+            Reservar mi lugar
+          </a>
+        {% endif %}
+      </div>
+    </div>
+  {% endif %}
+
+  <div class="prose max-w-none mb-10">
     {{ content }}
   </div>
 
-  {% if page.eventbrite_url %}
-    <div class="mt-10 p-6 bg-navy-50 rounded-2xl border border-navy-100 text-center">
-      <p class="text-sm text-gray-600 mb-4">Registrate para asegurar tu lugar</p>
-      <a href="{{ page.eventbrite_url }}" target="_blank" rel="noopener"
-         class="inline-flex items-center gap-2 bg-accent-500 text-white px-8 py-3.5 rounded-xl font-semibold hover:bg-accent-600 transition-all shadow-lg shadow-accent-500/25">
-        Registrarse en Eventbrite
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
-      </a>
-    </div>
+  {% if page.venue_embed_url %}
+    <section class="mb-10">
+      <h2 class="font-display text-[28px] sm:text-[34px] text-anil mb-4">Cómo llegar</h2>
+      <div class="bg-white rounded-[12px] overflow-hidden">
+        <iframe src="{{ page.venue_embed_url }}"
+                class="w-full h-80 md:h-96 block"
+                style="border:0;"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                title="Ubicación del evento"></iframe>
+      </div>
+      {% if page.venue_maps_url %}
+        <div class="mt-4">
+          <a href="{{ page.venue_maps_url }}" target="_blank" rel="noopener"
+             class="inline-flex items-center gap-2 h-11 px-5 rounded-[6px] bg-anil text-crema text-[17px] font-extrabold hover:bg-anil-900 transition">
+            Abrir en Google Maps →
+          </a>
+        </div>
+      {% endif %}
+    </section>
+  {% endif %}
+
+  {% if page.agenda and page.agenda.size > 0 %}
+    <section class="mb-10">
+      <h2 class="font-display text-[28px] sm:text-[34px] text-anil mb-4">Agenda</h2>
+      <ul class="space-y-3">
+        {% for block in page.agenda %}
+          <li class="bg-white rounded-[12px] p-5 flex items-baseline gap-5">
+            <span class="font-mono text-[14px] font-bold {{ tipo_accent }} shrink-0 min-w-[90px]">{{ block.time }}</span>
+            <div>
+              <p class="text-[20px] font-extrabold text-anil leading-tight">{{ block.title }}</p>
+              {% if block.description %}<p class="text-[16px] text-anil/80 mt-1 leading-relaxed">{{ block.description }}</p>{% endif %}
+            </div>
+          </li>
+        {% endfor %}
+      </ul>
+    </section>
+  {% endif %}
+
+  {% if page.requisitos and page.requisitos.size > 0 %}
+    <section class="mb-10">
+      <h2 class="font-display text-[28px] sm:text-[34px] text-anil mb-4">Qué traer</h2>
+      <div class="grid sm:grid-cols-2 gap-4">
+        {% for item in page.requisitos %}
+          <div class="bg-white rounded-[12px] p-5">
+            <p class="text-[20px] font-extrabold text-anil mb-1">{{ item.title }}</p>
+            {% if item.description %}<p class="text-[16px] text-anil/80 leading-relaxed">{{ item.description }}</p>{% endif %}
+          </div>
+        {% endfor %}
+      </div>
+    </section>
+  {% endif %}
+
+  {% if page.recursos and page.recursos.size > 0 %}
+    <section class="mb-10">
+      <h2 class="font-display text-[28px] sm:text-[34px] text-anil mb-4">Recursos</h2>
+      <div class="grid md:grid-cols-2 gap-4">
+        {% for group in page.recursos %}
+          <div class="bg-white rounded-[12px] p-6">
+            <h3 class="text-[22px] font-extrabold text-anil mb-2">{{ group.heading }}</h3>
+            {% if group.description %}<p class="text-[15px] text-anil/80 mb-3 leading-relaxed">{{ group.description }}</p>{% endif %}
+            <ul class="space-y-1.5 text-[16px] text-anil/90">
+              {% for item in group.items %}<li>• {{ item }}</li>{% endfor %}
+            </ul>
+            {% if group.link_url %}
+              <a href="{{ group.link_url }}" target="_blank" rel="noopener"
+                 class="inline-block mt-4 text-[14px] font-extrabold text-anil underline decoration-rosa decoration-2 underline-offset-4 hover:text-rosa transition">
+                {{ group.link_label | default: "Ver más" }} ↗
+              </a>
+            {% endif %}
+          </div>
+        {% endfor %}
+      </div>
+    </section>
   {% endif %}
 </article>

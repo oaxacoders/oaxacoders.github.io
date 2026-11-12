@@ -7,80 +7,112 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;700;800;900&family=Martian+Mono:wght@400;600;700&display=swap" rel="stylesheet" />
     <style type="text/tailwindcss">
       @theme {
-        --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
-        /* Navy — #01065c — primary text, headings, dark accents */
-        --color-navy-50: #eef0ff;
-        --color-navy-100: #dde1ff;
-        --color-navy-200: #b3baed;
-        --color-navy-300: #8089d0;
-        --color-navy-400: #4f58a8;
-        --color-navy-500: #2a3385;
-        --color-navy-600: #151c6e;
-        --color-navy-700: #01065c;
-        --color-navy-800: #010450;
-        --color-navy-900: #010340;
-        --color-navy-950: #000220;
-        /* Green — #37d31c — CTAs, highlights, accents */
-        --color-accent-50: #edfce8;
-        --color-accent-100: #d5f9cc;
-        --color-accent-200: #aaf29a;
-        --color-accent-300: #72e65a;
-        --color-accent-400: #4cdb2f;
-        --color-accent-500: #37d31c;
-        --color-accent-600: #28a814;
-        --color-accent-700: #1f8010;
-        --color-accent-800: #1a6510;
-        --color-accent-900: #155310;
-        /* Teal — #3e83a6 — secondary, links, badges */
-        --color-teal-50: #eef7fb;
-        --color-teal-100: #d5ecf5;
-        --color-teal-200: #aed8eb;
-        --color-teal-300: #7bbdd9;
-        --color-teal-400: #539fc2;
-        --color-teal-500: #3e83a6;
-        --color-teal-600: #336d8c;
-        --color-teal-700: #2a5872;
-        --color-teal-800: #224860;
-        --color-teal-900: #1c3c52;
+        --font-sans: 'Barlow Semi Condensed', ui-sans-serif, system-ui, sans-serif;
+        --font-mono: 'Martian Mono', ui-monospace, monospace;
+
+        --color-anil: #01065C;
+        --color-anil-900: #000340;
+        --color-crema: #FFF6E3;
+        --color-chapulin: #37D31C;
+        --color-rosa: #E4007C;
+        --color-rosa-700: #B80064;
+        --color-cempasuchil: #FFC629;
+        --color-turquesa: #009AA8;
+        --color-turquesa-700: #007A85;
+
+        --radius-sm: 6px;
+        --radius-md: 12px;
       }
 
-      .prose h2 {
-        font-size: var(--text-xl);
-        line-height: var(--text-xl--line-height);
+      body { font-family: var(--font-sans); }
+
+      .font-mono { font-family: var(--font-mono); }
+      .font-display { font-family: var(--font-sans); font-weight: 900; letter-spacing: -0.015em; }
+
+      .label-mono {
+        font-family: var(--font-mono);
+        font-size: 13px;
         font-weight: 700;
-        color: var(--color-navy-700);
-        margin-top: 2rem;
-        margin-bottom: 0.75rem;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+      }
+
+      /* Prose per BRIEF 3.5 */
+      .prose {
+        color: var(--color-anil);
+      }
+      .prose h2 {
+        font-size: 34px;
+        line-height: 1.05;
+        font-weight: 900;
+        color: var(--color-anil);
+        margin-top: 2.25rem;
+        margin-bottom: 1rem;
       }
       .prose h3 {
-        font-size: var(--text-lg);
-        line-height: var(--text-lg--line-height);
-        font-weight: 600;
-        color: var(--color-navy-700);
-        margin-top: 1.5rem;
-        margin-bottom: 0.5rem;
+        font-size: 24px;
+        line-height: 1.1;
+        font-weight: 800;
+        color: var(--color-anil);
+        margin-top: 1.75rem;
+        margin-bottom: 0.6rem;
       }
       .prose p {
+        font-size: 20px;
+        line-height: 1.5;
         margin-bottom: 1rem;
-        text-align: justify;
+        text-align: left;
+        max-width: 68ch;
       }
       .prose a {
-        color: var(--color-teal-500);
+        color: var(--color-anil);
         text-decoration: underline;
+        text-decoration-color: var(--color-rosa);
+        text-decoration-thickness: 2px;
+        text-underline-offset: 3px;
       }
-      .prose a:hover {
-        color: var(--color-teal-600);
-      }
-      .prose ul, .prose ol {
-        padding-left: 1.5rem;
-        margin-bottom: 1rem;
-      }
+      .prose a:hover { color: var(--color-rosa); }
+      .prose strong { color: var(--color-anil); font-weight: 800; }
+      .prose ul, .prose ol { padding-left: 1.5rem; margin-bottom: 1rem; max-width: 68ch; }
       .prose ul { list-style-type: disc; }
       .prose ol { list-style-type: decimal; }
-      .prose li { margin-bottom: 0.25rem; }
+      .prose li { margin-bottom: 0.35rem; font-size: 20px; line-height: 1.5; }
+      .prose li::marker { color: var(--color-rosa); }
+      .prose code {
+        font-family: var(--font-mono);
+        background: #ffffff;
+        padding: 2px 6px;
+        border-radius: 4px;
+        font-size: 0.9em;
+      }
+      .prose pre {
+        background: var(--color-anil);
+        color: var(--color-crema);
+        padding: 1rem 1.25rem;
+        border-radius: 12px;
+        overflow-x: auto;
+        margin-bottom: 1.25rem;
+      }
+      .prose pre code { background: transparent; color: inherit; padding: 0; }
+      .prose blockquote {
+        border-left: 4px solid var(--color-rosa);
+        padding-left: 1rem;
+        margin: 1rem 0;
+        color: var(--color-anil);
+      }
+      .prose img { border-radius: 12px; margin: 1.25rem 0; }
+
+      /* Focus visible global */
+      a:focus-visible, button:focus-visible, input:focus-visible {
+        outline: 3px solid var(--color-anil);
+        outline-offset: 2px;
+      }
+      .on-anil a:focus-visible, .on-anil button:focus-visible, .on-anil input:focus-visible {
+        outline-color: var(--color-cempasuchil);
+      }
     </style>
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
@@ -120,7 +152,7 @@
     }
     </script>
   </head>
-  <body class="min-h-screen flex flex-col bg-gray-50 text-gray-900 font-sans antialiased">
+  <body class="min-h-screen flex flex-col bg-crema text-anil font-sans antialiased">
     {% include header.html %}
     <main class="flex-1">
       {{ content }}

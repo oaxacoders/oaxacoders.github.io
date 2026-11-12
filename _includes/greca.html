@@ -1,0 +1,10 @@
+{% assign greca_variant = include.variant | default: "anil" %}
+{% if greca_variant == "cempasuchil" %}
+  <div aria-hidden="true"
+       class="w-full bg-anil"
+       style="height:24px; background-image:url('/assets/images/greca-cempasuchil.svg'); background-repeat:repeat-x; background-size:auto 100%; background-position:center;"></div>
+{% else %}
+  <div aria-hidden="true"
+       class="w-full bg-crema"
+       style="height:24px; background-image:url('/assets/images/greca-anil.svg'); background-repeat:repeat-x; background-size:auto 100%; background-position:center;"></div>
+{% endif %}

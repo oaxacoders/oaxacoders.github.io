@@ -5,12 +5,16 @@ permalink: /eventos/
 description: Próximos meetups, talleres y hackathons de Oaxacoders — la comunidad de programadores en Oaxaca, México. Participación gratuita.
 ---
 
-<section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-  <div class="mb-12">
-    <h1 class="text-3xl sm:text-4xl font-bold text-navy-700 mb-3">Eventos</h1>
-    <p class="text-gray-500 max-w-lg">Meetups, talleres y actividades de la comunidad Oaxacoders.</p>
+<section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 md:pt-16 pb-16">
+  <div class="mb-6">
+    <h1 class="font-display text-[44px] sm:text-[60px] md:text-[72px] text-anil leading-[0.95]">Eventos</h1>
+    <p class="text-[20px] text-anil/80 mt-3 max-w-xl">Meetups, talleres y actividades de la comunidad Oaxacoders.</p>
   </div>
+</section>
 
+{% include listones.html %}
+
+<section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
   {% assign now = site.time | date: "%Y-%m-%d" %}
   {% assign all_events = site.events | sort: "date" %}
   {% assign upcoming_events = "" | split: "" %}
@@ -22,29 +26,38 @@ description: Próximos meetups, talleres y hackathons de Oaxacoders — la comun
   {% endfor %}
 
   {% if upcoming_events.size > 0 %}
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
       {% for event in upcoming_events %}
         {% include event-card.html event=event %}
       {% endfor %}
     </div>
   {% else %}
-    <div class="text-center py-16">
-      <img src="/assets/images/programmer.jpeg" alt="Chapulin programando"
-           class="w-72 mx-auto rounded-2xl shadow-lg mb-8" />
-      <p class="text-gray-500 text-lg mb-2">No hay eventos programados por el momento.</p>
-      <p class="text-gray-400">
-        Únete a nuestros canales de
-        <a href="{{ site.community.telegram }}" class="text-teal-500 hover:underline" target="_blank" rel="noopener">Telegram</a> o
-        <a href="{{ site.community.whatsapp }}" class="text-teal-500 hover:underline" target="_blank" rel="noopener">WhatsApp</a>
-        para enterarte de los próximos eventos.
-      </p>
+    <div class="grid md:grid-cols-2 gap-10 items-center">
+      <div class="pr-6 pb-6">
+        {% include marco-ilustracion.html src="/assets/images/programmer.jpeg" alt="Chapulin programando" %}
+      </div>
+      <div>
+        <p class="text-[22px] text-anil leading-[1.4] mb-3">No hay eventos programados por el momento.</p>
+        <p class="text-[18px] text-anil/80 leading-relaxed mb-6">
+          Únete a nuestros canales para enterarte de los próximos.
+        </p>
+        <div class="flex flex-wrap gap-3">
+          <a href="{{ site.community.telegram }}" target="_blank" rel="noopener"
+             class="inline-flex items-center justify-center h-11 px-5 rounded-[6px] bg-rosa text-white text-[17px] font-extrabold hover:bg-rosa-700 transition">
+            Telegram
+          </a>
+          <a href="{{ site.community.whatsapp }}" target="_blank" rel="noopener"
+             class="inline-flex items-center justify-center h-11 px-5 rounded-[6px] border-2 border-anil text-anil text-[17px] font-extrabold hover:bg-anil hover:text-crema transition">
+            WhatsApp
+          </a>
+        </div>
+      </div>
     </div>
   {% endif %}
 
-  <div class="mt-12 text-center">
-    <a href="/eventos/todos/" class="inline-flex items-center gap-2 text-teal-600 hover:text-teal-500 font-medium transition">
-      Ver todos los eventos (pasados y futuros)
-      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+  <div class="mt-12">
+    <a href="/eventos/todos/" class="inline-flex items-center gap-2 text-[17px] font-extrabold text-anil underline decoration-rosa decoration-2 underline-offset-4 hover:text-rosa transition">
+      Ver todos los eventos (pasados y futuros) →
     </a>
   </div>
 </section>

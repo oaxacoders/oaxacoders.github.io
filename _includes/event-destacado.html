@@ -1,0 +1,23 @@
+{% include evento-tipo.html event=include.event %}
+<a href="{{ include.event.url }}"
+   class="group block bg-white rounded-[12px] p-6 sm:p-8 border-2 border-transparent hover:border-anil transition no-underline">
+  <div class="flex flex-col sm:flex-row sm:items-center gap-6">
+    {% if include.event.date %}
+      {% include fecha-bloque.html date=include.event.date bg=tipo_bg text=tipo_text size="md" %}
+    {% endif %}
+    <div class="min-w-0 flex-1">
+      <p class="label-mono {{ tipo_accent }} mb-2">
+        Próxima {{ tipo_label }}{% if include.event.time_display %} · {{ include.event.time_display }}{% endif %}{% if include.event.venue %} · {{ include.event.venue }}{% endif %}
+      </p>
+      <h3 class="text-[28px] sm:text-[32px] font-extrabold text-anil leading-[1.05] group-hover:underline decoration-anil decoration-2 underline-offset-4">
+        {{ include.event.title }}
+      </h3>
+    </div>
+    <span class="hidden sm:inline-block shrink-0 text-[17px] font-extrabold text-anil group-hover:underline decoration-rosa decoration-2 underline-offset-4">
+      Ver detalles &rarr;
+    </span>
+    <span class="sm:hidden inline-block text-[17px] font-extrabold text-anil group-hover:underline decoration-rosa decoration-2 underline-offset-4">
+      Ver detalles &rarr;
+    </span>
+  </div>
+</a>

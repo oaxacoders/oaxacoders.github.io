@@ -1,0 +1,40 @@
+{%- comment -%}
+  Uso: {% include fecha-bloque.html date=event.date bg=tipo_bg text=tipo_text size="md" %}
+  size: "sm" (pill), "md" (84px cuadro), "lg" (120px hero)
+{%- endcomment -%}
+{%- assign fb_day = include.date | date: "%-d" -%}
+{%- assign fb_month_num = include.date | date: "%m" -%}
+{%- case fb_month_num -%}
+  {%- when "01" -%}{%- assign fb_month = "ENE" -%}
+  {%- when "02" -%}{%- assign fb_month = "FEB" -%}
+  {%- when "03" -%}{%- assign fb_month = "MAR" -%}
+  {%- when "04" -%}{%- assign fb_month = "ABR" -%}
+  {%- when "05" -%}{%- assign fb_month = "MAY" -%}
+  {%- when "06" -%}{%- assign fb_month = "JUN" -%}
+  {%- when "07" -%}{%- assign fb_month = "JUL" -%}
+  {%- when "08" -%}{%- assign fb_month = "AGO" -%}
+  {%- when "09" -%}{%- assign fb_month = "SEP" -%}
+  {%- when "10" -%}{%- assign fb_month = "OCT" -%}
+  {%- when "11" -%}{%- assign fb_month = "NOV" -%}
+  {%- when "12" -%}{%- assign fb_month = "DIC" -%}
+{%- endcase -%}
+{%- assign fb_bg = include.bg | default: "bg-rosa" -%}
+{%- assign fb_text = include.text | default: "text-white" -%}
+{%- assign fb_size = include.size | default: "md" -%}
+{%- if fb_size == "lg" -%}
+  {%- assign fb_wh = "w-[120px] h-[120px]" -%}
+  {%- assign fb_day_cls = "text-[54px]" -%}
+  {%- assign fb_month_cls = "text-[14px]" -%}
+{%- elsif fb_size == "sm" -%}
+  {%- assign fb_wh = "w-[60px] h-[60px]" -%}
+  {%- assign fb_day_cls = "text-[26px]" -%}
+  {%- assign fb_month_cls = "text-[11px]" -%}
+{%- else -%}
+  {%- assign fb_wh = "w-[84px] h-[84px]" -%}
+  {%- assign fb_day_cls = "text-[38px]" -%}
+  {%- assign fb_month_cls = "text-[12px]" -%}
+{%- endif -%}
+<div class="shrink-0 {{ fb_wh }} rounded-[12px] {{ fb_bg }} {{ fb_text }} flex flex-col items-center justify-center leading-none" aria-hidden="true">
+  <span class="{{ fb_day_cls }} font-black leading-none">{{ fb_day }}</span>
+  <span class="{{ fb_month_cls }} font-mono font-bold tracking-[0.06em] mt-1">{{ fb_month }}</span>
+</div>
