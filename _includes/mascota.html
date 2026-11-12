@@ -1,0 +1,12 @@
+{%- comment -%}
+  Uso: {% include mascota.html src="/assets/images/mascota/coder.png" alt="..." pedestal="cempasuchil" %}
+  pedestal: "cempasuchil" | "turquesa" | "none" (default "cempasuchil")
+  Para imágenes con fondo transparente. Dibuja un pedestal (rectángulo) detrás del personaje, no fondo completo.
+{%- endcomment -%}
+{%- assign m_pedestal = include.pedestal | default: "cempasuchil" -%}
+<div class="relative inline-block max-w-full">
+  {%- if m_pedestal != "none" -%}
+    <div aria-hidden="true" class="absolute left-1/2 -translate-x-1/2 bottom-[8%] w-[60%] h-[10%] bg-{{ m_pedestal }} rounded-[12px]"></div>
+  {%- endif -%}
+  <img src="{{ include.src }}" alt="{{ include.alt }}" class="relative block w-full h-auto" />
+</div>

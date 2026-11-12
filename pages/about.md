@@ -16,8 +16,8 @@ description: Conoce a Oaxacoders, la comunidad abierta y gratuita de programador
       </p>
     </div>
     <div class="flex justify-center md:justify-end">
-      <div class="w-full max-w-sm pr-6 pb-6">
-        {% include marco-ilustracion.html src="/assets/images/programmer_grasshopper.jpeg" alt="Chapulin programador" %}
+      <div class="w-full max-w-sm">
+        {% include mascota.html src="/assets/images/mascota/coder.png" alt="Chapulín programador" pedestal="cempasuchil" %}
       </div>
     </div>
   </div>
@@ -58,8 +58,8 @@ description: Conoce a Oaxacoders, la comunidad abierta y gratuita de programador
 <section class="bg-anil text-crema on-anil">
   <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20">
     <div class="grid md:grid-cols-2 gap-10 md:gap-14 items-center">
-      <div class="pr-6 pb-6">
-        {% include marco-ilustracion.html src="/assets/images/programmers.jpeg" alt="Chapulines programadores" %}
+      <div class="">
+        {% include mascota.html src="/assets/images/mascota/karateka.png" alt="Chapulín karateka — mascota de Oaxacoders" pedestal="cempasuchil" %}
       </div>
       <div>
         <p class="label-mono text-cempasuchil mb-5">Unirse</p>

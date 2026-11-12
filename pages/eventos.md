@@ -33,8 +33,8 @@ description: Próximos meetups, talleres y hackathons de Oaxacoders — la comun
     </div>
   {% else %}
     <div class="grid md:grid-cols-2 gap-10 items-center">
-      <div class="pr-6 pb-6">
-        {% include marco-ilustracion.html src="/assets/images/programmer.jpeg" alt="Chapulin programando" %}
+      <div class="">
+        {% include mascota.html src="/assets/images/mascota/constructor.png" alt="Chapulín con casco y martillo" pedestal="cempasuchil" %}
       </div>
       <div>
         <p class="text-[22px] text-anil leading-[1.4] mb-3">No hay eventos programados por el momento.</p>
