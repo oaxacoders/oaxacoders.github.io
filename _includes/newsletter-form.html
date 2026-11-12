@@ -1,28 +1,23 @@
-<div class="relative overflow-hidden rounded-2xl bg-gradient-to-br from-navy-700 to-navy-900 p-8 sm:p-10 text-white">
-  <div class="relative z-10">
-    <h3 class="text-xl font-bold mb-2">Suscríbete al newsletter</h3>
-    <p class="text-navy-200 text-sm mb-6">Recibe noticias sobre eventos y actividades de la comunidad.</p>
-    <form
-      action="https://buttondown.com/api/emails/embed-subscribe/oaxacoders"
-      method="post"
-      target="popupwindow"
-      class="flex flex-col sm:flex-row gap-3"
-    >
-      <input
-        type="email"
-        name="email"
-        placeholder="tu@email.com"
-        required
-        class="flex-1 px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-accent-400 backdrop-blur-sm"
-      />
-      <button
-        type="submit"
-        class="px-6 py-3 rounded-xl bg-accent-500 text-white font-semibold hover:bg-accent-600 transition shadow-lg shadow-accent-500/25"
-      >
-        Suscribirse
-      </button>
-    </form>
-  </div>
-  <div class="absolute -top-10 -right-10 w-40 h-40 bg-accent-500/10 rounded-full"></div>
-  <div class="absolute -bottom-10 -left-10 w-60 h-60 bg-teal-500/10 rounded-full"></div>
+<div class="bg-white rounded-[12px] p-6 sm:p-8">
+  <h3 class="text-[26px] font-extrabold text-anil mb-2 leading-tight">Suscríbete al newsletter</h3>
+  <p class="text-[17px] text-anil/80 mb-5">Recibe noticias sobre eventos y actividades de la comunidad.</p>
+  <form
+    action="https://buttondown.com/api/emails/embed-subscribe/oaxacoders"
+    method="post"
+    target="popupwindow"
+    class="flex flex-col sm:flex-row gap-3">
+    <label class="sr-only" for="newsletter-email">Correo electrónico</label>
+    <input
+      id="newsletter-email"
+      type="email"
+      name="email"
+      placeholder="tu@email.com"
+      required
+      class="flex-1 h-12 px-4 text-[17px] rounded-[6px] border-2 border-anil bg-white text-anil placeholder-anil/50 focus:outline-none focus:border-rosa" />
+    <button
+      type="submit"
+      class="shrink-0 h-12 px-6 rounded-[6px] bg-rosa text-white text-[17px] font-extrabold hover:bg-rosa-700 transition">
+      Suscribirse
+    </button>
+  </form>
 </div>

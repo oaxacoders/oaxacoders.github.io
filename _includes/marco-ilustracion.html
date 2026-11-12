@@ -1,0 +1,7 @@
+{%- comment -%}
+  Uso: {% include marco-ilustracion.html src="/assets/images/programmer.jpeg" alt="..." %}
+{%- endcomment -%}
+<div class="relative inline-block max-w-full">
+  <div aria-hidden="true" class="absolute inset-0 translate-x-6 translate-y-6 bg-cempasuchil rounded-[12px]"></div>
+  <img src="{{ include.src }}" alt="{{ include.alt }}" class="relative block w-full h-auto rounded-[12px]" />
+</div>

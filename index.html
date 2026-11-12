@@ -3,120 +3,131 @@ layout: default
 title: Oaxacoders — Comunidad de programadores en Oaxaca
 description: Oaxacoders es la comunidad abierta y gratuita de programadores en Oaxaca, México. Meetups, talleres y hackathons para aprender, compartir y crear tecnología.
 ---
-<!-- Hero -->
-<section class="relative overflow-hidden bg-gradient-to-br from-navy-50 via-white to-teal-50">
-  <div class="absolute inset-0 overflow-hidden">
-    <div class="absolute -top-40 -right-40 w-96 h-96 bg-accent-100/30 rounded-full blur-3xl"></div>
-    <div class="absolute -bottom-40 -left-40 w-96 h-96 bg-teal-100/30 rounded-full blur-3xl"></div>
-  </div>
-  <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28 flex flex-col md:flex-row items-center gap-10 md:gap-16">
-    <div class="flex-1 text-center md:text-left">
-      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent-50 text-accent-700 text-xs font-semibold mb-6 border border-accent-200">
-        <span class="w-1.5 h-1.5 rounded-full bg-accent-500"></span>
-        Comunidad abierta y gratuita
+<!-- HERO -->
+<section class="bg-crema">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 md:pt-16 pb-16 md:pb-20">
+    <div class="grid md:grid-cols-[1.25fr_1fr] gap-10 md:gap-14 items-center">
+      <div>
+        <p class="label-mono text-rosa mb-5">Gratuita · Desde Oaxaca</p>
+        <h1 class="font-display text-[40px] sm:text-[52px] md:text-[60px] lg:text-[68px] text-anil leading-[0.95] mb-7 max-w-[11ch] md:max-w-none">
+          Comunidad abierta de programadores en Oaxaca.
+        </h1>
+        <p class="text-[20px] sm:text-[22px] text-anil leading-[1.4] mb-8 max-w-xl">
+          Meetups, talleres y hackathons para aprender, compartir y crear tecnología — con tradición oaxaqueña.
+        </p>
+        <div class="flex flex-wrap gap-3">
+          <a href="/eventos/" class="inline-flex items-center justify-center h-12 px-6 rounded-[6px] bg-rosa text-white text-[20px] font-extrabold hover:bg-rosa-700 transition">
+            Ver eventos
+          </a>
+          <a href="{{ site.community.telegram }}" target="_blank" rel="noopener"
+             class="inline-flex items-center justify-center h-12 px-6 rounded-[6px] border-2 border-anil text-anil text-[20px] font-extrabold hover:bg-anil hover:text-crema transition">
+            Unirse a Telegram
+          </a>
+        </div>
       </div>
-      <img src="/assets/images/oaxacoders.svg" alt="Oaxacoders" class="h-16 sm:h-20 md:h-24 mb-6 mx-auto md:mx-0" />
-      <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-navy-700 mb-5 leading-[1.1] tracking-tight">
-        Comunidad de<br class="hidden sm:block" />
-        <span class="text-accent-500">Programadores</span><br class="hidden sm:block" />
-        en Oaxaca
-      </h1>
-      <p class="text-lg text-gray-500 mb-8 max-w-md mx-auto md:mx-0 leading-relaxed">
-        Nos reunimos para aprender, compartir y crear tecnología juntos. Meetups, talleres y hackathons.
-      </p>
-      <div class="flex justify-center md:justify-start gap-3 flex-wrap">
-        <a href="/eventos/" class="inline-flex items-center gap-2 bg-accent-500 text-white px-6 py-3 rounded-xl font-semibold hover:bg-accent-600 transition-all shadow-lg shadow-accent-500/25 hover:shadow-accent-500/40">
-          Ver Eventos
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-        </a>
-        <a href="{{ site.community.telegram }}" target="_blank" rel="noopener"
-           class="inline-flex items-center gap-2 bg-white text-navy-700 px-6 py-3 rounded-xl font-semibold hover:bg-gray-50 transition-all shadow-md border border-gray-200">
-          Unirse a la Comunidad
-        </a>
-      </div>
-    </div>
-    <div class="flex-1 flex justify-center">
-      <div class="relative">
-        <div class="absolute -inset-4 bg-gradient-to-br from-accent-200 to-teal-200 rounded-3xl blur-2xl opacity-40"></div>
-        <img src="/assets/images/programmer_grasshopper.jpeg" alt="Chapulin programador"
-             class="relative w-72 sm:w-80 md:w-96 rounded-2xl shadow-2xl" />
+
+      <div class="flex justify-center md:justify-end">
+        <div class="w-full max-w-md md:max-w-none pr-6 pb-6">
+          {% include marco-ilustracion.html src="/assets/images/programmer_grasshopper.jpeg" alt="Chapulín programando" %}
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Upcoming Events -->
-<section class="py-20 bg-white">
-  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center mb-12">
-      <h2 class="text-3xl font-bold text-navy-700 mb-3">Próximos Eventos</h2>
-      <p class="text-gray-500 max-w-md mx-auto">Meetups, talleres y más actividades de la comunidad.</p>
-    </div>
-    {% assign now = site.time | date: "%Y-%m-%d" %}
-    {% assign all_events = site.events | sort: "date" %}
-    {% assign upcoming = "" | split: "" %}
-    {% for event in all_events %}
-      {% assign event_date = event.date | date: "%Y-%m-%d" %}
-      {% if event_date >= now %}
-        {% assign upcoming = upcoming | push: event %}
-      {% endif %}
-    {% endfor %}
+<!-- UPCOMING EVENTS -->
+{% assign now = site.time | date: "%Y-%m-%d" %}
+{% assign all_events = site.events | sort: "date" %}
+{% assign upcoming = "" | split: "" %}
+{% for event in all_events %}
+  {% assign event_date = event.date | date: "%Y-%m-%d" %}
+  {% if event_date >= now %}
+    {% assign upcoming = upcoming | push: event %}
+  {% endif %}
+{% endfor %}
+
+<section class="bg-crema">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
     {% if upcoming.size > 0 %}
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {% for event in upcoming limit:6 %}
-          {% include event-card.html event=event %}
-        {% endfor %}
-      </div>
-      <div class="text-center mt-10">
-        <a href="/eventos/" class="inline-flex items-center gap-2 text-teal-500 font-semibold hover:text-teal-600 transition">
-          Ver todos los eventos
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-        </a>
-      </div>
+      {% assign primero = upcoming | first %}
+      {% include event-destacado.html event=primero %}
+
+      {% if upcoming.size > 1 %}
+        <div class="mt-16">
+          <h2 class="font-display text-[34px] sm:text-[44px] text-anil leading-[0.95] mb-8 text-left">
+            Próximos eventos
+          </h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+            {% for event in upcoming offset:1 limit:5 %}
+              {% include event-card.html event=event %}
+            {% endfor %}
+          </div>
+          <div class="mt-10">
+            <a href="/eventos/" class="inline-flex items-center gap-2 text-[17px] font-extrabold text-anil hover:text-rosa transition underline decoration-rosa decoration-2 underline-offset-4">
+              Ver todos los eventos
+            </a>
+          </div>
+        </div>
+      {% endif %}
     {% else %}
-      <div class="text-center py-8">
-        <img src="/assets/images/programmers.jpeg" alt="Chapulines programadores"
-             class="w-72 mx-auto rounded-2xl shadow-lg mb-8" />
-        <p class="text-gray-500 text-lg mb-2">No hay eventos programados por el momento.</p>
-        <p class="text-gray-400">Únete a nuestros canales para enterarte de los próximos.</p>
+      <div class="mt-4">
+        <h2 class="font-display text-[34px] sm:text-[44px] text-anil leading-[0.95] mb-8 text-left">
+          Próximos eventos
+        </h2>
+        <div class="grid md:grid-cols-2 gap-10 items-center">
+          <div class="pr-6 pb-6">
+            {% include marco-ilustracion.html src="/assets/images/programmers.jpeg" alt="Chapulines programadores" %}
+          </div>
+          <div>
+            <p class="text-[22px] text-anil leading-[1.4] mb-3">No hay eventos programados por el momento.</p>
+            <p class="text-[18px] text-anil/80 leading-relaxed mb-6">Únete a nuestros canales para enterarte de los próximos.</p>
+            <div class="flex flex-wrap gap-3">
+              <a href="{{ site.community.telegram }}" target="_blank" rel="noopener"
+                 class="inline-flex items-center justify-center h-11 px-5 rounded-[6px] bg-rosa text-white text-[17px] font-extrabold hover:bg-rosa-700 transition">
+                Telegram
+              </a>
+              <a href="{{ site.community.whatsapp }}" target="_blank" rel="noopener"
+                 class="inline-flex items-center justify-center h-11 px-5 rounded-[6px] border-2 border-anil text-anil text-[17px] font-extrabold hover:bg-anil hover:text-crema transition">
+                WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
     {% endif %}
   </div>
 </section>
 
-<!-- About -->
-<section class="py-20 bg-gray-50">
-  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center gap-12">
-    <div class="flex-1">
-      <div class="relative">
-        <div class="absolute -inset-4 bg-gradient-to-br from-teal-200/50 to-accent-200/50 rounded-3xl blur-2xl"></div>
-        <img src="/assets/images/programmer.jpeg" alt="Chapulin programando"
-             class="relative rounded-2xl shadow-xl w-full max-w-md mx-auto" />
+<!-- SOBRE OAXACODERS -->
+{% include listones.html %}
+<section class="bg-anil text-crema on-anil">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20">
+    <div class="grid md:grid-cols-2 gap-10 md:gap-14 items-center">
+      <div class="pr-6 pb-6">
+        {% include marco-ilustracion.html src="/assets/images/programmers.jpeg" alt="Chapulines programadores" %}
       </div>
-    </div>
-    <div class="flex-1 text-center md:text-left">
-      <h2 class="text-3xl font-bold text-navy-700 mb-4">Sobre Oaxacoders</h2>
-      <p class="text-gray-500 mb-4 leading-relaxed">
-        Somos una comunidad abierta de programadores, diseñadores y
-        entusiastas de la tecnología en Oaxaca, México. 
-      </p>
-      <p class="text-gray-500 mb-8 leading-relaxed">
-        Organizamos meetups, talleres y hackathons para fomentar el aprendizaje y la colaboración.
-
-         Usamos el chapulín como parte de nuestro logotipo y como nuestra "mascota" al ser un símbolo muy oaxaqueño 
-        — tradición oaxaqueña mezclada con tecnología.
-      </p>
-      <a href="/nosotros/" class="inline-flex items-center gap-2 bg-navy-700 text-white px-5 py-3 rounded-xl font-semibold hover:bg-navy-800 transition-all shadow-lg shadow-navy-700/25">
-        Conoce más
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-      </a>
+      <div>
+        <p class="label-mono text-cempasuchil mb-5">Comunidad</p>
+        <h2 class="font-display text-[44px] sm:text-[56px] text-crema leading-[0.95] mb-6">Sobre Oaxacoders.</h2>
+        <p class="text-[20px] leading-[1.5] text-crema mb-4 max-w-xl">
+          Somos una comunidad abierta de programadores, diseñadores y entusiastas de la tecnología en Oaxaca, México.
+        </p>
+        <p class="text-[20px] leading-[1.5] text-crema mb-8 max-w-xl">
+          Organizamos meetups, talleres y hackathons para fomentar el aprendizaje y la colaboración. El chapulín, símbolo oaxaqueño, nos acompaña como mascota — tradición con tecnología.
+        </p>
+        <a href="/nosotros/" class="inline-flex items-center justify-center h-12 px-6 rounded-[6px] bg-cempasuchil text-anil text-[20px] font-extrabold hover:bg-crema transition">
+          Conoce más
+        </a>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- Newsletter -->
-<section class="py-20 bg-white">
-  <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
+<!-- NEWSLETTER -->
+<section class="bg-crema py-16 md:py-20">
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
     {% include newsletter-form.html %}
   </div>
 </section>
+
+{% include greca.html variant="anil" %}

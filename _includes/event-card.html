@@ -1,18 +1,29 @@
-<a href="{{ event.url }}" class="group block bg-white rounded-xl border border-gray-100 p-6 hover:border-teal-200 hover:shadow-lg hover:shadow-teal-100/50 transition-all duration-200">
-  {% if event.date_display %}
-    <p class="text-xs font-semibold uppercase tracking-wider text-accent-600 mb-2">{{ event.date_display }}</p>
-  {% endif %}
-  <h3 class="text-lg font-semibold text-navy-700 group-hover:text-teal-500 transition-colors mb-2">
-    {{ event.title }}
-  </h3>
-  {% if event.time_display %}
-    <p class="text-sm text-gray-500 mb-1">{{ event.time_display }}</p>
-  {% endif %}
-  {% if event.venue %}
-    <p class="text-sm text-gray-500 mb-3">{{ event.venue }}</p>
-  {% endif %}
-  {% if event.excerpt %}
-    <p class="text-gray-600 text-sm leading-relaxed mb-4">{{ event.excerpt | strip_html | truncatewords: 30 }}</p>
-  {% endif %}
-  <span class="text-teal-500 text-sm font-medium group-hover:underline">Ver detalles &rarr;</span>
+{% include evento-tipo.html event=include.event %}
+<a href="{{ include.event.url }}"
+   class="group block bg-white rounded-[12px] p-6 border-2 border-transparent hover:border-anil transition no-underline">
+  <div class="flex gap-5 items-start">
+    {% if include.event.date %}
+      {% include fecha-bloque.html date=include.event.date bg=tipo_bg text=tipo_text size="md" %}
+    {% endif %}
+    <div class="min-w-0 flex-1">
+      <p class="label-mono {{ tipo_accent }} mb-2">{{ tipo_label }}</p>
+      <h3 class="text-[26px] font-extrabold text-anil leading-[1.1] mb-3 group-hover:underline decoration-anil decoration-2 underline-offset-4">
+        {{ include.event.title }}
+      </h3>
+      <div class="font-mono text-[13px] text-anil/80 space-y-1">
+        {% if include.event.time_display %}
+          <p>{{ include.event.time_display }}</p>
+        {% endif %}
+        {% if include.event.venue %}
+          <p>{{ include.event.venue }}</p>
+        {% endif %}
+      </div>
+      {% if include.event.excerpt %}
+        <p class="text-anil/80 text-[16px] leading-relaxed mt-3">{{ include.event.excerpt | strip_html | truncatewords: 24 }}</p>
+      {% endif %}
+      <span class="inline-block mt-4 text-[16px] font-extrabold text-anil group-hover:underline decoration-rosa decoration-2 underline-offset-4">
+        Ver detalles &rarr;
+      </span>
+    </div>
+  </div>
 </a>

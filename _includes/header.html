@@ -1,62 +1,71 @@
-<header class="sticky top-0 z-50 bg-white/80 backdrop-blur-lg border-b border-gray-100">
+{% include listones.html %}
+
+<header class="sticky top-0 z-50 bg-crema border-b border-anil/15">
   <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-    <a href="/" class="flex items-center gap-2 shrink-0">
-      <img src="/assets/images/oaxacoders.svg" alt="Oaxacoders" class="h-9" />
+    <a href="/" class="flex items-center shrink-0 min-h-11" aria-label="Oaxacoders — inicio">
+      <img src="/assets/images/oaxacoders.svg" alt="Oaxacoders" class="h-10 w-auto" />
     </a>
 
     <!-- Desktop nav -->
-    <div class="hidden sm:flex items-center gap-1">
-      <a href="/eventos/" class="px-3 py-2 rounded-lg text-sm font-medium text-navy-700 hover:text-teal-500 hover:bg-teal-50 transition">Eventos</a>
-      <a href="/eventos/hacktoberfest-hack-day-oaxaca-2026/" class="inline-flex items-center gap-1.5 ml-1 px-3 py-2 rounded-lg text-sm font-bold text-white bg-[#e73122] hover:bg-[#b32319] transition shadow-sm">
-        <span class="w-1.5 h-1.5 rounded-full bg-[#facc15] animate-pulse"></span>
+    <div class="hidden sm:flex items-center gap-6">
+      {% assign nav_base = "px-1 py-2 text-[19px] font-bold text-anil hover:text-rosa transition min-h-11 inline-flex items-center" %}
+      {% assign cur = page.url | default: "" %}
+
+      <a href="/eventos/" class="{{ nav_base }}{% if cur == '/eventos/' %} underline decoration-rosa decoration-[3px] underline-offset-4{% endif %}"{% if cur == '/eventos/' %} aria-current="page"{% endif %}>Eventos</a>
+      <a href="/eventos/hacktoberfest-hack-day-oaxaca-2026/" class="{{ nav_base }} gap-2{% if cur contains 'hacktoberfest' %} underline decoration-rosa decoration-[3px] underline-offset-4{% endif %}"{% if cur contains 'hacktoberfest' %} aria-current="page"{% endif %}>
         Hacktoberfest
+        <span class="label-mono bg-cempasuchil text-anil px-1.5 h-5 rounded-[6px] inline-flex items-center text-[10px]">Recap</span>
       </a>
-      <a href="/blog/" class="px-3 py-2 rounded-lg text-sm font-medium text-navy-700 hover:text-teal-500 hover:bg-teal-50 transition">Blog</a>
-      <a href="/nosotros/" class="px-3 py-2 rounded-lg text-sm font-medium text-navy-700 hover:text-teal-500 hover:bg-teal-50 transition">Nosotros</a>
-      <a href="/agradecimientos/" class="px-3 py-2 rounded-lg text-sm font-medium text-navy-700 hover:text-teal-500 hover:bg-teal-50 transition">Agradecimientos</a>
+      <a href="/blog/" class="{{ nav_base }}{% if cur contains '/blog/' %} underline decoration-rosa decoration-[3px] underline-offset-4{% endif %}"{% if cur contains '/blog/' %} aria-current="page"{% endif %}>Blog</a>
+      <a href="/nosotros/" class="{{ nav_base }}{% if cur contains '/nosotros/' %} underline decoration-rosa decoration-[3px] underline-offset-4{% endif %}"{% if cur contains '/nosotros/' %} aria-current="page"{% endif %}>Nosotros</a>
+      <a href="/agradecimientos/" class="{{ nav_base }}{% if cur contains '/agradecimientos/' %} underline decoration-rosa decoration-[3px] underline-offset-4{% endif %}"{% if cur contains '/agradecimientos/' %} aria-current="page"{% endif %}>Agradecimientos</a>
+
       <a href="{{ site.community.telegram }}" target="_blank" rel="noopener"
-         class="ml-2 px-4 py-2 rounded-lg text-sm font-semibold text-white bg-accent-500 hover:bg-accent-600 transition shadow-sm">
+         class="ml-2 inline-flex items-center justify-center bg-anil text-crema hover:bg-anil-900 transition px-6 h-12 rounded-[6px] text-[19px] font-extrabold">
         Unirse
       </a>
     </div>
 
     <!-- Mobile hamburger -->
-    <button id="menu-toggle" class="sm:hidden p-2 -mr-2 rounded-lg text-navy-600 hover:bg-gray-100 transition" aria-label="Menu">
-      <svg id="menu-icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-      </svg>
-      <svg id="menu-icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
-      </svg>
+    <button id="menu-toggle" class="sm:hidden p-3 -mr-2 rounded-[6px] text-anil hover:bg-anil/5 transition min-h-11 min-w-11" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu">
+      <svg id="menu-icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.25" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      <svg id="menu-icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.25" d="M6 18L18 6M6 6l12 12"/></svg>
     </button>
   </nav>
 
   <!-- Mobile menu -->
-  <div id="mobile-menu" class="hidden sm:hidden border-t border-gray-100 bg-white">
-    <div class="px-4 py-3 space-y-1">
-      <a href="/eventos/" class="block px-3 py-2.5 rounded-lg text-sm font-medium text-navy-700 hover:bg-teal-50 hover:text-teal-600 transition">Eventos</a>
-      <a href="/eventos/hacktoberfest-hack-day-oaxaca-2026/" class="flex items-center gap-2 px-3 py-2.5 rounded-lg text-sm font-bold text-white bg-[#e73122] hover:bg-[#b32319] transition">
-        <span class="w-1.5 h-1.5 rounded-full bg-[#facc15] animate-pulse"></span>
-        Hacktoberfest · 31 Oct
+  <div id="mobile-menu" class="hidden sm:hidden border-t border-anil/15 bg-crema">
+    <div class="px-4 py-4 space-y-1">
+      {% assign nav_mob = "block px-3 py-3 min-h-11 rounded-[6px] text-[19px] font-bold text-anil hover:bg-anil/5 hover:text-rosa transition" %}
+      <a href="/eventos/" class="{{ nav_mob }}">Eventos</a>
+      <a href="/eventos/hacktoberfest-hack-day-oaxaca-2026/" class="{{ nav_mob }} flex items-center gap-2">
+        Hacktoberfest
+        <span class="label-mono bg-cempasuchil text-anil px-1.5 h-5 rounded-[6px] inline-flex items-center text-[10px]">Recap</span>
       </a>
-      <a href="/blog/" class="block px-3 py-2.5 rounded-lg text-sm font-medium text-navy-700 hover:bg-teal-50 hover:text-teal-600 transition">Blog</a>
-      <a href="/nosotros/" class="block px-3 py-2.5 rounded-lg text-sm font-medium text-navy-700 hover:bg-teal-50 hover:text-teal-600 transition">Nosotros</a>
-      <a href="/agradecimientos/" class="block px-3 py-2.5 rounded-lg text-sm font-medium text-navy-700 hover:bg-teal-50 hover:text-teal-600 transition">Agradecimientos</a>
+      <a href="/blog/" class="{{ nav_mob }}">Blog</a>
+      <a href="/nosotros/" class="{{ nav_mob }}">Nosotros</a>
+      <a href="/agradecimientos/" class="{{ nav_mob }}">Agradecimientos</a>
       <a href="{{ site.community.telegram }}" target="_blank" rel="noopener"
-         class="block mt-2 px-3 py-2.5 rounded-lg text-sm font-semibold text-center text-white bg-accent-500 hover:bg-accent-600 transition">
-        Unirse a la comunidad
+         class="block mt-3 px-3 h-12 rounded-[6px] text-[19px] font-extrabold text-center text-crema bg-anil hover:bg-anil-900 transition inline-flex items-center justify-center w-full">
+        Unirse
       </a>
     </div>
   </div>
 
   <script>
-    document.getElementById('menu-toggle').addEventListener('click', function () {
-      var menu = document.getElementById('mobile-menu');
-      var open = document.getElementById('menu-icon-open');
-      var close = document.getElementById('menu-icon-close');
-      menu.classList.toggle('hidden');
-      open.classList.toggle('hidden');
-      close.classList.toggle('hidden');
-    });
+    (function(){
+      var toggle = document.getElementById('menu-toggle');
+      if (!toggle) return;
+      toggle.addEventListener('click', function () {
+        var menu = document.getElementById('mobile-menu');
+        var open = document.getElementById('menu-icon-open');
+        var close = document.getElementById('menu-icon-close');
+        var expanded = toggle.getAttribute('aria-expanded') === 'true';
+        toggle.setAttribute('aria-expanded', String(!expanded));
+        menu.classList.toggle('hidden');
+        open.classList.toggle('hidden');
+        close.classList.toggle('hidden');
+      });
+    })();
   </script>
 </header>
