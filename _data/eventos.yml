@@ -11,6 +11,6 @@
   eventbrite_url: https://www.eventbrite.com.mx/e/reagendado-de-programador-a-programador-c-tickets-1989803781675
   eventbrite_id: '1989803781675'
   is_free: false
-  status: agotado
+  status: disponible
   description: Desarrollador de C# con años de experiencia comparte algunas lecciones
     aprendidas
